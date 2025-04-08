@@ -28,7 +28,7 @@ const Navigation = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <svg width="50" height="40" viewBox="0 0 520 501" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
@@ -53,21 +53,10 @@ const Navigation = () => {
         
         <nav className="hidden lg:flex space-x-1">
           {/* Desktop Navigation */}
-          <a href="#home" className="nav-item text-alurion-secondary hover:text-black">Home</a>
-          <a href="#mission" className="nav-item text-alurion-secondary hover:text-black">Mission</a>
-          <a href="#about" className="nav-item text-alurion-secondary hover:text-black">About Us</a>
-          <a href="#values" className="nav-item text-alurion-secondary hover:text-black">Values</a>
-          
-          <div className="nav-item text-alurion-secondary hover:text-black">
-            <div className="flex items-center">
-              Meet the Team
-              <ChevronDown size={16} className="ml-1" />
-            </div>
-            <div className="dropdown-menu">
-              <a href="#managing-partners" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Managing Partners</a>
-              <a href="#team" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Team</a>
-            </div>
-          </div>
+          <Link to="/" className="nav-item text-alurion-secondary hover:text-black">Home</Link>
+          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black">Mission</Link>
+          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black">Values</Link>
+          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black">Meet the Team</Link>
           
           <div className="nav-item text-alurion-secondary hover:text-black">
             <div className="flex items-center">
@@ -113,11 +102,10 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white py-4 px-6 shadow-lg animated fade-in">
-          <a href="#home" className="block py-2 text-alurion-secondary hover:text-black">Home</a>
-          <a href="#mission" className="block py-2 text-alurion-secondary hover:text-black">Mission</a>
-          <a href="#about" className="block py-2 text-alurion-secondary hover:text-black">About Us</a>
-          <a href="#values" className="block py-2 text-alurion-secondary hover:text-black">Values</a>
-          <a href="#team" className="block py-2 text-alurion-secondary hover:text-black">Meet the Team</a>
+          <Link to="/" className="block py-2 text-alurion-secondary hover:text-black">Home</Link>
+          <Link to="/mission" className="block py-2 text-alurion-secondary hover:text-black">Mission</Link>
+          <Link to="/values" className="block py-2 text-alurion-secondary hover:text-black">Values</Link>
+          <Link to="/team" className="block py-2 text-alurion-secondary hover:text-black">Meet the Team</Link>
           <a href="#solutions" className="block py-2 text-alurion-secondary hover:text-black">Solutions</a>
           <a href="#industries" className="block py-2 text-alurion-secondary hover:text-black">Industries & Functions</a>
           <a href="#testimonials" className="block py-2 text-alurion-secondary hover:text-black">Testimonials</a>
