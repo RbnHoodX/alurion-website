@@ -91,8 +91,8 @@
     @apply text-3xl md:text-4xl font-bold mb-6 text-alurion-secondary;
   }
 
-  .pattern-bg-dark {
-    background-image: url('/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png');
+  .alurion-pattern-bg {
+    background-image: url('/lovable-uploads/9d022264-3439-4458-8320-1862792d976c.png');
     background-repeat: repeat;
     background-size: 350px;
   }
