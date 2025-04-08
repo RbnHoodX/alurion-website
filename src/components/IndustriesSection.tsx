@@ -45,8 +45,9 @@ const IndustriesSection = () => {
   ];
   
   return (
-    <section id="industries" className="section bg-alurion-primary">
-      <div className="container mx-auto">
+    <section id="industries" className="section bg-alurion-primary relative">
+      <div className="absolute inset-0 pattern-bg-light opacity-50"></div>
+      <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary">Industries & Functions</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

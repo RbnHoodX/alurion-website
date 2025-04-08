@@ -27,8 +27,10 @@ export default {
 				foreground: 'hsl(var(--foreground))',
                 // Alurion color palette
                 alurion: {
-                    primary: '#C7C4B2', // beige/cream
-                    secondary: '#1C213C', // navy blue
+                    primary: '#C7C4B2', // Default color
+                    secondary: '#1C213C', // Hover color
+                    pressed: 'rgba(12, 61, 76, 0.5)', // Pressed color
+                    disabled: 'rgba(12, 61, 76, 0.2)', // Disabled color
                     black: '#000000',
                     white: '#FFFFFF',
                 },
@@ -103,8 +105,8 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 			},
 			backgroundImage: {
-                'logo-pattern-dark': "url('/public/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png')",
-                'logo-pattern-light': "url('/public/lovable-uploads/b96d002d-b82a-4b59-bcfe-8d2220755cc3.png')",
+                'logo-pattern-dark': "url('/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png')",
+                'logo-pattern-light': "url('/lovable-uploads/b96d002d-b82a-4b59-bcfe-8d2220755cc3.png')",
             }
 		}
 	},

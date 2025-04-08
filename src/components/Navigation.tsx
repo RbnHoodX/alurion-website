@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Briefcase, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
@@ -31,10 +31,10 @@ const Navigation = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <svg width="50" height="40" viewBox="0 0 520 501" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+            <svg width="40" height="32" viewBox="0 0 520 501" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
               <path d="M76.995 45.6265H519.276V0.669922H32.0384H22.7299H0.255859V500.67H45.2039V77.409L468.473 500.67H519.276V152.571H280.127L329.061 197.519H474.319V442.951L76.995 45.6265Z" fill="#1C213C"/>
             </svg>
-            <svg width="150" height="40" viewBox="0 0 750 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="120" height="32" viewBox="0 0 750 190" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 88.0672L37.5797 1.07715H51.2735L90.2001 88.0672H75.1593L65.2367 65.6406H24.4246L14.7714 88.0672H0ZM29.2736 53.0242H60.6798L44.5613 17.0385L29.2512 53.0242H29.2736Z" fill="#1C213C"/>
               <path d="M130.091 1.75195H144.054V75.3174H194.52V88.0684H130.091V1.75195Z" fill="#1C213C"/>
               <path d="M232.103 1.75195H246.066V46.7173C246.066 51.7234 247.031 56.4827 248.962 60.95C250.892 65.4174 253.743 69.0541 257.56 71.8153C261.354 74.599 265.866 75.9685 271.052 75.9685C276.237 75.9685 280.75 74.5765 284.543 71.8153C288.337 69.0541 291.211 65.3949 293.141 60.8826C295.072 56.3704 296.037 51.6336 296.037 46.7173V1.75195H310.001V46.7173C310.001 54.0581 308.474 61.0173 305.443 67.5949C302.39 74.1724 297.923 79.5154 292.019 83.646C286.115 87.7542 279.133 89.8195 271.074 89.8195C263.015 89.8195 256.033 87.7542 250.129 83.646C244.225 79.5378 239.757 74.1724 236.704 67.5949C233.651 61.0173 232.147 54.0581 232.147 46.7173V1.75195H232.103Z" fill="#1C213C"/>
@@ -53,15 +53,16 @@ const Navigation = () => {
         
         <nav className="hidden lg:flex space-x-1">
           {/* Desktop Navigation */}
-          <Link to="/" className="nav-item text-alurion-secondary hover:text-black">Home</Link>
-          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black">Mission</Link>
-          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black">Values</Link>
-          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black">Meet the Team</Link>
+          <Link to="/" className="nav-item text-alurion-secondary hover:text-black group">Home</Link>
+          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black group">Mission</Link>
+          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black group">Values</Link>
+          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black group">Meet the Team</Link>
           
-          <div className="nav-item text-alurion-secondary hover:text-black">
+          <div className="nav-item text-alurion-secondary hover:text-black group">
             <div className="flex items-center">
-              Solutions
-              <ChevronDown size={16} className="ml-1" />
+              <Briefcase size={16} className="mr-1" />
+              <span>Solutions</span>
+              <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
               <a href="#retained-search" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Retained Search</a>
@@ -74,14 +75,15 @@ const Navigation = () => {
             </div>
           </div>
           
-          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black">Industries & Functions</a>
-          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black">Testimonials</a>
-          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black">Blog</a>
+          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black group">Industries & Functions</a>
+          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black group">Testimonials</a>
+          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black group">Blog</a>
           
-          <div className="nav-item text-alurion-secondary hover:text-black">
+          <div className="nav-item text-alurion-secondary hover:text-black group">
             <div className="flex items-center">
-              For Candidates
-              <ChevronDown size={16} className="ml-1" />
+              <Users size={16} className="mr-1" />
+              <span>For Candidates</span>
+              <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
               <a href="#submit-resume" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Submit Resume</a>
@@ -89,7 +91,7 @@ const Navigation = () => {
             </div>
           </div>
           
-          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black">Contact Us</a>
+          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black group">Contact Us</a>
         </nav>
         
         <div className="lg:hidden">

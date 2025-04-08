@@ -3,8 +3,9 @@ import React from 'react';
 
 const CandidatesSection = () => {
   return (
-    <section id="candidates" className="section bg-alurion-secondary text-white">
-      <div className="container mx-auto">
+    <section id="candidates" className="section bg-alurion-secondary text-white pattern-bg-dark">
+      <div className="absolute inset-0 bg-alurion-secondary/90"></div>
+      <div className="container mx-auto relative z-10">
         <h2 className="section-title text-white">For Candidates</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

@@ -3,8 +3,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-alurion-secondary text-white">
-      <div className="container mx-auto py-12 px-4">
+    <footer className="bg-alurion-secondary text-white relative">
+      <div className="absolute inset-0 pattern-bg-dark opacity-30"></div>
+      <div className="container mx-auto py-12 px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center">

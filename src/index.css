@@ -76,11 +76,11 @@
   }
 
   .primary-btn {
-    @apply bg-alurion-primary text-alurion-secondary px-6 py-3 rounded hover:opacity-90 transition-all;
+    @apply bg-alurion-primary text-alurion-secondary px-6 py-3 rounded hover:bg-alurion-secondary hover:text-white transition-all active:bg-alurion-pressed disabled:bg-alurion-disabled;
   }
 
   .secondary-btn {
-    @apply bg-alurion-secondary text-white px-6 py-3 rounded hover:opacity-90 transition-all;
+    @apply bg-alurion-secondary text-white px-6 py-3 rounded hover:opacity-90 transition-all active:bg-alurion-pressed disabled:bg-alurion-disabled;
   }
 
   .section {
@@ -92,13 +92,13 @@
   }
 
   .pattern-bg-dark {
-    background-image: url('/public/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png');
+    background-image: url('/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png');
     background-repeat: repeat;
     background-size: 350px;
   }
 
   .pattern-bg-light {
-    background-image: url('/public/lovable-uploads/b96d002d-b82a-4b59-bcfe-8d2220755cc3.png');
+    background-image: url('/lovable-uploads/b96d002d-b82a-4b59-bcfe-8d2220755cc3.png');
     background-repeat: repeat;
     background-size: 350px;
   }

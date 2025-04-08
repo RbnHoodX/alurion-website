@@ -8,8 +8,9 @@ const Mission = () => {
     <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
-        <section className="bg-alurion-secondary text-white py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-alurion-secondary text-white py-20 relative">
+          <div className="absolute inset-0 pattern-bg-dark opacity-50"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center">Our Mission</h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg md:text-xl leading-relaxed mb-6">
@@ -27,8 +28,9 @@ const Mission = () => {
           </div>
         </section>
         
-        <section className="bg-white py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-white py-20 relative">
+          <div className="absolute inset-0 pattern-bg-light opacity-20"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-secondary text-center">About Us</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">

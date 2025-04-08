@@ -49,8 +49,9 @@ const Values = () => {
     <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
-        <section className="bg-alurion-secondary text-white py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-alurion-secondary text-white py-20 relative">
+          <div className="absolute inset-0 pattern-bg-dark opacity-50"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center">Our Values</h1>
             <p className="text-lg md:text-xl text-center max-w-4xl mx-auto">
               At Alurion Talent Group, our values guide everything we do. They shape our approach to talent acquisition, 
@@ -59,8 +60,9 @@ const Values = () => {
           </div>
         </section>
         
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gray-50 relative">
+          <div className="absolute inset-0 pattern-bg-light opacity-20"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((value, index) => (
                 <ValueCard key={index} title={value.title} description={value.description} />
