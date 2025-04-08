@@ -26,6 +26,20 @@ const Navigation = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Helper function to handle navigation to a section based on the current URL
+  const navigateToSection = (sectionId) => (e) => {
+    const currentPath = window.location.pathname;
+    
+    // Only prevent default if we're on the homepage
+    if (currentPath === '/') {
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
@@ -53,10 +67,10 @@ const Navigation = () => {
         
         <nav className="hidden lg:flex space-x-1">
           {/* Desktop Navigation */}
-          <Link to="/" className="nav-item text-alurion-secondary hover:text-black group">Home</Link>
-          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black group">Mission</Link>
-          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black group">Values</Link>
-          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black group">Meet the Team</Link>
+          <Link to="/" className="nav-item text-alurion-secondary hover:text-black">Home</Link>
+          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black">Mission</Link>
+          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black">Values</Link>
+          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black">Meet the Team</Link>
           
           <div className="nav-item text-alurion-secondary hover:text-black group">
             <div className="flex items-center">
@@ -65,19 +79,19 @@ const Navigation = () => {
               <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
-              <a href="#retained-search" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Retained Search</a>
-              <a href="#rpo" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">RPO</a>
-              <a href="#fractional-hr" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Fractional HR & Talent Officer</a>
-              <a href="#consulting" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Consulting</a>
-              <a href="#talent-mapping" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Talent Mapping & Pipelining</a>
-              <a href="#board-advisory" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Board Advisory</a>
-              <a href="#coaching" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Coaching & Development</a>
+              <a href="/#retained-search" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('retained-search')}>Retained Search</a>
+              <a href="/#rpo" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('rpo')}>RPO</a>
+              <a href="/#fractional-hr" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('fractional-hr')}>Fractional HR & Talent Officer</a>
+              <a href="/#consulting" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('consulting')}>Consulting</a>
+              <a href="/#talent-mapping" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('talent-mapping')}>Talent Mapping & Pipelining</a>
+              <a href="/#board-advisory" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('board-advisory')}>Board Advisory</a>
+              <a href="/#coaching" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('coaching')}>Coaching & Development</a>
             </div>
           </div>
           
-          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black group">Industries & Functions</a>
-          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black group">Testimonials</a>
-          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black group">Blog</a>
+          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black">Industries & Functions</a>
+          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black">Testimonials</a>
+          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black">Blog</a>
           
           <div className="nav-item text-alurion-secondary hover:text-black group">
             <div className="flex items-center">
@@ -91,7 +105,7 @@ const Navigation = () => {
             </div>
           </div>
           
-          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black group">Contact Us</a>
+          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black">Contact Us</a>
         </nav>
         
         <div className="lg:hidden">
