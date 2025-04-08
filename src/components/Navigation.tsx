@@ -41,7 +41,7 @@ const Navigation = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-md py-2' : 'py-4'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-md py-2' : 'py-3'}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
@@ -65,35 +65,35 @@ const Navigation = () => {
           </Link>
         </div>
         
-        <nav className="hidden lg:flex space-x-1">
-          {/* Desktop Navigation */}
-          <Link to="/" className="nav-item text-alurion-secondary hover:text-black">Home</Link>
-          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black">Mission</Link>
-          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black">Values</Link>
-          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black">Meet the Team</Link>
+        <nav className="hidden lg:flex space-x-0">
+          {/* Desktop Navigation - Removed Home link and reduced spacing */}
+          <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black px-3">Mission</Link>
+          <Link to="/values" className="nav-item text-alurion-secondary hover:text-black px-3">Values</Link>
+          <Link to="/team" className="nav-item text-alurion-secondary hover:text-black px-3">Meet the Team</Link>
           
-          <div className="nav-item text-alurion-secondary hover:text-black group">
+          <div className="nav-item text-alurion-secondary hover:text-black group px-3">
             <div className="flex items-center">
               <Briefcase size={16} className="mr-1" />
               <span>Solutions</span>
               <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
-              <a href="/#retained-search" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('retained-search')}>Retained Search</a>
-              <a href="/#rpo" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('rpo')}>RPO</a>
-              <a href="/#fractional-hr" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('fractional-hr')}>Fractional HR & Talent Officer</a>
-              <a href="/#consulting" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('consulting')}>Consulting</a>
-              <a href="/#talent-mapping" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('talent-mapping')}>Talent Mapping & Pipelining</a>
-              <a href="/#board-advisory" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('board-advisory')}>Board Advisory</a>
-              <a href="/#coaching" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('coaching')}>Coaching & Development</a>
+              {/* All solution items now point to the same solutions section */}
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Retained Search</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>RPO</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Fractional HR & Talent Officer</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Consulting</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Talent Mapping & Pipelining</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Board Advisory</a>
+              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Coaching & Development</a>
             </div>
           </div>
           
-          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black">Industries & Functions</a>
-          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black">Testimonials</a>
-          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black">Blog</a>
+          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black px-3">Industries</a>
+          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black px-3">Testimonials</a>
+          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black px-3">Blog</a>
           
-          <div className="nav-item text-alurion-secondary hover:text-black group">
+          <div className="nav-item text-alurion-secondary hover:text-black group px-3">
             <div className="flex items-center">
               <Users size={16} className="mr-1" />
               <span>For Candidates</span>
@@ -105,7 +105,7 @@ const Navigation = () => {
             </div>
           </div>
           
-          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black">Contact Us</a>
+          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black px-3">Contact Us</a>
         </nav>
         
         <div className="lg:hidden">
@@ -118,7 +118,6 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white py-4 px-6 shadow-lg animated fade-in">
-          <Link to="/" className="block py-2 text-alurion-secondary hover:text-black">Home</Link>
           <Link to="/mission" className="block py-2 text-alurion-secondary hover:text-black">Mission</Link>
           <Link to="/values" className="block py-2 text-alurion-secondary hover:text-black">Values</Link>
           <Link to="/team" className="block py-2 text-alurion-secondary hover:text-black">Meet the Team</Link>
