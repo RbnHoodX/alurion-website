@@ -7,13 +7,13 @@ const HeroSection = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center alurion-pattern-bg"
     >
-      <div className="absolute inset-0 bg-white/80"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-alurion-secondary">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
             Alurion Talent Group
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-700 leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-white leading-relaxed">
             Blending advanced strategy with the art of human connection to deliver
             talent and HR solutions that shape the future of work
           </p>
@@ -29,7 +29,7 @@ const HeroSection = () => {
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#mission" className="text-alurion-secondary">
+        <a href="#mission" className="text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
           </svg>
