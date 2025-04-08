@@ -63,11 +63,16 @@
   }
 
   .dropdown-menu {
-    @apply absolute left-0 mt-0 hidden min-w-[220px] rounded-md border border-gray-100 bg-white p-2 shadow-md group-hover:block z-50;
+    @apply absolute left-0 mt-0 hidden min-w-[220px] rounded-md border border-gray-100 bg-white p-2 shadow-md z-50;
+  }
+  
+  /* The dropdown menu will be shown when the parent (with class group) is hovered */
+  .group:hover .dropdown-menu {
+    display: block;
   }
 
   .nav-item {
-    @apply relative group px-4 py-2;
+    @apply relative px-4 py-2;
   }
 
   .primary-btn {
