@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Briefcase, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown, Briefcase, Users, Home } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,17 +28,26 @@ const Navigation = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Helper function to handle navigation to a section based on the current URL
-  const navigateToSection = (sectionId) => (e) => {
-    const currentPath = window.location.pathname;
-    
-    // Only prevent default if we're on the homepage
-    if (currentPath === '/') {
-      e.preventDefault();
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  // Helper function to create section links that work from any page
+  const createSectionLink = (sectionId) => {
+    // If on homepage, smooth scroll to section
+    if (isHomePage) {
+      return {
+        href: `#${sectionId}`,
+        onClick: (e) => {
+          e.preventDefault();
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      };
+    } 
+    // If on other pages, link to homepage with section hash
+    else {
+      return {
+        href: `/#${sectionId}`,
+      };
     }
   };
 
@@ -66,7 +77,11 @@ const Navigation = () => {
         </div>
         
         <nav className="hidden lg:flex space-x-0">
-          {/* Desktop Navigation - Removed Home link and reduced spacing */}
+          {/* Desktop Navigation - Added Home link */}
+          <Link to="/" className="nav-item text-alurion-secondary hover:text-black px-3 flex items-center">
+            <Home size={16} className="mr-1" />
+            <span>Home</span>
+          </Link>
           <Link to="/mission" className="nav-item text-alurion-secondary hover:text-black px-3">Mission</Link>
           <Link to="/values" className="nav-item text-alurion-secondary hover:text-black px-3">Values</Link>
           <Link to="/team" className="nav-item text-alurion-secondary hover:text-black px-3">Meet the Team</Link>
@@ -78,20 +93,55 @@ const Navigation = () => {
               <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
-              {/* All solution items now point to the same solutions section */}
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Retained Search</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>RPO</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Fractional HR & Talent Officer</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Consulting</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Talent Mapping & Pipelining</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Board Advisory</a>
-              <a href="/#solutions" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded" onClick={navigateToSection('solutions')}>Coaching & Development</a>
+              {/* Solution items now handle both homepage and other page scenarios */}
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Retained Search
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                RPO
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Fractional HR & Talent Officer
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Consulting
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Talent Mapping & Pipelining
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Board Advisory
+              </a>
+              <a 
+                {...createSectionLink('solutions')} 
+                className="block px-4 py-2 text-sm hover:bg-gray-100 rounded"
+              >
+                Coaching & Development
+              </a>
             </div>
           </div>
           
-          <a href="#industries" className="nav-item text-alurion-secondary hover:text-black px-3">Industries</a>
-          <a href="#testimonials" className="nav-item text-alurion-secondary hover:text-black px-3">Testimonials</a>
-          <a href="#blog" className="nav-item text-alurion-secondary hover:text-black px-3">Blog</a>
+          <a {...createSectionLink('industries')} className="nav-item text-alurion-secondary hover:text-black px-3">Industries</a>
+          <a {...createSectionLink('testimonials')} className="nav-item text-alurion-secondary hover:text-black px-3">Testimonials</a>
+          <a {...createSectionLink('blog')} className="nav-item text-alurion-secondary hover:text-black px-3">Blog</a>
           
           <div className="nav-item text-alurion-secondary hover:text-black group px-3">
             <div className="flex items-center">
@@ -100,12 +150,12 @@ const Navigation = () => {
               <ChevronDown size={14} className="ml-1" />
             </div>
             <div className="dropdown-menu">
-              <a href="#submit-resume" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Submit Resume</a>
-              <a href="#open-roles" className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Open Roles</a>
+              <a {...createSectionLink('submit-resume')} className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Submit Resume</a>
+              <a {...createSectionLink('open-roles')} className="block px-4 py-2 text-sm hover:bg-gray-100 rounded">Open Roles</a>
             </div>
           </div>
           
-          <a href="#contact" className="nav-item text-alurion-secondary hover:text-black px-3">Contact Us</a>
+          <a {...createSectionLink('contact')} className="nav-item text-alurion-secondary hover:text-black px-3">Contact Us</a>
         </nav>
         
         <div className="lg:hidden">
@@ -118,15 +168,16 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white py-4 px-6 shadow-lg animated fade-in">
+          <Link to="/" className="block py-2 text-alurion-secondary hover:text-black">Home</Link>
           <Link to="/mission" className="block py-2 text-alurion-secondary hover:text-black">Mission</Link>
           <Link to="/values" className="block py-2 text-alurion-secondary hover:text-black">Values</Link>
           <Link to="/team" className="block py-2 text-alurion-secondary hover:text-black">Meet the Team</Link>
-          <a href="#solutions" className="block py-2 text-alurion-secondary hover:text-black">Solutions</a>
-          <a href="#industries" className="block py-2 text-alurion-secondary hover:text-black">Industries & Functions</a>
-          <a href="#testimonials" className="block py-2 text-alurion-secondary hover:text-black">Testimonials</a>
-          <a href="#blog" className="block py-2 text-alurion-secondary hover:text-black">Blog</a>
-          <a href="#candidates" className="block py-2 text-alurion-secondary hover:text-black">For Candidates</a>
-          <a href="#contact" className="block py-2 text-alurion-secondary hover:text-black">Contact Us</a>
+          <a href={isHomePage ? "#solutions" : "/#solutions"} className="block py-2 text-alurion-secondary hover:text-black">Solutions</a>
+          <a href={isHomePage ? "#industries" : "/#industries"} className="block py-2 text-alurion-secondary hover:text-black">Industries & Functions</a>
+          <a href={isHomePage ? "#testimonials" : "/#testimonials"} className="block py-2 text-alurion-secondary hover:text-black">Testimonials</a>
+          <a href={isHomePage ? "#blog" : "/#blog"} className="block py-2 text-alurion-secondary hover:text-black">Blog</a>
+          <a href={isHomePage ? "#candidates" : "/#candidates"} className="block py-2 text-alurion-secondary hover:text-black">For Candidates</a>
+          <a href={isHomePage ? "#contact" : "/#contact"} className="block py-2 text-alurion-secondary hover:text-black">Contact Us</a>
         </div>
       )}
     </header>
