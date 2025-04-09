@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Briefcase, Users, Home } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -30,7 +29,7 @@ const Navigation = () => {
   };
 
   // Improved section navigation handler
-  const navigateToSection = (sectionId, solutionId = null) => (e) => {
+  const navigateToSection = (sectionId: string, solutionId: string | null = null) => (e: React.MouseEvent) => {
     e.preventDefault();
     
     if (isHomePage) {
@@ -41,7 +40,7 @@ const Navigation = () => {
         
         // If it's a solution, set the active solution
         if (solutionId && window.setActiveSolution) {
-          setTimeout(() => window.setActiveSolution(solutionId), 100);
+          window.setActiveSolution(solutionId);
         }
       }
     } else {
@@ -55,7 +54,7 @@ const Navigation = () => {
           
           // If it's a solution, set the active solution
           if (solutionId && window.setActiveSolution) {
-            setTimeout(() => window.setActiveSolution(solutionId), 100);
+            window.setActiveSolution(solutionId);
           }
         }
       }, 300);

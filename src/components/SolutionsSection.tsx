@@ -12,12 +12,11 @@ const SolutionsSection = () => {
 
   // Expose setActiveSolution to the window so Navigation component can access it
   useEffect(() => {
-    // @ts-ignore - Exposing to window object for cross-component communication
+    // Now TypeScript knows this property exists due to our type declaration
     window.setActiveSolution = setActiveSolution;
 
     return () => {
       // Clean up when component unmounts
-      // @ts-ignore
       delete window.setActiveSolution;
     };
   }, []);
