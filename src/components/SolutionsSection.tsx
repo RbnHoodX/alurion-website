@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Solution {
   id: string;
@@ -9,6 +9,18 @@ interface Solution {
 
 const SolutionsSection = () => {
   const [activeSolution, setActiveSolution] = useState<string>("retained-search");
+
+  // Expose setActiveSolution to the window so Navigation component can access it
+  useEffect(() => {
+    // @ts-ignore - Exposing to window object for cross-component communication
+    window.setActiveSolution = setActiveSolution;
+
+    return () => {
+      // Clean up when component unmounts
+      // @ts-ignore
+      delete window.setActiveSolution;
+    };
+  }, []);
 
   const solutions: Solution[] = [
     {
@@ -47,6 +59,19 @@ const SolutionsSection = () => {
       description: "Unlock your organization's full potential by empowering your new leaders from day one. Our comprehensive Executive Onboarding Plan ensures a seamless integration for executives, fostering alignment with strategic goals and driving long-term success. Through tailored assimilation activities and a 360-degree review at the 6-month mark, we provide clarity, build relationships, and deliver actionable feedback—setting your leaders and your organization on the path to excellence. Investing in an Executive Onboarding Plan is an investment in your organization's future. Studies show that effective onboarding reduces turnover by up to 82% and accelerates time-to-productivity for new leaders. By providing structured support, aligning leaders with your strategic vision, and fostering team collaboration, our onboarding approach minimizes costly missteps and maximizes leadership impact. Experience tangible results through stronger engagement, heightened team performance, and measurable progress toward your organizational goals."
     }
   ];
+
+  // Handle direct URL access with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches a solution ID
+    const hash = window.location.hash;
+    if (hash && hash.includes('#solutions')) {
+      // If there's a solution ID in the URL after a dash, use it
+      const solutionId = hash.split('-')[1];
+      if (solutionId && solutions.some(s => s.id === solutionId)) {
+        setActiveSolution(solutionId);
+      }
+    }
+  }, []);
 
   return (
     <section id="solutions" className="section bg-white">
