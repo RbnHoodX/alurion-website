@@ -1,17 +1,14 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-
 const Mission = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
-        <section className="bg-alurion-secondary text-white py-20 relative">
+        <section className="bg-alurion-primary text-white py-20 relative">
           <div className="absolute inset-0 pattern-bg-dark opacity-50"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center">Our Mission</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-secondary">Our Mission</h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg md:text-xl leading-relaxed mb-6">
                 Our mission is to create lasting impact by forging meaningful connections
@@ -31,7 +28,7 @@ const Mission = () => {
         <section className="bg-white py-20 relative">
           <div className="absolute inset-0 pattern-bg-light opacity-20"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-secondary text-center">About Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-primary text-center">About Us</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 We are a team of high-powered female executives with decades of experience leading
@@ -56,8 +53,6 @@ const Mission = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Mission;
