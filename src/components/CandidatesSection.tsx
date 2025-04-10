@@ -1,7 +1,7 @@
 import React from 'react';
 const CandidatesSection = () => {
   return <section id="candidates" className="section bg-alurion-secondary text-white pattern-bg-dark">
-      <div className="absolute inset-0 bg-alurion-secondary/90"></div>
+      <div className="absolute inset-0 bg-alurion-primary"></div>
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-primary">For Candidates</h2>
         
