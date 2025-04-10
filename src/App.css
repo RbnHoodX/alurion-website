@@ -27,7 +27,7 @@
 
 /* Background styling */
 .bg-gradient {
-  background: linear-gradient(135deg, #1C213C 0%, #182962 100%);
+  background: linear-gradient(135deg, #1C213C 0%, #C7C4B2 100%);
 }
 
 .text-shadow {
@@ -64,3 +64,25 @@
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Testimonial card animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-card {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+/* Staggered animation delay classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
