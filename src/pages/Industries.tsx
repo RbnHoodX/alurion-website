@@ -2,7 +2,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Briefcase } from 'lucide-react';
@@ -51,20 +50,6 @@ const Industries = () => {
     "Food & Beverage"
   ];
 
-  // Animation variants for cards
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    })
-  };
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -98,22 +83,14 @@ const Industries = () => {
                   <CarouselContent className="-ml-4">
                     {industries.map((industry, index) => (
                       <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                        <motion.div 
-                          custom={index} 
-                          initial="hidden" 
-                          whileInView="visible"
-                          variants={cardVariants}
-                          viewport={{ once: true }}
-                        >
-                          <Card className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg h-full transform transition-transform duration-300 hover:scale-105">
-                            <CardContent className="flex flex-col p-6">
-                              <div className="mb-4">
-                                <Building className="h-8 w-8 text-alurion-secondary" />
-                              </div>
-                              <h4 className="text-xl font-medium text-white">{industry}</h4>
-                            </CardContent>
-                          </Card>
-                        </motion.div>
+                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                          <CardContent className="flex flex-col p-6">
+                            <div className="mb-4">
+                              <Building className="h-8 w-8 text-alurion-secondary" />
+                            </div>
+                            <h4 className="text-xl font-medium text-white">{industry}</h4>
+                          </CardContent>
+                        </Card>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
@@ -141,22 +118,14 @@ const Industries = () => {
                   <CarouselContent className="-ml-4">
                     {functions.map((func, index) => (
                       <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                        <motion.div 
-                          custom={index} 
-                          initial="hidden" 
-                          whileInView="visible"
-                          variants={cardVariants}
-                          viewport={{ once: true }}
-                        >
-                          <Card className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg h-full transform transition-transform duration-300 hover:scale-105">
-                            <CardContent className="flex flex-col p-6">
-                              <div className="mb-4">
-                                <Briefcase className="h-8 w-8 text-alurion-secondary" />
-                              </div>
-                              <h4 className="text-xl font-medium text-white">{func}</h4>
-                            </CardContent>
-                          </Card>
-                        </motion.div>
+                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                          <CardContent className="flex flex-col p-6">
+                            <div className="mb-4">
+                              <Briefcase className="h-8 w-8 text-alurion-secondary" />
+                            </div>
+                            <h4 className="text-xl font-medium text-white">{func}</h4>
+                          </CardContent>
+                        </Card>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
