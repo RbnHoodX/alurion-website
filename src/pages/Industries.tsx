@@ -73,34 +73,32 @@ const Industries = () => {
                   technology enabled systems, as well as transformation of cultural work involved with globalization.
                 </p>
                 
-                <ScrollArea className="pb-8">
-                  <Carousel
-                    opts={{
-                      align: "start",
-                      loop: true,
-                    }}
-                    className="w-full"
-                  >
-                    <CarouselContent className="-ml-4">
-                      {industries.map((industry, index) => (
-                        <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                          <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
-                            <CardContent className="flex flex-col p-6">
-                              <div className="mb-4">
-                                <Building className="h-8 w-8 text-alurion-secondary" />
-                              </div>
-                              <h4 className="text-xl font-medium text-white">{industry}</h4>
-                            </CardContent>
-                          </Card>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <div className="flex justify-end gap-2 mt-6">
-                      <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                      <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                    </div>
-                  </Carousel>
-                </ScrollArea>
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4">
+                    {industries.map((industry, index) => (
+                      <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
+                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                          <CardContent className="flex flex-col p-6">
+                            <div className="mb-4">
+                              <Building className="h-8 w-8 text-alurion-secondary" />
+                            </div>
+                            <h4 className="text-xl font-medium text-white">{industry}</h4>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-end gap-2 mt-6">
+                    <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
+                    <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
+                  </div>
+                </Carousel>
               </div>
               
               <div>
@@ -110,34 +108,32 @@ const Industries = () => {
                   that can drive your business forward and help you achieve your strategic goals.
                 </p>
                 
-                <ScrollArea className="pb-8">
-                  <Carousel
-                    opts={{
-                      align: "start",
-                      loop: true,
-                    }}
-                    className="w-full"
-                  >
-                    <CarouselContent className="-ml-4">
-                      {functions.map((func, index) => (
-                        <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                          <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
-                            <CardContent className="flex flex-col p-6">
-                              <div className="mb-4">
-                                <Briefcase className="h-8 w-8 text-alurion-secondary" />
-                              </div>
-                              <h4 className="text-xl font-medium text-white">{func}</h4>
-                            </CardContent>
-                          </Card>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <div className="flex justify-end gap-2 mt-6">
-                      <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                      <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                    </div>
-                  </Carousel>
-                </ScrollArea>
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4">
+                    {functions.map((func, index) => (
+                      <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
+                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                          <CardContent className="flex flex-col p-6">
+                            <div className="mb-4">
+                              <Briefcase className="h-8 w-8 text-alurion-secondary" />
+                            </div>
+                            <h4 className="text-xl font-medium text-white">{func}</h4>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-end gap-2 mt-6">
+                    <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
+                    <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
+                  </div>
+                </Carousel>
               </div>
             </div>
           </div>
