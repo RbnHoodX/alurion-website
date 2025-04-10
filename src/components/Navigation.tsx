@@ -1,13 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Briefcase, Users, Home } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -16,19 +13,15 @@ const Navigation = () => {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#1C213C]/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#1C213C]/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
@@ -107,8 +100,7 @@ const Navigation = () => {
       </div>
       
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-[#1C213C]/95 backdrop-blur-md py-4 px-6 shadow-lg animated fade-in">
+      {isMenuOpen && <div className="lg:hidden bg-[#1C213C]/95 backdrop-blur-md py-4 px-6 shadow-lg animated fade-in">
           <Link to="/" className="block py-2 text-white hover:text-alurion-secondary">Home</Link>
           <Link to="/mission" className="block py-2 text-white hover:text-alurion-secondary">Mission</Link>
           <Link to="/values" className="block py-2 text-white hover:text-alurion-secondary">Values</Link>
@@ -119,10 +111,7 @@ const Navigation = () => {
           <Link to="/blog" className="block py-2 text-white hover:text-alurion-secondary">Blog</Link>
           <Link to="/candidates" className="block py-2 text-white hover:text-alurion-secondary">For Candidates</Link>
           <Link to="/contact" className="block py-2 text-white hover:text-alurion-secondary">Contact Us</Link>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Navigation;

@@ -1,10 +1,7 @@
-
 import React from 'react';
-
 const CandidatesSection = () => {
-  return (
-    <section id="candidates" className="section bg-alurion-secondary text-white pattern-bg-dark">
-      <div className="absolute inset-0 bg-alurion-secondary/90"></div>
+  return <section id="candidates" className="section bg-alurion-secondary text-white pattern-bg-dark">
+      <div className="absolute inset-0 bg-alurion-primary/90"></div>
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-white">For Candidates</h2>
         
@@ -17,35 +14,19 @@ const CandidatesSection = () => {
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">Full Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary"
-                />
+                <input type="text" id="name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">Email Address</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary"
-                />
+                <input type="email" id="email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary" />
               </div>
               <div>
                 <label htmlFor="resume" className="block text-sm font-medium mb-1">Resume/CV</label>
-                <input 
-                  type="file" 
-                  id="resume" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-white bg-transparent"
-                />
+                <input type="file" id="resume" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-white bg-transparent" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1">Additional Information</label>
-                <textarea 
-                  id="message" 
-                  rows={3} 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary"
-                ></textarea>
+                <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary"></textarea>
               </div>
               <button type="submit" className="primary-btn">Submit Resume</button>
             </form>
@@ -99,8 +80,6 @@ const CandidatesSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CandidatesSection;
