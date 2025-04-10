@@ -1,5 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface Solution {
   id: string;
@@ -12,11 +15,8 @@ const SolutionsSection = () => {
 
   // Expose setActiveSolution to the window so Navigation component can access it
   useEffect(() => {
-    // Now TypeScript knows this property exists due to our type declaration
     window.setActiveSolution = setActiveSolution;
-
     return () => {
-      // Clean up when component unmounts
       delete window.setActiveSolution;
     };
   }, []);
@@ -61,10 +61,8 @@ const SolutionsSection = () => {
 
   // Handle direct URL access with hash
   useEffect(() => {
-    // Check if there's a hash in the URL that matches a solution ID
     const hash = window.location.hash;
     if (hash && hash.includes('#solutions')) {
-      // If there's a solution ID in the URL after a dash, use it
       const solutionId = hash.split('-')[1];
       if (solutionId && solutions.some(s => s.id === solutionId)) {
         setActiveSolution(solutionId);
@@ -73,57 +71,39 @@ const SolutionsSection = () => {
   }, []);
 
   return (
-    <section id="solutions" className="section bg-gray-50 relative">
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="container mx-auto">
-        <h2 className="section-title text-center mb-12">Our Solutions</h2>
-        <p className="text-lg text-gray-700 text-center mb-16 max-w-4xl mx-auto">
+    <section id="solutions" className="section py-24 px-4 relative bg-gray-50 overflow-hidden">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-alurion-primary">Our Solutions</h2>
+        <p className="text-lg text-gray-700 mb-16 max-w-3xl">
           At Alurion Talent Group, we don't just fill roles—we architect transformation. As strategic partners
           and fractional leaders, we help organizations attract, develop, and retain top talent that fuels
           innovation and drives business growth.
         </p>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Solutions Navigation */}
-          <div className="lg:w-1/3">
-            <div className="sticky top-24">
-              <h3 className="text-xl font-bold mb-6 text-alurion-secondary">Services</h3>
-              <ul className="space-y-3">
-                {solutions.map((solution) => (
-                  <li key={solution.id} id={solution.id}>
-                    <button
-                      onClick={() => setActiveSolution(solution.id)}
-                      className={`w-full text-left px-5 py-4 rounded-lg transition-all duration-300 ${
-                        activeSolution === solution.id 
-                          ? 'bg-alurion-primary text-white shadow-lg' 
-                          : 'hover:bg-alurion-accent/10 text-gray-700'
-                      }`}
-                    >
-                      {solution.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Solution Content */}
-          <div className="lg:w-2/3">
-            <div className="bg-white p-8 rounded-xl shadow-xl">
-              {solutions.map((solution) => (
-                <div 
-                  key={solution.id}
-                  className={`${activeSolution === solution.id ? 'animate-fade-in' : 'hidden'}`}
-                >
-                  <h3 className="text-2xl font-bold mb-6 text-alurion-secondary">{solution.title}</h3>
-                  <p className="text-gray-700 whitespace-pre-line leading-relaxed">{solution.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solutions.map((solution) => (
+            <div 
+              key={solution.id}
+              onClick={() => setActiveSolution(solution.id)}
+              className="group relative rounded-2xl bg-white shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
+            >
+              <div className="p-8 h-full flex flex-col">
+                <h3 className="text-xl font-semibold text-alurion-primary mb-4">{solution.title}</h3>
+                <div className="mt-2 flex-grow">
+                  <p className="text-gray-600 line-clamp-3 text-sm">{solution.description.substring(0, 120)}...</p>
                 </div>
-              ))}
+                <Link 
+                  to={`/solutions#${solution.id}`} 
+                  className="mt-6 flex items-center text-alurion-primary font-medium text-sm"
+                >
+                  Learn more
+                  <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 };
