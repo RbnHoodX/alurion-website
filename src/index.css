@@ -19,13 +19,13 @@
     --primary: 0 0% 100%;
     --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 225 25% 17%;
+    --secondary: 35 13% 74%; /* Updated to use #C7C4B2 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 35 13% 74%; /* Updated to use #C7C4B2 */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -74,7 +74,7 @@
   }
 
   .secondary-btn {
-    @apply bg-alurion-secondary text-white px-6 py-3 rounded-md hover:opacity-90 transition-all active:bg-alurion-pressed disabled:bg-alurion-disabled font-medium;
+    @apply bg-alurion-secondary text-alurion-primary px-6 py-3 rounded-md hover:opacity-90 transition-all active:bg-opacity-80 disabled:bg-alurion-disabled font-medium;
   }
 
   .section {
@@ -82,7 +82,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-bold mb-8 text-alurion-secondary;
+    @apply text-3xl md:text-5xl font-bold mb-8 text-alurion-primary;
   }
 
   .pattern-bg-light {

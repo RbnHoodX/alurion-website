@@ -34,10 +34,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: delay * 0.1 }}
     >
-      <Card className="bg-white border border-alurion-accent/30 rounded-2xl overflow-hidden h-full shadow-lg hover:shadow-xl transition-all duration-300">
+      <Card className="bg-white border border-alurion-secondary/30 rounded-2xl overflow-hidden h-full shadow-lg hover:shadow-xl transition-all duration-300">
         <CardContent className="p-6 flex flex-col h-full">
           <div className="flex items-center mb-6">
-            <Avatar className="h-14 w-14 border-2 border-alurion-accent">
+            <Avatar className="h-14 w-14 border-2 border-alurion-secondary">
               {image ? (
                 <AvatarImage src={image} alt={author} />
               ) : (
@@ -55,7 +55,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {[...Array(5)].map((_, i) => (
                 <svg 
                   key={i} 
-                  className="w-5 h-5 text-alurion-accent" 
+                  className="w-5 h-5 text-alurion-secondary" 
                   fill="currentColor" 
                   viewBox="0 0 20 20"
                 >
@@ -66,7 +66,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           </div>
           <div className="relative mb-4">
             <svg 
-              className="absolute top-0 left-0 transform -translate-y-6 w-12 h-12 text-alurion-accent opacity-20"
+              className="absolute top-0 left-0 transform -translate-y-6 w-12 h-12 text-alurion-secondary opacity-20"
               fill="currentColor" 
               viewBox="0 0 24 24"
             >
@@ -75,7 +75,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             <p className="text-gray-600 italic text-lg px-2">{quote}</p>
           </div>
           <div className="mt-auto">
-            <div className="h-1 w-16 bg-alurion-accent rounded-full"></div>
+            <div className="h-1 w-16 bg-alurion-secondary rounded-full"></div>
           </div>
         </CardContent>
       </Card>

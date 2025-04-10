@@ -25,13 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-                // Alurion color palette
+                // Alurion color palette - updated to emphasize requested colors
                 alurion: {
                     primary: '#1C213C', // Primary brand color
-                    secondary: '#182962', // Secondary brand color
+                    secondary: '#C7C4B2', // Now using the accent as secondary (previously used #182962)
                     accent: '#C7C4B2', // Accent color
-                    pressed: 'rgba(12, 61, 76, 0.5)', // Pressed color
-                    disabled: 'rgba(12, 61, 76, 0.2)', // Disabled color
+                    pressed: 'rgba(28, 33, 60, 0.7)', // Updated pressed color
+                    disabled: 'rgba(28, 33, 60, 0.3)', // Updated disabled color
                     white: '#FFFFFF',
                     black: '#000000',
                 },
