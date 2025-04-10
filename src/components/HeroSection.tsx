@@ -6,10 +6,10 @@ const HeroSection = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1C213C]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary"
     >
       <P5Background className="absolute inset-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1C213C]/80 to-[#1C213C]/95 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -30,7 +30,7 @@ const HeroSection = () => {
               and workforce planning.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center fade-in delay-400">
-              <a href="/solutions" className="bg-alurion-secondary text-[#1C213C] px-8 py-4 rounded-md font-medium hover:bg-opacity-90 transition-all">
+              <a href="/solutions" className="bg-alurion-secondary text-alurion-primary px-8 py-4 rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Solutions
               </a>
               <a href="/contact" className="bg-transparent border border-alurion-secondary text-alurion-secondary px-8 py-4 rounded-md font-medium hover:bg-alurion-secondary/10 transition-all">
