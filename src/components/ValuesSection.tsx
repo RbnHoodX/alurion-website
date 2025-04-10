@@ -6,11 +6,13 @@ import { cn } from "@/lib/utils";
 const ValueCard = ({
   title,
   description,
-  className
+  className,
+  style
 }: {
   title: string;
   description: string;
   className?: string;
+  style?: React.CSSProperties;
 }) => {
   return (
     <Card 
@@ -18,6 +20,7 @@ const ValueCard = ({
         "bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]",
         className
       )}
+      style={style}
     >
       <CardContent className="p-6 md:p-8">
         <h3 className="text-xl font-medium mb-4 text-alurion-secondary">{title}</h3>
