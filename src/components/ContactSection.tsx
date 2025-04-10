@@ -1,22 +1,19 @@
-
 import React from 'react';
-
 const ContactSection = () => {
-  return (
-    <section id="contact" className="section bg-white">
+  return <section id="contact" className="section bg-white">
       <div className="container mx-auto">
         <h2 className="section-title">Contact Us</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-alurion-secondary">Get in Touch</h3>
+            <h3 className="text-2xl font-bold mb-6 text-alurion-primary">Get in Touch</h3>
             <p className="text-gray-700 mb-6">
               Ready to transform your talent strategy? Connect with our team to discuss how Alurion can help your organization attract, develop, and retain exceptional talent.
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-alurion-secondary mr-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6 text-alurion-secondary mr-4 mt-1 ">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <div>
@@ -71,61 +68,37 @@ const ContactSection = () => {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-alurion-secondary">Send a Message</h3>
+            <h3 className="text-2xl font-bold mb-6 text-alurion-primary">Send a Message</h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                  <input 
-                    type="text" 
-                    id="first-name" 
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                  />
+                  <input type="text" id="first-name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary" />
                 </div>
                 <div>
                   <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                  <input 
-                    type="text" 
-                    id="last-name" 
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                  />
+                  <input type="text" id="last-name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary" />
                 </div>
               </div>
               
               <div>
                 <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input 
-                  type="email" 
-                  id="contact-email" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                />
+                <input type="email" id="contact-email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary" />
               </div>
               
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                />
+                <input type="tel" id="phone" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary" />
               </div>
               
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company</label>
-                <input 
-                  type="text" 
-                  id="company" 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                />
+                <input type="text" id="company" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary" />
               </div>
               
               <div>
                 <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea 
-                  id="contact-message" 
-                  rows={4} 
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"
-                ></textarea>
+                <textarea id="contact-message" rows={4} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-secondary"></textarea>
               </div>
               
               <button type="submit" className="secondary-btn w-full md:w-auto">Send Message</button>
@@ -133,8 +106,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
