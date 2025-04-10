@@ -73,10 +73,11 @@ const SolutionsSection = () => {
   }, []);
 
   return (
-    <section id="solutions" className="section bg-white">
+    <section id="solutions" className="section bg-gray-50 relative">
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent"></div>
       <div className="container mx-auto">
-        <h2 className="section-title">Our Solutions</h2>
-        <p className="text-lg text-gray-700 text-center mb-12 max-w-4xl mx-auto">
+        <h2 className="section-title text-center mb-12">Our Solutions</h2>
+        <p className="text-lg text-gray-700 text-center mb-16 max-w-4xl mx-auto">
           At Alurion Talent Group, we don't just fill roles—we architect transformation. As strategic partners
           and fractional leaders, we help organizations attract, develop, and retain top talent that fuels
           innovation and drives business growth.
@@ -86,16 +87,16 @@ const SolutionsSection = () => {
           {/* Solutions Navigation */}
           <div className="lg:w-1/3">
             <div className="sticky top-24">
-              <h3 className="text-xl font-bold mb-4 text-alurion-secondary">Services</h3>
-              <ul className="space-y-2">
+              <h3 className="text-xl font-bold mb-6 text-alurion-secondary">Services</h3>
+              <ul className="space-y-3">
                 {solutions.map((solution) => (
                   <li key={solution.id} id={solution.id}>
                     <button
                       onClick={() => setActiveSolution(solution.id)}
-                      className={`w-full text-left px-4 py-3 rounded-md transition-colors ${
+                      className={`w-full text-left px-5 py-4 rounded-lg transition-all duration-300 ${
                         activeSolution === solution.id 
-                          ? 'bg-alurion-secondary text-white' 
-                          : 'hover:bg-gray-100 text-gray-700'
+                          ? 'bg-alurion-primary text-white shadow-lg' 
+                          : 'hover:bg-alurion-accent/10 text-gray-700'
                       }`}
                     >
                       {solution.title}
@@ -108,20 +109,21 @@ const SolutionsSection = () => {
 
           {/* Solution Content */}
           <div className="lg:w-2/3">
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               {solutions.map((solution) => (
                 <div 
                   key={solution.id}
-                  className={`${activeSolution === solution.id ? 'block' : 'hidden'}`}
+                  className={`${activeSolution === solution.id ? 'animate-fade-in' : 'hidden'}`}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-alurion-secondary">{solution.title}</h3>
-                  <p className="text-gray-700 whitespace-pre-line">{solution.description}</p>
+                  <h3 className="text-2xl font-bold mb-6 text-alurion-secondary">{solution.title}</h3>
+                  <p className="text-gray-700 whitespace-pre-line leading-relaxed">{solution.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 };

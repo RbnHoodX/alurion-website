@@ -1,42 +1,66 @@
+
+/* Remove old styles */
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #C7C4B2;
+  margin: 20px auto 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Modern hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-  padding: 2em;
+/* Background styling */
+.bg-gradient {
+  background: linear-gradient(135deg, #1C213C 0%, #182962 100%);
 }
 
-.read-the-docs {
-  color: #888;
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+/* Animated underline for links */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #C7C4B2;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Special card styles */
+.premium-card {
+  background: linear-gradient(145deg, #FFFFFF, #F5F5F5);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+

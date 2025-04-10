@@ -27,12 +27,23 @@ export default {
 				foreground: 'hsl(var(--foreground))',
                 // Alurion color palette
                 alurion: {
-                    primary: '#C7C4B2', // Default color
-                    secondary: '#1C213C', // Hover color
+                    primary: '#1C213C', // Primary brand color
+                    secondary: '#182962', // Secondary brand color
+                    accent: '#C7C4B2', // Accent color
                     pressed: 'rgba(12, 61, 76, 0.5)', // Pressed color
                     disabled: 'rgba(12, 61, 76, 0.2)', // Disabled color
-                    black: '#000000',
                     white: '#FFFFFF',
+                    black: '#000000',
+                },
+                gray: {
+                    50: '#EDEFF7',
+                    100: '#D3D6E0',
+                    200: '#BCBFCC',
+                    300: '#9DA2B3',
+                    400: '#6E7180',
+                    500: '#40424D',
+                    600: '#1E1E24',
+                    700: '#000000',
                 },
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -74,7 +85,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['DM Sans', 'sans-serif'],
+				manrope: ['Manrope', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -105,8 +116,7 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 			},
 			backgroundImage: {
-                'logo-pattern-dark': "url('/lovable-uploads/a393d1a2-040d-441d-9d88-42aab59b541b.png')",
-                'logo-pattern-light': "url('/lovable-uploads/b96d002d-b82a-4b59-bcfe-8d2220755cc3.png')",
+                'hero-pattern': "url('/public/lovable-uploads/2ce32ea3-15a4-4caa-9835-08aa488f9e13.png')",
             }
 		}
 	},
