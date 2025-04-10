@@ -14,11 +14,11 @@ const CandidatesSection = () => {
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1 text-alurion-primary">Full Name</label>
-                <input type="text" id="name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary " />
+                <input type="text" id="name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1 text-alurion-primary">Email Address</label>
-                <input type="email" id="email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary" />
+                <input type="email" id="email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
                 <label htmlFor="resume" className="block text-sm font-medium mb-1 text-alurion-primary">Resume/CV</label>
@@ -26,7 +26,7 @@ const CandidatesSection = () => {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-primary">Additional Information</label>
-                <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-secondary"></textarea>
+                <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent"></textarea>
               </div>
               <button type="submit" className="primary-btn">Submit Resume</button>
             </form>
