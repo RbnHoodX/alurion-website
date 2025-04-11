@@ -42,10 +42,10 @@ const HeroSection = () => {
               <span className="animate-pulse ml-0.5 inline-block border-l-2 border-gray-100 h-[1em] align-middle">|</span>
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center fade-in delay-400">
-              <a href="/solutions" className="bg-alurion-secondary text-alurion-primary px-8 py-4 rounded-md font-medium hover:bg-opacity-90 transition-all">
+              <a href="/solutions" className="bg-alurion-primary text-alurion-secondary px-8 py-4 rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Solutions
               </a>
-              <a href="/contact" className="bg-transparent border border-alurion-secondary text-alurion-secondary px-8 py-4 rounded-md font-medium hover:bg-alurion-secondary/10 transition-all">
+              <a href="/contact" className="bg-transparent border border-alurion-primary text-alurion-primary px-8 py-4 rounded-md font-medium hover:bg-alurion-primary/20 transition-all">
                 Contact Us
               </a>
             </div>
