@@ -8,6 +8,8 @@ import ValuesSection from '../components/ValuesSection';
 import SolutionsSection from '../components/SolutionsSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
+import AddOnServicesSection from '../components/AddOnServicesSection';
 import BlogSection from '../components/BlogSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -24,6 +26,8 @@ const Index = () => {
         <SolutionsSection />
         <IndustriesSection />
         <TestimonialsSection />
+        <ExecutiveSearchTimeline />
+        <AddOnServicesSection />
         <BlogSection />
         <ContactSection />
         <Footer />
