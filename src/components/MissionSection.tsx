@@ -1,14 +1,10 @@
-
 import React from 'react';
-
 const MissionSection = () => {
-  return (
-    <section id="mission" className="section bg-white text-alurion-primary relative">
+  return <section id="mission" className="section bg-white text-alurion-primary relative">
       {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-10"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80)' }}
-      ></div>
+      <div className="absolute inset-0 bg-cover bg-fixed bg-center opacity-10" style={{
+      backgroundImage: 'url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80)'
+    }}></div>
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
@@ -33,11 +29,7 @@ const MissionSection = () => {
           
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="rounded-xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80" 
-                alt="Team collaboration" 
-                className="w-full h-auto"
-              />
+              <img alt="Team collaboration" className="w-full h-auto" src="/lovable-uploads/38e131a5-a4cd-44d8-8ad8-0351fe3b7a12.jpg" />
             </div>
           </div>
         </div>
@@ -46,8 +38,6 @@ const MissionSection = () => {
       {/* Abstract decorative elements */}
       <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-alurion-accent/10 -z-10"></div>
       <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-alurion-accent/5 -z-10"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default MissionSection;
