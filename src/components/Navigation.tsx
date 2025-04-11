@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Briefcase, Users, Home } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -14,14 +16,25 @@ const Navigation = () => {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Function to handle solutions dropdown item clicks
+  const handleSolutionClick = (solutionId: string) => {
+    // Close the mobile menu if open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-alurion-primary ${isScrolled ? 'shadow-lg py-2' : 'py-4'}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
@@ -75,25 +88,53 @@ const Navigation = () => {
               <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
                 All Solutions
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#retained-search" 
+                onClick={() => handleSolutionClick('retained-search')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Retained Search
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#rpo" 
+                onClick={() => handleSolutionClick('rpo')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 RPO
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#fractional-hr" 
+                onClick={() => handleSolutionClick('fractional-hr')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Fractional HR & Talent Officer
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#consulting" 
+                onClick={() => handleSolutionClick('consulting')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Consulting
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#talent-mapping" 
+                onClick={() => handleSolutionClick('talent-mapping')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Talent Mapping & Pipelining
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#board-advisory" 
+                onClick={() => handleSolutionClick('board-advisory')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Board Advisory
               </Link>
-              <Link to="/solutions" className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700">
+              <Link 
+                to="/solutions#coaching" 
+                onClick={() => handleSolutionClick('coaching')}
+                className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
+              >
                 Coaching & Development
               </Link>
             </div>
@@ -140,4 +181,5 @@ const Navigation = () => {
         </div>}
     </header>;
 };
+
 export default Navigation;

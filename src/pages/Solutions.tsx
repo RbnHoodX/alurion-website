@@ -52,18 +52,31 @@ const Solutions = () => {
     }
   ];
 
-  // Handle direct URL access with hash
+  // Handle URL hash changes
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const solutionId = hash.substring(1);
-      if (solutionId && solutions.some(s => s.id === solutionId)) {
-        setActiveSolution(solutionId);
-        // Smooth scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const solutionId = hash.substring(1);
+        if (solutionId && solutions.some(s => s.id === solutionId)) {
+          setActiveSolution(solutionId);
+          // Smooth scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
-    }
-  }, []);
+    };
+
+    // Handle initial hash if present
+    handleHashChange();
+
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Clean up
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [solutions]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -91,7 +104,11 @@ const Solutions = () => {
                     {solutions.map((solution) => (
                       <button
                         key={solution.id}
-                        onClick={() => setActiveSolution(solution.id)}
+                        onClick={() => {
+                          setActiveSolution(solution.id);
+                          // Update URL hash without full page reload
+                          window.history.pushState(null, '', `#${solution.id}`);
+                        }}
                         className={`w-full text-left py-3 px-4 rounded-xl transition-all duration-200 ${
                           activeSolution === solution.id
                             ? 'bg-alurion-primary text-white'
@@ -113,6 +130,7 @@ const Solutions = () => {
                   <div 
                     key={solution.id}
                     className="animate-fade-in"
+                    id={solution.id}
                   >
                     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                       <div className="p-8 md:p-12">
@@ -130,7 +148,11 @@ const Solutions = () => {
                         {solutions.filter(s => s.id !== activeSolution).slice(0, 3).map((relatedSolution) => (
                           <div 
                             key={relatedSolution.id}
-                            onClick={() => setActiveSolution(relatedSolution.id)}
+                            onClick={() => {
+                              setActiveSolution(relatedSolution.id);
+                              // Update URL hash without full page reload
+                              window.history.pushState(null, '', `#${relatedSolution.id}`);
+                            }}
                             className="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 cursor-pointer border border-transparent hover:border-gray-100"
                           >
                             <h4 className="font-medium mb-2 text-alurion-primary">{relatedSolution.title}</h4>
