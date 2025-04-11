@@ -16,6 +16,14 @@ import {
 const Testimonials = () => {
   // State for active category filter (can be expanded with categories if needed)
   const [activeFilter, setActiveFilter] = useState('all');
+  
+  // Get featured testimonials
+  const featuredTestimonials = allTestimonials.filter(testimonial => testimonial.featured);
+  
+  // Filter testimonials based on active filter
+  const filteredTestimonials = activeFilter === 'all' 
+    ? allTestimonials 
+    : allTestimonials.filter(t => t.position.toLowerCase().includes(activeFilter.toLowerCase()));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -47,7 +55,7 @@ const Testimonials = () => {
                 className="w-full"
               >
                 <CarouselContent className="-ml-4">
-                  {allTestimonials.slice(0, 4).map((testimonial, index) => (
+                  {featuredTestimonials.map((testimonial, index) => (
                     <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                       <TestimonialCard
                         key={`${testimonial.author}-carousel-${index}`}
@@ -79,32 +87,12 @@ const Testimonials = () => {
                 >
                   All
                 </button>
-                <button
-                  onClick={() => setActiveFilter('leadership')}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeFilter === 'leadership' 
-                      ? 'bg-white shadow-sm text-alurion-primary' 
-                      : 'text-gray-500 hover:text-alurion-primary'
-                  }`}
-                >
-                  Leadership
-                </button>
-                <button
-                  onClick={() => setActiveFilter('recruiting')}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeFilter === 'recruiting' 
-                      ? 'bg-white shadow-sm text-alurion-primary' 
-                      : 'text-gray-500 hover:text-alurion-primary'
-                  }`}
-                >
-                  Recruiting
-                </button>
               </div>
             </div>
             
             {/* All testimonials in grid - Apple style */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allTestimonials.map((testimonial, index) => (
+              {filteredTestimonials.map((testimonial, index) => (
                 <TestimonialCard
                   key={`${testimonial.author}-${index}`}
                   quote={testimonial.quote}
