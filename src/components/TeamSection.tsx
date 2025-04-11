@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 interface TeamMember {
   name: string;
@@ -60,40 +61,30 @@ const TeamSection = () => {
       <div className="container mx-auto">
         <h2 className="section-title">Meet the Team</h2>
         
+        {/* Apple-style Tab Bar */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-md shadow-sm" role="group">
-            <button
-              onClick={() => setActiveTab('all')}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === 'all'
-                  ? 'bg-alurion-secondary text-white'
-                  : 'bg-white text-alurion-secondary hover:bg-gray-100'
-              } border border-gray-200 rounded-l-lg`}
-            >
-              All
-            </button>
-            <button
-              id="managing-partners"
-              onClick={() => setActiveTab('managing-partner')}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === 'managing-partner'
-                  ? 'bg-alurion-secondary text-white'
-                  : 'bg-white text-alurion-secondary hover:bg-gray-100'
-              } border-t border-b border-r border-gray-200`}
-            >
-              Managing Partners
-            </button>
-            <button
-              onClick={() => setActiveTab('team')}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === 'team'
-                  ? 'bg-alurion-secondary text-white'
-                  : 'bg-white text-alurion-secondary hover:bg-gray-100'
-              } border-t border-b border-r border-gray-200 rounded-r-md`}
-            >
-              Team
-            </button>
-          </div>
+          <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'all' | 'managing-partner' | 'team')} className="w-full max-w-md">
+            <TabsList className="w-full rounded-full bg-alurion-secondary/20 p-1 h-12">
+              <TabsTrigger 
+                value="all" 
+                className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
+              >
+                All
+              </TabsTrigger>
+              <TabsTrigger 
+                value="managing-partner" 
+                className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
+              >
+                Managing Partners
+              </TabsTrigger>
+              <TabsTrigger 
+                value="team" 
+                className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
+              >
+                Team Members
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
