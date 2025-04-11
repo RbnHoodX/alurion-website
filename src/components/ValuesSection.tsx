@@ -47,7 +47,7 @@ const ValuesSection = () => {
     "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80", // Integrity
     "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80", // Grit
     "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80", // Now - innovation
-    "https://images.unsplash.com/photo-1610019089504-a565e7dcf60d?q=80", // Curiosity
+    "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80", // Curiosity - Updated to a working image
     "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80", // Adaptability
   ];
 
