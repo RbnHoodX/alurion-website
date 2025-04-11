@@ -49,7 +49,7 @@ const Industries = () => {
               }} className="w-full">
                   <CarouselContent className="-ml-4">
                     {industries.map((industry, index) => <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                        <Card className="bg-alurion-primary/70 backdrop-blur-sm border-none h-full">
                           <CardContent className="flex flex-col p-6">
                             <div className="mb-4">
                               <Building className="h-8 w-8 text-alurion-secondary" />
