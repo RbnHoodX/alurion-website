@@ -40,15 +40,15 @@ const Navigation = () => {
     }
   };
 
-  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-alurion-primary ${isScrolled ? 'shadow-lg py-2' : 'py-4'}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-lg py-2' : 'py-4'}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <svg width="180" height="40" viewBox="0 0 995.32 504.62" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
               <g id="Layer_1-2" data-name="Layer 1">
                 <g>
-                  <polygon className="fill-white" points="422.48 18.49 604.4 18.49 604.4 0 403.99 0 400.16 0 390.92 0 390.92 205.67 409.4 205.67 409.4 31.56 583.51 205.67 604.4 205.67 604.4 62.48 506.04 62.48 526.16 80.97 585.91 80.97 585.91 181.92 422.48 18.49"/>
-                  <g className="fill-white">
+                  <polygon className="fill-alurion-primary" points="422.48 18.49 604.4 18.49 604.4 0 403.99 0 400.16 0 390.92 0 390.92 205.67 409.4 205.67 409.4 31.56 583.51 205.67 604.4 205.67 604.4 62.48 506.04 62.48 526.16 80.97 585.91 80.97 585.91 181.92 422.48 18.49"/>
+                  <g className="fill-alurion-primary">
                     <path d="M0,426.24l49.88-115.44h18.17l51.67,115.44h-19.95l-13.18-29.75h-54.16l-12.83,29.75H0ZM38.84,379.74h41.69l-21.38-47.74-20.31,47.74Z"/>
                     <polygon points="172.63 311.69 191.15 311.69 191.15 409.31 258.14 409.31 258.14 426.24 172.63 426.24 172.63 311.69"/>
                     <path d="M308.02,311.69h18.52v59.68c0,6.65,1.28,12.95,3.83,18.89,2.55,5.94,6.35,10.75,11.4,14.43,5.04,3.69,11.01,5.52,17.9,5.52s12.86-1.84,17.91-5.52c5.04-3.68,8.85-8.52,11.4-14.52,2.55-6,3.83-12.26,3.83-18.8v-59.68h18.52v59.68c0,9.74-2.02,18.97-6.06,27.7-4.04,8.73-9.97,15.83-17.81,21.29-7.84,5.46-17.1,8.2-27.79,8.2s-19.95-2.73-27.79-8.2c-7.84-5.46-13.78-12.56-17.81-21.29-4.04-8.73-6.06-17.96-6.06-27.7v-59.68Z"/>
@@ -57,7 +57,7 @@ const Navigation = () => {
                     <path d="M773.88,309.37c11.52,0,21.52,2.76,30.02,8.28,8.49,5.52,14.99,12.83,19.51,21.91,4.52,9.09,6.77,18.92,6.77,29.48s-2.26,20.22-6.77,29.31c-4.51,9.09-11.02,16.39-19.51,21.91-8.49,5.52-18.5,8.28-30.02,8.28s-21.35-2.76-29.84-8.28c-8.49-5.52-14.96-12.83-19.42-21.91-4.46-9.08-6.68-18.85-6.68-29.31s2.23-20.25,6.68-29.39c4.45-9.14,10.92-16.48,19.42-22,8.49-5.52,18.44-8.28,29.84-8.28M773.88,327.37c-7.48,0-13.96,1.96-19.42,5.88-5.46,3.92-9.62,9.06-12.47,15.41-2.85,6.35-4.28,13.09-4.28,20.22s1.42,13.84,4.28,20.13c2.85,6.3,7.01,11.4,12.47,15.32,5.46,3.92,11.94,5.88,19.42,5.88s14.01-1.93,19.6-5.79c5.58-3.86,9.83-8.93,12.74-15.23,2.91-6.3,4.36-13.01,4.36-20.13s-1.46-14.04-4.36-20.4c-2.91-6.35-7.13-11.49-12.65-15.41-5.52-3.92-12.09-5.88-19.69-5.88"/>
                     <polygon points="887.54 311.69 905 311.69 976.79 396.84 976.79 311.69 995.32 311.69 995.32 426.24 977.86 426.24 906.06 340.9 906.06 426.24 887.54 426.24 887.54 311.69"/>
                   </g>
-                  <g className="fill-white opacity-80">
+                  <g className="fill-alurion-primary opacity-80">
                     <path d="M230.02,476.34h-14.65v27.32h-5.51v-27.32h-14.55v-4.82h34.71v4.82Z"/>
                     <path d="M270.84,495.9h-20.62l-4.08,7.76h-5.97l17.4-32.14h6.06l17.36,32.14h-6.02l-4.13-7.76ZM268.41,491.22l-7.85-14.88-7.85,14.88h15.7Z"/>
                     <path d="M329.47,498.79v4.87h-29.2v-32.14h5.51v27.27h23.69Z"/>
@@ -78,12 +78,12 @@ const Navigation = () => {
         
         <nav className="hidden lg:flex space-x-2">
           {/* Desktop Navigation */}
-          <Link to="/" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Home</Link>
-          <Link to="/mission" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Mission</Link>
-          <Link to="/values" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Values</Link>
-          <Link to="/team" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Meet the Team</Link>
+          <Link to="/" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Home</Link>
+          <Link to="/mission" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Mission</Link>
+          <Link to="/values" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Values</Link>
+          <Link to="/team" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Meet the Team</Link>
           
-          <div className="nav-item text-white hover:text-alurion-secondary group px-3 font-medium">
+          <div className="nav-item text-alurion-primary hover:text-alurion-secondary group px-3 font-medium">
             <div className="flex items-center">
               <Briefcase size={16} className="mr-1" />
               <span>Solutions</span>
@@ -145,11 +145,11 @@ const Navigation = () => {
             </div>
           </div>
           
-          <Link to="/industries" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Industries</Link>
-          <Link to="/testimonials" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Testimonials</Link>
-          <Link to="/blog" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Blog</Link>
+          <Link to="/industries" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Industries</Link>
+          <Link to="/testimonials" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Testimonials</Link>
+          <Link to="/blog" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Blog</Link>
           
-          <div className="nav-item text-white hover:text-alurion-secondary group px-3 font-medium">
+          <div className="nav-item text-alurion-primary hover:text-alurion-secondary group px-3 font-medium">
             <div className="flex items-center">
               <Users size={16} className="mr-1" />
               <span>For Candidates</span>
@@ -161,28 +161,28 @@ const Navigation = () => {
             </div>
           </div>
           
-          <Link to="/contact" className="nav-item text-white hover:text-alurion-secondary px-3 font-medium">Contact Us</Link>
+          <Link to="/contact" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Contact Us</Link>
         </nav>
         
         <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-white p-2">
+          <button onClick={toggleMenu} className="text-alurion-primary p-2">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
       
       {/* Mobile Navigation */}
-      {isMenuOpen && <div className="lg:hidden bg-[#1C213C]/95 backdrop-blur-md py-4 px-6 shadow-lg animated fade-in">
-          <Link to="/" className="block py-2 text-white hover:text-alurion-secondary">Home</Link>
-          <Link to="/mission" className="block py-2 text-white hover:text-alurion-secondary">Mission</Link>
-          <Link to="/values" className="block py-2 text-white hover:text-alurion-secondary">Values</Link>
-          <Link to="/team" className="block py-2 text-white hover:text-alurion-secondary">Meet the Team</Link>
-          <Link to="/solutions" className="block py-2 text-white hover:text-alurion-secondary">Solutions</Link>
-          <Link to="/industries" className="block py-2 text-white hover:text-alurion-secondary">Industries & Functions</Link>
-          <Link to="/testimonials" className="block py-2 text-white hover:text-alurion-secondary">Testimonials</Link>
-          <Link to="/blog" className="block py-2 text-white hover:text-alurion-secondary">Blog</Link>
-          <Link to="/candidates" className="block py-2 text-white hover:text-alurion-secondary">For Candidates</Link>
-          <Link to="/contact" className="block py-2 text-white hover:text-alurion-secondary">Contact Us</Link>
+      {isMenuOpen && <div className="lg:hidden bg-white shadow-lg animated fade-in py-4 px-6">
+          <Link to="/" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Home</Link>
+          <Link to="/mission" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Mission</Link>
+          <Link to="/values" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Values</Link>
+          <Link to="/team" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Meet the Team</Link>
+          <Link to="/solutions" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Solutions</Link>
+          <Link to="/industries" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Industries & Functions</Link>
+          <Link to="/testimonials" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Testimonials</Link>
+          <Link to="/blog" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Blog</Link>
+          <Link to="/candidates" className="block py-2 text-alurion-primary hover:text-alurion-secondary">For Candidates</Link>
+          <Link to="/contact" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Contact Us</Link>
         </div>}
     </header>;
 };
