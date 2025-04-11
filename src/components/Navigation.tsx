@@ -126,7 +126,7 @@ const Navigation = () => {
                 onClick={() => handleSolutionClick('talent-mapping')}
                 className="block px-4 py-2 text-sm hover:bg-alurion-secondary/20 rounded text-gray-700"
               >
-                Talent Mapping & Pipelining
+                Candidate Mapping & Pipelining
               </Link>
               <Link 
                 to="/solutions#board-advisory" 

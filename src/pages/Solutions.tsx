@@ -37,7 +37,7 @@ const Solutions = () => {
     },
     {
       id: "talent-mapping",
-      title: "Talent Mapping & Pipelining",
+      title: "Candidate Mapping & Pipelining",
       description: "Our Candidate Mapping & Pipelining solution provides businesses with a proactive, research-driven approach to identifying and engaging top talent ahead of demand. Through in-depth market mapping, we deliver insights into candidate availability, competitor talent, and key hiring trends- equipping you with the data to make informed workforce decisions. We build and nurture talent pipelines tailored to your future hiring needs, ensuring you are ready to move quickly when the right opportunity arises. This solution empowers long-term planning and gives your organization a competitive edge in securing high-impact talent."
     },
     {
