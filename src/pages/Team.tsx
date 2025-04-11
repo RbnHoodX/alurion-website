@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { Card, CardContent } from '../components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 import { motion, AnimatePresence } from 'framer-motion';
+import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
 
 interface TeamMember {
   name: string;
@@ -247,6 +248,9 @@ const Team = () => {
             </div>
           </div>
         </section>
+        
+        {/* Executive Search Timeline Section */}
+        <ExecutiveSearchTimeline />
         
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
