@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -7,46 +8,52 @@ interface Testimonial {
   position: string;
   company: string;
   image: string;
+  featured?: boolean;
 }
 
+export const allTestimonials: Testimonial[] = [
+  {
+    quote: "Alurion Talent Group revolutionized our executive hiring process. Their strategic approach and deep understanding of our industry allowed us to secure transformative leaders who have driven measurable impact across our organization.",
+    author: "Sarah Johnson",
+    position: "Chief Human Resources Officer",
+    company: "Global Tech Innovations",
+    image: "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    featured: true
+  },
+  {
+    quote: "Working with Alurion has been a game-changer for our talent strategy. Their consultative approach and commitment to understanding our unique culture has resulted in exceptional hires that align perfectly with our values and vision.",
+    author: "Michael Chen",
+    position: "CEO",
+    company: "Nexus Health Systems",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    featured: true
+  },
+  {
+    quote: "The Alurion team's expertise in talent acquisition and development has been invaluable to our organization's growth. Their ability to identify candidates who bring both technical excellence and cultural alignment has strengthened our leadership team immeasurably.",
+    author: "Jennifer Rodriguez",
+    position: "COO",
+    company: "Momentum Financial",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    featured: true
+  },
+  {
+    quote: "Alurion doesn't just fill positions—they build foundations for success. Their holistic approach to talent strategy has empowered our team with the right leaders at the right time, driving innovation and sustainable growth.",
+    author: "David Patterson",
+    position: "Founder",
+    company: "Elevate Solutions",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+  },
+  {
+    quote: "What sets Alurion apart is their genuine partnership approach. They took the time to deeply understand our challenges, culture, and aspirations, then delivered talent solutions that have transformed our organization's capabilities.",
+    author: "Priya Sharma",
+    position: "VP of Talent",
+    company: "Catalyst Innovations",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+  }
+];
+
 const TestimonialsSection = () => {
-  const testimonials: Testimonial[] = [
-    {
-      quote: "Alurion Talent Group revolutionized our executive hiring process. Their strategic approach and deep understanding of our industry allowed us to secure transformative leaders who have driven measurable impact across our organization.",
-      author: "Sarah Johnson",
-      position: "Chief Human Resources Officer",
-      company: "Global Tech Innovations",
-      image: "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      quote: "Working with Alurion has been a game-changer for our talent strategy. Their consultative approach and commitment to understanding our unique culture has resulted in exceptional hires that align perfectly with our values and vision.",
-      author: "Michael Chen",
-      position: "CEO",
-      company: "Nexus Health Systems",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      quote: "The Alurion team's expertise in talent acquisition and development has been invaluable to our organization's growth. Their ability to identify candidates who bring both technical excellence and cultural alignment has strengthened our leadership team immeasurably.",
-      author: "Jennifer Rodriguez",
-      position: "COO",
-      company: "Momentum Financial",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      quote: "Alurion doesn't just fill positions—they build foundations for success. Their holistic approach to talent strategy has empowered our team with the right leaders at the right time, driving innovation and sustainable growth.",
-      author: "David Patterson",
-      position: "Founder",
-      company: "Elevate Solutions",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      quote: "What sets Alurion apart is their genuine partnership approach. They took the time to deeply understand our challenges, culture, and aspirations, then delivered talent solutions that have transformed our organization's capabilities.",
-      author: "Priya Sharma",
-      position: "VP of Talent",
-      company: "Catalyst Innovations",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
-    }
-  ];
+  const testimonials = allTestimonials;
 
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
