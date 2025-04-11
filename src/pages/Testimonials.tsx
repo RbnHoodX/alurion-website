@@ -74,20 +74,9 @@ const Testimonials = () => {
               </Carousel>
             </div>
             
-            {/* Filter buttons - Apple style */}
-            <div className="flex justify-center mb-12">
-              <div className="inline-flex bg-gray-100 p-1 rounded-full">
-                <button
-                  onClick={() => setActiveFilter('all')}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeFilter === 'all' 
-                      ? 'bg-white shadow-sm text-alurion-primary' 
-                      : 'text-gray-500 hover:text-alurion-primary'
-                  }`}
-                >
-                  All
-                </button>
-              </div>
+            {/* All testimonials heading - replacing filter buttons */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-semibold text-alurion-primary text-center">All Testimonials</h2>
             </div>
             
             {/* All testimonials in grid - Apple style */}

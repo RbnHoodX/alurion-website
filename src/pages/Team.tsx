@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Card, CardContent } from '../components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TeamMember {
   name: string;
@@ -13,7 +13,8 @@ interface TeamMember {
 }
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   
   const initials = member.name
     .split(' ')
@@ -21,41 +22,162 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
     .join('')
     .toUpperCase();
   
+  const openModal = () => {
+    setIsModalOpen(true);
+    // Start flip animation after a small delay
+    setTimeout(() => {
+      setIsFlipped(true);
+    }, 100);
+  };
+
+  const closeModal = () => {
+    setIsFlipped(false);
+    // Wait for flip animation to complete before closing modal
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 500);
+  };
+
   return (
-    <div className="group relative transition-all duration-300 hover:translate-y-[-8px]">
-      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-        <div className="p-6 pb-0 flex justify-center">
-          <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-alurion-secondary/30 shadow-lg">
-            <img 
-              src={member.image} 
-              alt={member.name} 
-              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-        </div>
-        <CardContent className="p-6">
-          <div className="space-y-3 text-center">
-            <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
-            <p className="text-alurion-secondary font-medium">{member.title}</p>
-            
-            <div className={`transition-all duration-500 ${expanded ? 'max-h-[1000px]' : 'max-h-24 overflow-hidden'}`}>
-              <div className="prose-sm text-gray-600 space-y-3 pt-2">
-                {member.bio.map((paragraph, i) => (
-                  <p key={i} className="text-left font-light leading-relaxed">{paragraph}</p>
-                ))}
-              </div>
+    <>
+      <div className="group relative transition-all duration-300 hover:translate-y-[-8px]">
+        <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+          <div className="p-6 pb-0 flex justify-center">
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-alurion-secondary/30 shadow-lg">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+              />
             </div>
-            
-            <button 
-              onClick={() => setExpanded(!expanded)} 
-              className="mt-3 px-4 py-2 rounded-full bg-alurion-primary/10 text-alurion-primary text-sm font-medium hover:bg-alurion-primary hover:text-white transition-colors"
-            >
-              {expanded ? 'Read Less' : 'Read More'}
-            </button>
           </div>
-        </CardContent>
-      </Card>
-    </div>
+          <CardContent className="p-6">
+            <div className="space-y-3 text-center">
+              <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
+              <p className="text-alurion-secondary font-medium">{member.title}</p>
+              
+              <div className="max-h-24 overflow-hidden">
+                <div className="prose-sm text-gray-600 space-y-3 pt-2">
+                  <p className="text-left font-light leading-relaxed line-clamp-3">{member.bio[0]}</p>
+                </div>
+              </div>
+              
+              <button 
+                onClick={openModal} 
+                className="mt-3 px-4 py-2 rounded-full bg-alurion-primary/10 text-alurion-primary text-sm font-medium hover:bg-alurion-primary hover:text-white transition-colors"
+              >
+                Read More
+              </button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Bio Modal with Flip Animation */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 backdrop-blur-sm"
+            onClick={closeModal}
+          >
+            <motion.div
+              className="w-full max-w-3xl h-auto max-h-[80vh] perspective-1000"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.div 
+                className="relative w-full h-full preserve-3d"
+                initial={{ rotateY: 0 }}
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                {/* Front of card */}
+                <motion.div 
+                  className={`absolute w-full h-full backface-hidden bg-white rounded-xl shadow-2xl p-8 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
+                  style={{ backfaceVisibility: "hidden" }}
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="flex gap-6 items-center">
+                      <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-alurion-secondary/30">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
+                        <p className="text-alurion-secondary">{member.title}</p>
+                      </div>
+                    </div>
+                    <button 
+                      onClick={closeModal}
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <p className="text-gray-600">{member.bio[0].substring(0, 150)}...</p>
+                    <div className="mt-6 flex justify-center">
+                      <button 
+                        onClick={() => setIsFlipped(true)}
+                        className="px-4 py-2 bg-alurion-primary text-white rounded-full flex items-center gap-2"
+                      >
+                        Continue Reading
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* Back of card - full bio */}
+                <motion.div 
+                  className="absolute w-full h-full bg-white rounded-xl shadow-2xl p-8 overflow-y-auto"
+                  style={{ 
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)"
+                  }}
+                >
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-2xl font-bold text-alurion-primary">About {member.name}</h3>
+                    <button 
+                      onClick={closeModal}
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <div className="prose max-w-none text-gray-700">
+                    {member.bio.map((paragraph, i) => (
+                      <p key={i} className="mb-4">{paragraph}</p>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8 flex justify-center">
+                    <button 
+                      onClick={() => setIsFlipped(false)}
+                      className="px-4 py-2 bg-alurion-secondary/10 text-alurion-secondary rounded-full flex items-center gap-2"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Back to Summary
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
@@ -145,6 +267,19 @@ const Team = () => {
         </section>
       </main>
       <Footer />
+
+      {/* Add perspective CSS for flip animation */}
+      <style jsx global>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+      `}</style>
     </div>
   );
 };

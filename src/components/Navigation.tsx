@@ -29,6 +29,11 @@ const Navigation = () => {
 
   // Function to handle solutions dropdown item clicks
   const handleSolutionClick = (solutionId: string) => {
+    // Access window.setActiveSolution if it exists (defined in SolutionsSection)
+    if (window.location.pathname === '/solutions' && window.setActiveSolution) {
+      window.setActiveSolution(solutionId);
+    }
+    
     // Close the mobile menu if open
     if (isMenuOpen) {
       setIsMenuOpen(false);

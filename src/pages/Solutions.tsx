@@ -52,6 +52,15 @@ const Solutions = () => {
     }
   ];
 
+  // Expose setActiveSolution to window for Navigation component
+  useEffect(() => {
+    // Type declaration for window object
+    window.setActiveSolution = setActiveSolution;
+    return () => {
+      delete window.setActiveSolution;
+    };
+  }, []);
+
   // Handle URL hash changes
   useEffect(() => {
     const handleHashChange = () => {
@@ -163,7 +172,7 @@ const Solutions = () => {
                     </div>
                   </div>
                 )
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -172,5 +181,12 @@ const Solutions = () => {
     </div>
   );
 };
+
+// Add TypeScript interface for the window object
+declare global {
+  interface Window {
+    setActiveSolution?: (solutionId: string) => void;
+  }
+}
 
 export default Solutions;
