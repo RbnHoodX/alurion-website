@@ -58,7 +58,7 @@ const CandidatesSection = () => {
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
               </div>
               
-              <div className="bg-alurion-primary/20 p-6 rounded-lg">
+              <div className="bg-alurion-primary/90 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">HR Business Partner</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Human Resources</span>
