@@ -44,7 +44,7 @@ const AboutSection = () => {
       </div>
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/90 to-alurion-primary/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/50 backdrop-blur-sm"></div>
       
       {/* Background design elements */}
       <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-alurion-primary/5 blur-3xl"></div>
