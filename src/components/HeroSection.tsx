@@ -8,7 +8,10 @@ const HeroSection = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary"
     >
-      <P5Background className="absolute inset-0" />
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)' }}
+      ></div>
       <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
       
       {/* Hero Content */}

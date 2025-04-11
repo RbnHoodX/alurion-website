@@ -22,31 +22,33 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
     .toUpperCase();
   
   return (
-    <div className="group relative">
-      <Card className="backdrop-blur-xl bg-alurion-primary/5 border-0 shadow-lg overflow-hidden transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl">
-        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg">
-          <img 
-            src={member.image} 
-            alt={member.name} 
-            className="object-cover w-full h-[300px] transition-transform duration-700 group-hover:scale-105"
-          />
+    <div className="group relative transition-all duration-300 hover:translate-y-[-8px]">
+      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+        <div className="p-6 pb-0 flex justify-center">
+          <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-alurion-secondary/30 shadow-lg">
+            <img 
+              src={member.image} 
+              alt={member.name} 
+              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
         </div>
-        <CardContent className="p-6 bg-white/95 backdrop-blur-sm">
-          <div className="space-y-2">
-            <h3 className="text-2xl font-medium text-alurion-primary">{member.name}</h3>
-            <p className="text-alurion-secondary font-light">{member.title}</p>
+        <CardContent className="p-6">
+          <div className="space-y-3 text-center">
+            <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
+            <p className="text-alurion-secondary font-medium">{member.title}</p>
             
             <div className={`transition-all duration-500 ${expanded ? 'max-h-[1000px]' : 'max-h-24 overflow-hidden'}`}>
-              <div className="prose-sm text-gray-600 space-y-2">
+              <div className="prose-sm text-gray-600 space-y-3 pt-2">
                 {member.bio.map((paragraph, i) => (
-                  <p key={i} className="font-light leading-relaxed">{paragraph}</p>
+                  <p key={i} className="text-left font-light leading-relaxed">{paragraph}</p>
                 ))}
               </div>
             </div>
             
             <button 
               onClick={() => setExpanded(!expanded)} 
-              className="text-sm text-alurion-primary mt-2 font-medium hover:text-alurion-secondary transition-colors"
+              className="mt-3 px-4 py-2 rounded-full bg-alurion-primary/10 text-alurion-primary text-sm font-medium hover:bg-alurion-primary hover:text-white transition-colors"
             >
               {expanded ? 'Read Less' : 'Read More'}
             </button>
@@ -102,7 +104,7 @@ const Team = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {teamMembers.map((member, index) => (
                 <div 
                   key={index} 
