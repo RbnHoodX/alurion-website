@@ -28,7 +28,7 @@ const CandidatesSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-primary">Additional Information</label>
                 <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent text-alurion-primary"></textarea>
               </div>
-              <button type="submit" className="secondary-btn">Submit Resume</button>
+              <button type="submit" className="primary-btn">Submit Resume</button>
             </form>
           </div>
           
