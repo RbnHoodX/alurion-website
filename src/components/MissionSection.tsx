@@ -34,8 +34,8 @@ const MissionSection = () => {
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80" 
-                alt="Team collaboration" 
+                src="https://images.unsplash.com/photo-1664575599736-c5197c684153?q=80" 
+                alt="Professionals in meeting" 
                 className="w-full h-auto"
               />
             </div>

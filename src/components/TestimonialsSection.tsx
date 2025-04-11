@@ -17,7 +17,7 @@ export const allTestimonials: Testimonial[] = [
     author: "Jessica Elders",
     position: "Vice President, Head of Human Resources",
     company: "The New York Times",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     featured: true
   },
   {
@@ -25,7 +25,7 @@ export const allTestimonials: Testimonial[] = [
     author: "Juan Corvinos Solans",
     position: "Senior Vice President Development, Architecture, Design and Construction Latin America & Caribbean",
     company: "Hilton",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     featured: true
   },
   {
@@ -33,7 +33,7 @@ export const allTestimonials: Testimonial[] = [
     author: "Jani Wilson, Ph.D.",
     position: "Global VP of HR Consulting",
     company: "Hilton",
-    image: "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     featured: true
   },
   {
@@ -41,7 +41,7 @@ export const allTestimonials: Testimonial[] = [
     author: "Theresa Graff",
     position: "Chief HR Officer",
     company: "MDVIP: Personalized Healthcare",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     featured: true
   },
   {
@@ -49,7 +49,7 @@ export const allTestimonials: Testimonial[] = [
     author: "Ray Inman",
     position: "Vice President | Technology Recruitment Program Mgmt",
     company: "Deutsche Bank via Robert Walters",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     featured: true
   },
   {
@@ -57,77 +57,77 @@ export const allTestimonials: Testimonial[] = [
     author: "Brian Michaud",
     position: "President, ADP HRO and Smart Compliance",
     company: "ADP",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Monica has single-handedly shaped our National Sales Force. I had absolutely no doubt that she would rise to the challenge because she has been impressing me for the last 8 years placing amazing candidates in the Fortune 500 Corporate World. Perhaps what impresses me the most is her ability to utilize creativity in enticing 'thoroughbreds' and 'athletes' to simply listen to her pitch when they would be otherwise content in their current environment.",
     author: "Glynn Frechette",
     position: "Head of Paychex, PEO",
     company: "Paychex",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Monica is an experienced professional who gets results. She is very talented at sourcing into firms, versus the more common vetting of just posted information on candidates via the boards. However, the key attribute that she possesses beyond these is her ability to articulate what you wish to be known to the candidate; Being convincing and creative while attracting the best isn't an easy task.",
     author: "James Sheridan",
     position: "Outsourced Vice President of Sales",
     company: "Xceleration",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Monica is a great resource that takes the time to understand your needs and match your needs with a prospect's needs and talent! She is thorough, reliable, responsible, understanding and values matching the right talent with the right Company.",
     author: "Wendy Boyd",
     position: "Chief Distribution Officer",
     company: "World Financial Group",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Monica has an incredible eye for talent and has served as a sage advisor and partner. She has been absolutely clutch in identifying and delivering candidates to fill key roles. The war for talent is real and Monica is a great ally to have!",
     author: "Oral Muir",
     position: "Vice President, Partnerships, Experiences, & Distribution",
     company: "Hilton",
-    image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "There are skilled people in our industry, no doubt. But when your level of humanity is immense then you fall into another category. Monica falls under the later one. Increíble use of empathy and a great professional. I have loved working with Monica as she brings the (so much needed) application of heart and brain to everything she does. Monica is a truly unique human being and incredibly talented.",
     author: "Alvaro Valeriani",
     position: "Chief Commercial Officer",
     company: "Awasi Experiences",
-    image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Monica is exactly the type of person you want on your side as an ally and mentor. She has strength, incredible grace, and exceptional recruiting experience that isn't typically found in one person. What a pleasure and honor to watch her in action, soaking up every minute like a sponge! She was able to turn around sensitive situations that no one else could seem to master with her excellent influencing and relationship management prowess.",
     author: "Erin Reilly Peneschi",
     position: "Sr. Manager, Executive Talent Research Recruitment",
     company: "Hilton",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Impossible to capture with words the value and positive experience it is to work with Monica. In short, regardless of the challenge or goal you want Monica on your team. As a practitioner, I haven't come across many, if any, recruiters that are as respected and valued as Monica is. Clients and candidates alike sing her praises, seek her counsel and rely on her judgement.",
     author: "Soheil Saeed",
     position: "Manager, Diversity & Strategic Search",
     company: "General Mills",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1553484771-cc0d9b8c2b17?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Melanie is a true leader! She has a gift for connecting with associates, colleagues and clients. She has successfully led a team through extreme organizational transition while delivering exceptional results. Melanie is also a 'change agent' and not afraid to challenge common belief to try new and different approaches to better current processes or partnerships.",
     author: "Jana R Smyth",
     position: "VP Global Talent Acquisition",
     company: "ICF",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1558222218-b7b54eede3f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Melanie has been an exceptional business partner. She has gone beyond the scope of her role to ensure a win-win for our mutual organizations. Her ability to step back and see the strategic picture and communicate with a diverse community of stakeholders up and down the management chain is a rare and powerful asset to any organization.",
     author: "Ira Grossman",
     position: "Software Entrepreneur & Investor",
     company: "Technology Investment",
-    image: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
     quote: "Melanie is an excellent business partner. She is an astute listener and able to transcend content to action. I would strongly recommend Melanie for her knowledge, skill and attitude. Definitely someone you want on your team.",
     author: "Jeff Vandiver",
     position: "EVP Managing Director of Growth - Americas",
     company: "AMS",
-    image: "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   }
 ];
 

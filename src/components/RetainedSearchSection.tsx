@@ -17,7 +17,7 @@ const RetainedSearchSection = () => {
     {
       name: "Melanie Smith",
       title: "Founder & President",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       bio: [
         "As a seasoned Human Resource professional, I specialize in diagnosing and resolving core challenges that hinder a company's people investment. I craft strategies that elevate team performance, empower leaders, and drive high-impact results aligned with the company's culture and pace. My expertise is particularly valuable for organizations navigating M&A, globalization, or preparing their workforce for an AI-driven future.",
         "I have held executive HR roles across diverse industries, including R&D with Savvy Sherpa/Optum Labs, biotech/life sciences with DiaMedica, and large-scale organizations such as UnitedHealth Group, ADP, 3M, and Target. My HR Generalist background enables me to adapt seamlessly across broad strategies, always centered on human-focused design.",
@@ -28,7 +28,7 @@ const RetainedSearchSection = () => {
     {
       name: "Monica Parodi",
       title: "Managing Partner & Talent Acquisition Strategist",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       bio: [
         "With over 20 years of talent acquisition experience spanning both agency and in-house roles, Monica Parodi has built a career on the foundation of excellence, strategy, and human connection. She has successfully led talent acquisition initiatives across the Americas, EMEA, APAC, and CALA, working with organizations at every stage- from high-growth startups to some of the world's most recognized brands, including Hilton, The New York Times, ADP, First Data, and Build-A-Bear Workshop, where she played a pivotal role in scaling the company from just two stores to an international brand.",
         "Monica's expertise lies in the art of the pitch and the science of the close- a unique blend of persuasive storytelling and data-driven decision-making that ensures companies secure the right talent at the right time. She is an empathetic yet results-driven leader who prioritizes fiscal responsibility, efficiency, and the human element of recruitment. By leveraging advanced AI technologies, she streamlines processes, allowing for more meaningful candidate engagement and strategic hiring.",
@@ -38,7 +38,7 @@ const RetainedSearchSection = () => {
     {
       name: "Chessa Keimig",
       title: "Project Manager & TA Operations",
-      image: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       bio: [
         "Chessa is a project manager with nearly 10 years of experience delivering value for medium and large clients across multiple industries. She helps businesses implement organization and rigor to core business processes. She has garnered trust with clients by building relationships and being approachable. She has experience in project management with a background in talent acquisition, where she supported executive level employees while leading a team of peers.",
         "Chessa holds a bachelor's degree in communications from the College of Saint Benedict and Saint John's University. She is originally from Minnesota and currently resides in Arizona with her husband and two daughters."
