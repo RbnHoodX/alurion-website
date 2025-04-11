@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -269,7 +270,7 @@ const Team = () => {
       <Footer />
 
       {/* Add perspective CSS for flip animation */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{__html: `
         .perspective-1000 {
           perspective: 1000px;
         }
@@ -279,7 +280,7 @@ const Team = () => {
         .backface-hidden {
           backface-visibility: hidden;
         }
-      `}</style>
+      `}} />
     </div>
   );
 };
