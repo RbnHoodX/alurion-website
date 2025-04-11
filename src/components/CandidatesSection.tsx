@@ -38,7 +38,7 @@ const CandidatesSection = () => {
               Explore our current job openings across various industries and functions. We're connecting exceptional talent with transformative opportunities at leading organizations.
             </p>
             <div className="space-y-6">
-              <div className="bg-alurion-primary/85 p-6 rounded-lg">
+              <div className="bg-alurion-primary/95 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">Senior Product Manager</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Technology</span>
@@ -48,7 +48,7 @@ const CandidatesSection = () => {
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
               </div>
               
-              <div className="bg-alurion-primary/85 p-6 rounded-lg">
+              <div className="bg-alurion-primary/95 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">Director of Marketing</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Marketing</span>
@@ -58,7 +58,7 @@ const CandidatesSection = () => {
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
               </div>
               
-              <div className="bg-alurion-primary/85 p-6 rounded-lg">
+              <div className="bg-alurion-primary/95 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">HR Business Partner</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Human Resources</span>
