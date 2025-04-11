@@ -1,7 +1,7 @@
 import React from 'react';
 const CandidatesSection = () => {
   return <section id="candidates" className="section bg-alurion-primary text-white pattern-bg-dark">
-      <div className="absolute inset-0 bg-alurion-primary"></div>
+      <div className="absolute inset-0 bg-white"></div>
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary">For Candidates</h2>
         
@@ -42,7 +42,7 @@ const CandidatesSection = () => {
                 <h4 className="text-xl font-medium mb-2 text-white">Senior Product Manager</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Technology</span>
-                  <span className="text-sm bg-white/60 px-2 py-1 rounded">Remote</span>
+                  <span className="text-sm bg-white/20 px-2 py-1 rounded">Remote</span>
                 </div>
                 <p className="text-gray-100 mb-4">Lead product strategy and execution for a growing SaaS company, driving innovation and customer-centered solutions.</p>
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
@@ -52,7 +52,7 @@ const CandidatesSection = () => {
                 <h4 className="text-xl font-medium mb-2 text-white">Director of Marketing</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Marketing</span>
-                  <span className="text-sm bg-white/60 px-2 py-1 rounded">New York</span>
+                  <span className="text-sm bg-white/20 px-2 py-1 rounded">New York</span>
                 </div>
                 <p className="text-gray-100 mb-4">Develop and implement comprehensive marketing strategies to drive brand awareness and customer acquisition.</p>
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
@@ -62,7 +62,7 @@ const CandidatesSection = () => {
                 <h4 className="text-xl font-medium mb-2 text-white">HR Business Partner</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Human Resources</span>
-                  <span className="text-sm bg-white/60 px-2 py-1 rounded">Chicago</span>
+                  <span className="text-sm bg-white/20 px-2 py-1 rounded">Chicago</span>
                 </div>
                 <p className="text-gray-100 mb-4">Partner with leadership to develop and implement human resource initiatives aligned with business objectives.</p>
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
