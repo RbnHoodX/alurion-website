@@ -55,7 +55,13 @@ const Industries = () => {
       <Navigation />
       <div className="pt-16">
         <section className="section bg-alurion-primary relative">
-          <div className="absolute inset-0 pattern-bg-light opacity-50"></div>
+          {/* Hero background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80)' }}
+          ></div>
+          <div className="absolute inset-0 bg-alurion-primary/70"></div>
+          
           <div className="container mx-auto relative z-10">
             <header className="mb-16 text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-alurion-secondary">Industries & Functions</h1>
@@ -68,6 +74,18 @@ const Industries = () => {
             <div className="space-y-24">
               <div>
                 <h2 className="text-3xl font-bold mb-8 text-alurion-secondary">Industry Experience</h2>
+                
+                {/* Image section */}
+                <div className="mb-12">
+                  <div className="rounded-xl overflow-hidden shadow-xl">
+                    <img 
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80" 
+                      alt="Technology team working together" 
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+                  </div>
+                </div>
+                
                 <p className="text-gray-200 mb-8 max-w-3xl">
                   Within these industries, we are able to prepare your workforce for a change in control, for AI and
                   technology enabled systems, as well as transformation of cultural work involved with globalization.
@@ -103,6 +121,18 @@ const Industries = () => {
               
               <div>
                 <h2 className="text-3xl font-bold mb-8 text-alurion-secondary">Functions We've Recruited For</h2>
+                
+                {/* Image section */}
+                <div className="mb-12">
+                  <div className="rounded-xl overflow-hidden shadow-xl">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80" 
+                      alt="Business meeting" 
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+                  </div>
+                </div>
+                
                 <p className="text-gray-200 mb-8 max-w-3xl">
                   Our expertise spans across various functional areas, ensuring we find the right talent for specialized roles
                   that can drive your business forward and help you achieve your strategic goals.

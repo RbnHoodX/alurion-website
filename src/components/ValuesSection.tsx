@@ -7,12 +7,14 @@ const ValueCard = ({
   title,
   description,
   className,
-  style
+  style,
+  imageUrl
 }: {
   title: string;
   description: string;
   className?: string;
   style?: React.CSSProperties;
+  imageUrl?: string;
 }) => {
   return (
     <Card 
@@ -22,6 +24,15 @@ const ValueCard = ({
       )}
       style={style}
     >
+      {imageUrl && (
+        <div className="h-40 overflow-hidden">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+      )}
       <CardContent className="p-6 md:p-8">
         <h3 className="text-xl font-medium mb-4 text-alurion-secondary">{title}</h3>
         <p className="text-alurion-secondary/90 leading-relaxed">{description}</p>
@@ -31,6 +42,15 @@ const ValueCard = ({
 };
 
 const ValuesSection = () => {
+  const valueImages = [
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80", // Excellence
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80", // Integrity
+    "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80", // Grit
+    "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80", // Now - innovation
+    "https://images.unsplash.com/photo-1610019089504-a565e7dcf60d?q=80", // Curiosity
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80", // Adaptability
+  ];
+
   const values = [{
     title: "Excellence",
     description: "We hold ourselves to the highest standards, delivering exceptional results with precision and purpose. Our commitment to excellence ensures that every connection we make drives meaningful impact and long-term success."
@@ -53,7 +73,13 @@ const ValuesSection = () => {
   
   return (
     <section id="values" className="section bg-alurion-primary py-24 px-4 relative">
-      <div className="absolute inset-0 pattern-bg-dark opacity-20"></div>
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?q=80)' }}
+      ></div>
+      <div className="absolute inset-0 bg-alurion-primary/70"></div>
+      
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary mb-12">Our Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -62,6 +88,7 @@ const ValuesSection = () => {
               key={index} 
               title={value.title} 
               description={value.description} 
+              imageUrl={valueImages[index]}
               className={`animate-fade-in`}
               style={{animationDelay: `${index * 100}ms`}}
             />

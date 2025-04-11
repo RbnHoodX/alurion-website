@@ -63,7 +63,13 @@ const IndustriesSection = () => {
 
   return (
     <section id="industries" className="section bg-alurion-primary relative">
-      <div className="absolute inset-0 pattern-bg-light opacity-50"></div>
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80)' }}
+      ></div>
+      <div className="absolute inset-0 bg-alurion-primary/70"></div>
+      
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary">Industries & Functions</h2>
         

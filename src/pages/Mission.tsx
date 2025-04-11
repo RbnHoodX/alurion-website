@@ -1,12 +1,20 @@
+
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+
 const Mission = () => {
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
-        <section className="bg-alurion-primary text-white py-20 relative">
-          <div className="absolute inset-0 pattern-bg-dark opacity-50"></div>
+        {/* Hero section with background image */}
+        <section className="bg-alurion-primary text-white py-24 relative">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80)' }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95"></div>
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-secondary">Our Mission</h1>
             <div className="max-w-4xl mx-auto">
@@ -25,34 +33,42 @@ const Mission = () => {
           </div>
         </section>
         
+        {/* About section with image */}
         <section className="bg-white py-20 relative">
           <div className="absolute inset-0 pattern-bg-light opacity-20"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-primary text-center">About Us</h2>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                We are a team of high-powered female executives with decades of experience leading
-                organizations across a diverse portfolio—from Fortune 5 companies to startups—and navigating
-                high-stakes challenges like M&A, global expansions, and technology transformations. Having
-                walked in the shoes of our clients, we bring a unique, insider perspective to deliver tailored,
-                results-driven talent solutions that directly impact business performance.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We combine the power of technology with the art of human connection to
-                redefine talent acquisition. By leveraging AI-driven efficiencies to streamline
-                processes, we create a seamless and data-informed hiring experience
-                while ensuring that every candidate interaction is personal, strategic, and
-                impactful. Our expertise lies in not only identifying top talent but also in
-                engaging, guiding, and closing candidates with a tailored, human-first
-                approach. In a world full of automation, we bring the critical balance of
-                precision and persuasion, ensuring that businesses secure the right talent
-                with both speed and substance.
-              </p>
+            <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+              <div className="w-full md:w-1/2 md:order-2">
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80" 
+                    alt="Professional team meeting" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 md:order-1">
+                <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-primary">About Us</h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We are a team of high-powered female executives with decades of experience leading
+                  organizations across a diverse portfolio—from Fortune 5 companies to startups—and navigating
+                  high-stakes challenges like M&A, global expansions, and technology transformations.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  We combine the power of technology with the art of human connection to
+                  redefine talent acquisition. By leveraging AI-driven efficiencies to streamline
+                  processes, we create a seamless and data-informed hiring experience
+                  while ensuring that every candidate interaction is personal, strategic, and
+                  impactful.
+                </p>
+              </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Mission;

@@ -60,8 +60,13 @@ const Values = () => {
     <div className="min-h-screen bg-alurion-primary">
       <Navigation />
       <main className="pt-16">
-        <section className="py-20 px-4 md:px-8 relative">
-          <div className="absolute inset-0 pattern-bg-dark opacity-20"></div>
+        {/* Hero section with background image */}
+        <section className="py-24 px-4 md:px-8 relative overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?q=80)' }}
+          ></div>
+          <div className="absolute inset-0 bg-alurion-primary/70"></div>
           <div className="container mx-auto relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-alurion-secondary">Our Values</h1>
             <p className="text-lg md:text-xl text-center max-w-4xl mx-auto text-alurion-secondary/90 mb-16">
@@ -101,19 +106,30 @@ const Values = () => {
 
         <section className="py-20 px-4 md:px-8 bg-alurion-primary/80 relative">
           <div className="absolute inset-0 pattern-bg-dark opacity-10"></div>
+          
+          {/* Add team meeting image */}
           <div className="container mx-auto relative z-10">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-10 text-alurion-secondary">Living Our Values</h2>
-              <p className="text-lg text-alurion-secondary/90 mb-10 leading-relaxed">
-                Our values aren't just words on a page—they're the principles that guide our daily actions and decisions. 
-                They shape how we interact with clients, candidates, and each other. They're reflected in the 
-                thoughtful approach we take to talent acquisition, the personalized attention we give to every 
-                partnership, and the innovative solutions we develop to meet evolving needs.
-              </p>
-              <p className="text-lg text-alurion-secondary/90 leading-relaxed">
-                By living these values every day, we create an environment where exceptional talent can connect 
-                with outstanding opportunities, driving success for everyone involved in the process.
-              </p>
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80" 
+                    alt="Team discussing values" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2">
+                <h2 className="text-3xl font-bold mb-6 text-alurion-secondary">Living Our Values</h2>
+                <p className="text-lg text-alurion-secondary/90 mb-6 leading-relaxed">
+                  Our values aren't just words on a page—they're the principles that guide our daily actions and decisions. 
+                  They shape how we interact with clients, candidates, and each other.
+                </p>
+                <p className="text-lg text-alurion-secondary/90 leading-relaxed">
+                  By living these values every day, we create an environment where exceptional talent can connect 
+                  with outstanding opportunities, driving success for everyone involved in the process.
+                </p>
+              </div>
             </div>
           </div>
         </section>
