@@ -15,7 +15,7 @@ const ValueCard = ({
   className
 }: ValueProps) => {
   return <Card className={cn("bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]", className)}>
-      <CardContent className="p-8 h-full flex flex-col bg-alurion-primary/90">
+      <CardContent className="p-8 h-full flex flex-col bg-alurion-primary/95">
         <h3 className="text-2xl font-medium mb-4 text-alurion-secondary">{title}</h3>
         <p className="text-alurion-secondary/90 text-lg leading-relaxed">{description}</p>
       </CardContent>
