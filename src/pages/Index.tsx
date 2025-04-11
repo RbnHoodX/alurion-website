@@ -9,7 +9,6 @@ import SolutionsSection from '../components/SolutionsSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import BlogSection from '../components/BlogSection';
-import CandidatesSection from '../components/CandidatesSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
@@ -26,7 +25,6 @@ const Index = () => {
         <IndustriesSection />
         <TestimonialsSection />
         <BlogSection />
-        <CandidatesSection />
         <ContactSection />
         <Footer />
       </div>

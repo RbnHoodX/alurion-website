@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const IndustriesSection = () => {
   const industries = [
@@ -49,6 +51,16 @@ const IndustriesSection = () => {
     "Food & Beverage"
   ];
   
+  const [industriesCarouselRef, industriesCarouselApi] = useEmblaCarousel(
+    { loop: true, dragFree: true },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
+  const [functionsCarouselRef, functionsCarouselApi] = useEmblaCarousel(
+    { loop: true, dragFree: true },
+    [Autoplay({ delay: 3500, stopOnInteraction: false })]
+  );
+
   return (
     <section id="industries" className="section bg-alurion-primary relative">
       <div className="absolute inset-0 pattern-bg-light opacity-50"></div>
@@ -70,16 +82,10 @@ const IndustriesSection = () => {
               technology enabled systems, as well as transformation of cultural work involved with globalization.
             </p>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {industries.slice(0, 9).map((industry, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+            <div className="overflow-hidden" ref={industriesCarouselRef}>
+              <div className="flex">
+                {industries.map((industry, index) => (
+                  <div key={index} className="min-w-[280px] md:min-w-[320px] px-4 flex-shrink-0">
                     <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
                       <CardContent className="flex flex-col p-6">
                         <div className="mb-4">
@@ -88,14 +94,10 @@ const IndustriesSection = () => {
                         <h4 className="text-xl font-medium text-white">{industry}</h4>
                       </CardContent>
                     </Card>
-                  </CarouselItem>
+                  </div>
                 ))}
-              </CarouselContent>
-              <div className="flex justify-end gap-2 mt-6">
-                <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
               </div>
-            </Carousel>
+            </div>
           </div>
           
           <div>
@@ -111,16 +113,10 @@ const IndustriesSection = () => {
               Our expertise spans across various functional areas, ensuring we find the right talent for specialized roles.
             </p>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {functions.slice(0, 9).map((func, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+            <div className="overflow-hidden" ref={functionsCarouselRef}>
+              <div className="flex">
+                {functions.map((func, index) => (
+                  <div key={index} className="min-w-[280px] md:min-w-[320px] px-4 flex-shrink-0">
                     <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
                       <CardContent className="flex flex-col p-6">
                         <div className="mb-4">
@@ -129,14 +125,10 @@ const IndustriesSection = () => {
                         <h4 className="text-xl font-medium text-white">{func}</h4>
                       </CardContent>
                     </Card>
-                  </CarouselItem>
+                  </div>
                 ))}
-              </CarouselContent>
-              <div className="flex justify-end gap-2 mt-6">
-                <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
-                <CarouselNext className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
               </div>
-            </Carousel>
+            </div>
           </div>
         </div>
       </div>
