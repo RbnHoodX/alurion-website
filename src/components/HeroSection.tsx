@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
 import P5Background from './P5Background';
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const fullText = "Blending advanced strategy with the art of human connection to deliver talent and HR solutions that shape the future of work";
@@ -17,20 +15,13 @@ const HeroSection = () => {
         clearInterval(typingInterval);
       }
     }, typingSpeed);
-
     return () => clearInterval(typingInterval);
   }, []);
-
-  return (
-    <section 
-      id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary"
-    >
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)' }}
-      ></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary">
+      <div className="absolute inset-0 bg-cover bg-center z-0" style={{
+      backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
+    }}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-white/85 z-0"></div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -65,12 +56,10 @@ const HeroSection = () => {
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <a href="#mission" className="text-white opacity-80 hover:opacity-100 transition-opacity">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M19 12l-7 7-7-7"/>
+            <path d="M12 5v14M19 12l-7 7-7-7" />
           </svg>
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
