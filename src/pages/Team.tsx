@@ -57,7 +57,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
               <p className="text-alurion-secondary font-medium">{member.title}</p>
               
-              <div className="max-h-24 overflow-hidden">
+              <div className="min-h-[100px] overflow-hidden"> {/* Increased minimum height here */}
                 <div className="prose-sm text-gray-600 space-y-3 pt-2">
                   <p className="text-left font-light leading-relaxed line-clamp-3">{member.bio[0]}</p>
                 </div>
@@ -125,8 +125,10 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
                     </button>
                   </div>
                   
-                  <div className="mt-6">
-                    <p className="text-gray-600">{member.bio[0].substring(0, 150)}...</p>
+                  <div className="mt-6 flex flex-col justify-between" style={{ minHeight: "360px" }}> {/* Added min-height and flex to push button to bottom */}
+                    <div>
+                      <p className="text-gray-600">{member.bio[0].substring(0, 150)}...</p>
+                    </div>
                     <div className="mt-6 flex justify-center">
                       <button 
                         onClick={() => setIsFlipped(true)}
@@ -249,9 +251,7 @@ const Team = () => {
           </div>
         </section>
         
-        {/* Executive Search Timeline Section */}
-        <ExecutiveSearchTimeline />
-        
+        {/* Our Approach Section - MOVED TO BEFORE Executive Search Timeline */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
@@ -277,6 +277,9 @@ const Team = () => {
             </div>
           </div>
         </section>
+        
+        {/* Executive Search Timeline Section - NOW AFTER Our Approach */}
+        <ExecutiveSearchTimeline />
       </main>
       <Footer />
 
