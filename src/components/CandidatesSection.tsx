@@ -1,31 +1,31 @@
 import React from 'react';
 const CandidatesSection = () => {
-  return <section id="candidates" className="section bg-alurion-secondary text-white pattern-bg-dark">
-      <div className="absolute inset-0 bg-alurion-primary"></div>
+  return <section id="candidates" className="section bg-alurion-primary text-white pattern-bg-dark">
+      <div className="absolute inset-0 bg-alurion-secondary"></div>
       <div className="container mx-auto relative z-10">
-        <h2 className="section-title text-alurion-primary">For Candidates</h2>
+        <h2 className="section-title text-alurion-secondary">For Candidates</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div id="submit-resume">
-            <h3 className="text-2xl font-bold mb-4 text-alurion-primary">Submit Your Resume</h3>
-            <p className="mb-6 text-alurion-primary">
+            <h3 className="text-2xl font-bold mb-4 text-alurion-secondary">Submit Your Resume</h3>
+            <p className="mb-6 text-alurion-secondary">
               We're always looking for exceptional talent to join our network. Submit your resume and our team will reach out if there's a potential match with current or future opportunities.
             </p>
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1 text-alurion-primary">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1 text-alurion-secondary">Full Name</label>
                 <input type="text" id="name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1 text-alurion-primary">Email Address</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1 text-alurion-secondary">Email Address</label>
                 <input type="email" id="email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
-                <label htmlFor="resume" className="block text-sm font-medium mb-1 text-alurion-primary">Resume/CV</label>
+                <label htmlFor="resume" className="block text-sm font-medium mb-1 text-alurion-secondary">Resume/CV</label>
                 <input type="file" id="resume" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary  bg-transparent" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-primary">Additional Information</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-secondary">Additional Information</label>
                 <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent"></textarea>
               </div>
               <button type="submit" className="primary-btn">Submit Resume</button>
