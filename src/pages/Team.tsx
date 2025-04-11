@@ -57,9 +57,9 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
               <p className="text-alurion-secondary font-medium">{member.title}</p>
               
-              <div className="min-h-[100px] overflow-hidden"> {/* Increased minimum height here */}
+              <div className="min-h-[130px] overflow-hidden"> {/* Increased minimum height here */}
                 <div className="prose-sm text-gray-600 space-y-3 pt-2">
-                  <p className="text-left font-light leading-relaxed line-clamp-3">{member.bio[0]}</p>
+                  <p className="text-left font-light leading-relaxed line-clamp-4">{member.bio[0]}</p> {/* Changed from line-clamp-3 to line-clamp-4 */}
                 </div>
               </div>
               
@@ -126,8 +126,8 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
                   </div>
                   
                   <div className="mt-6 flex flex-col justify-between" style={{ minHeight: "360px" }}> {/* Added min-height and flex to push button to bottom */}
-                    <div>
-                      <p className="text-gray-600">{member.bio[0].substring(0, 150)}...</p>
+                    <div className="flex-grow">
+                      <p className="text-gray-600 text-lg">{member.bio[0].substring(0, 300)}...</p> {/* Increased text content and font size */}
                     </div>
                     <div className="mt-6 flex justify-center">
                       <button 
