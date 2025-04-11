@@ -44,7 +44,7 @@ const ValuesSection = () => {
       <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?q=80)'
     }}></div>
-      <div className="absolute inset-0 bg-alurion-primary/85"></div>
+      <div className="absolute inset-0 bg-alurion-primary/95"></div>
       
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary mb-12">Our Values</h2>
