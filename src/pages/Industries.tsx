@@ -16,12 +16,12 @@ const Industries = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80)'
         }}></div>
-          <div className="absolute inset-0 bg-alurion-primary/70"></div>
+          <div className="absolute inset-0 bg-white/90"></div>
           
           <div className="container mx-auto relative z-10">
             <header className="mb-16 text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-alurion-secondary">Industries & Functions</h1>
-              <p className="text-gray-200 max-w-2xl mx-auto">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-alurion-primary">Industries & Functions</h1>
+              <p className="text-alurion-primary/80 max-w-2xl mx-auto">
                 Our expertise spans across multiple industries and functional areas, 
                 ensuring we find the right talent for your specialized roles.
               </p>
@@ -29,7 +29,7 @@ const Industries = () => {
             
             <div className="space-y-24">
               <div>
-                <h2 className="text-3xl font-bold mb-8 text-alurion-secondary">Industry Experience</h2>
+                <h2 className="text-3xl font-bold mb-8 text-alurion-primary">Industry Experience</h2>
                 
                 {/* Image section */}
                 <div className="mb-12">
@@ -38,7 +38,7 @@ const Industries = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-200 mb-8 max-w-3xl">
+                <p className="text-alurion-primary/80 mb-8 max-w-3xl">
                   Within these industries, we are able to prepare your workforce for a change in control, for AI and
                   technology enabled systems, as well as transformation of cultural work involved with globalization.
                 </p>
@@ -49,7 +49,7 @@ const Industries = () => {
               }} className="w-full">
                   <CarouselContent className="-ml-4">
                     {industries.map((industry, index) => <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                        <Card className="bg-alurion-primary/70 backdrop-blur-sm border-none h-full">
+                        <Card className="bg-alurion-primary/90 backdrop-blur-sm border-none h-full">
                           <CardContent className="flex flex-col p-6">
                             <div className="mb-4">
                               <Building className="h-8 w-8 text-alurion-secondary" />
@@ -67,7 +67,7 @@ const Industries = () => {
               </div>
               
               <div>
-                <h2 className="text-3xl font-bold mb-8 text-alurion-secondary">Functions We've Recruited For</h2>
+                <h2 className="text-3xl font-bold mb-8 text-alurion-primary">Functions We've Recruited For</h2>
                 
                 {/* Image section */}
                 <div className="mb-12">
@@ -76,7 +76,7 @@ const Industries = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-200 mb-8 max-w-3xl">
+                <p className="text-alurion-primary/80 mb-8 max-w-3xl">
                   Our expertise spans across various functional areas, ensuring we find the right talent for specialized roles
                   that can drive your business forward and help you achieve your strategic goals.
                 </p>
@@ -87,7 +87,7 @@ const Industries = () => {
               }} className="w-full">
                   <CarouselContent className="-ml-4">
                     {functions.map((func, index) => <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                        <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
+                        <Card className="bg-alurion-primary/90 backdrop-blur-sm border-none h-full">
                           <CardContent className="flex flex-col p-6">
                             <div className="mb-4">
                               <Briefcase className="h-8 w-8 text-alurion-secondary" />
