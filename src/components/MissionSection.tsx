@@ -1,4 +1,3 @@
-
 import React from 'react';
 const MissionSection = () => {
   return <section id="mission" className="section bg-white text-alurion-primary relative">
