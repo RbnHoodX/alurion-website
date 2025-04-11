@@ -49,7 +49,7 @@ const Values = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?q=80)'
         }}></div>
-          <div className="absolute inset-0 bg-white/85"></div>
+          <div className="absolute inset-0 bg-white/95"></div>
           <div className="container mx-auto relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-alurion-primary">Our Values</h1>
             <p className="text-lg md:text-xl text-center max-w-4xl mx-auto text-alurion-primary/90 mb-16">
