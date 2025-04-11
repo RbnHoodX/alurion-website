@@ -26,7 +26,7 @@ const CandidatesSection = () => {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-secondary">Additional Information</label>
-                <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent"></textarea>
+                <textarea id="message" rows={3} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent text-alurion-secondary"></textarea>
               </div>
               <button type="submit" className="secondary-btn">Submit Resume</button>
             </form>
@@ -38,7 +38,7 @@ const CandidatesSection = () => {
               Explore our current job openings across various industries and functions. We're connecting exceptional talent with transformative opportunities at leading organizations.
             </p>
             <div className="space-y-6">
-              <div className="bg-alurion-primary/80 p-6 rounded-lg">
+              <div className="bg-white/20 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">Senior Product Manager</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Technology</span>
@@ -48,7 +48,7 @@ const CandidatesSection = () => {
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
               </div>
               
-              <div className="bg-alurion-primary/80 p-6 rounded-lg">
+              <div className="bg-white/20 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">Director of Marketing</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Marketing</span>
@@ -58,7 +58,7 @@ const CandidatesSection = () => {
                 <a href="#" className="text-alurion-secondary hover:underline font-medium">View Details</a>
               </div>
               
-              <div className="bg-alurion-primary/80 p-6 rounded-lg">
+              <div className="bg-white/20 p-6 rounded-lg">
                 <h4 className="text-xl font-medium mb-2 text-white">HR Business Partner</h4>
                 <div className="flex gap-4 mb-3">
                   <span className="text-sm bg-alurion-secondary text-alurion-primary px-2 py-1 rounded font-medium">Human Resources</span>
