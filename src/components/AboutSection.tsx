@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
 import { AnimatePresence, motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
 
 const AboutSection = () => {
   const backgroundImages = [
@@ -14,6 +15,16 @@ const AboutSection = () => {
     "https://images.unsplash.com/photo-1573164574572-cb89e39749b4",
     "https://images.unsplash.com/photo-1622675363311-3e1904dc1885"
   ];
+
+  // Create autoplay plugin with options
+  const autoplayPlugin = React.useMemo(
+    () => 
+      Autoplay({
+        delay: 5000, // 5 seconds between slides
+        stopOnInteraction: false, // continue autoplay after user interaction
+      }),
+    []
+  );
 
   return (
     <section id="about" className="section relative overflow-hidden">
@@ -24,8 +35,8 @@ const AboutSection = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[autoplayPlugin]}
           className="w-full h-full"
-          autoplay={true}
         >
           <CarouselContent className="h-full">
             <AnimatePresence>
