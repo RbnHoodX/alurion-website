@@ -4,7 +4,7 @@ import P5Background from './P5Background';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = "A beacon of sophistication and trusted excellence in executive recruiting and workforce planning.";
+  const fullText = "Blending advanced strategy with the art of human connection to deliver talent and HR solutions that shape the future of work";
   const typingSpeed = 40; // milliseconds per character
 
   useEffect(() => {
