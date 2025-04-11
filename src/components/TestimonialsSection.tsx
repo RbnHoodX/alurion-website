@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { motion } from 'framer-motion';
@@ -20,8 +19,9 @@ const testimonialImages = {
   theresa: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
   ray: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
   brian: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-  monica: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-  melanie: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
+  glynn: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
+  james: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
+  wendy: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
   oral: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
   alvaro: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
   erin: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
@@ -72,42 +72,32 @@ export const allTestimonials: Testimonial[] = [
     image: testimonialImages.ray
   },
   {
-    quote: "Monica holds herself to the highest standard of integrity in all that she does. In my 20 years of executive recruiting, I have had the privilege of working with several thousand recruiters across the globe, and I can say without equivocation, Monica is one of the best. Her unique combination of recruiting expertise, business savvy, and understanding of the nuances of organizations in general make her one of the best talent acquisition leaders I have worked with, period.",
-    author: "Brian Morace",
-    position: "Managing Director",
-    company: "Russell Reynolds Associates",
-    image: testimonialImages.brian
-  },
-  {
-    quote: "Monica is one of the best recruiting professionals I've had the pleasure to work with. She has a keen sense of identifying talent and matching that talent with the appropriate opportunity. She's adept at working with hiring managers to understand their requirements and advising them on realistic expectations in the marketplace. I would jump at the chance to work with Monica again!",
-    author: "Michael Brown",
-    position: "Senior Director, Human Resources",
-    company: "Hilton",
-    image: testimonialImages.monica
-  },
-  {
     quote: "In a business environment packed with recruiters, Monica Parodi distinguishes herself and her company as head and shoulders above the rest. I've worked with Monica a few times over the last few years in filling consultative sales positions and I've been extremely pleased with the results every time. There are many traits Monica has that you can rely on. First, she won't waste your time. None of her candidates ever left my office with me scratching my head lamenting the lost hour I just spent on an interview. Monica hones right in on qualifications, talents and corporate cultural fit to put the best folks in front of you, without exception! Secondly, you will never question her professionalism. If Monica says she is going to do something, you can rely on it. She is an excellent communicator and has superb follow up skills. She never over promises and always exceeds expectations. Lastly, and what really matters, Monica gets results. Many of my colleagues have also partnered with Monica over the years and we all keep coming back. There is no better recommendation I can give that trumps the fact that I am a repeat customer. Whether you have hiring needs or are looking for the right career opportunity, look no further than Monica Parodi.",
     author: "Brian Michaud",
     position: "President",
-    company: "ADP HRO and Smart Compliance"
+    company: "ADP HRO and Smart Compliance",
+    image: testimonialImages.brian
   },
   {
     quote: "Monica has single-handedly shaped our National Sales Force. I had absolutely no doubt that she would rise to the challenge because she has been impressing me for the last 8 years placing amazing candidates in the Fortune 500 Corporate World. Perhaps what impresses me the most is her ability to utilize creativity in enticing \"thoroughbreds\" and \"athletes\" to simply listen to her pitch when they would be otherwise content in their current environment. Well, when the \"pitch\" is on, her personal credibility and integrity have a chance to shine. Her passion for her client's company is obvious to all candidates, which prepares them immensely for their very first meeting with me. Monica is a highly selective and discerning individual that makes my job easier as my face-to-face interviews are always with A+ candidates. Monica is probably going to shoot me for this one, but she knows no time zone restrictions!!!! She sacrifices her personal time on a very regular basis with clients and candidates alike in an attempt to meet many demanding schedules across the country. It is a pleasure to recommend Monica as a results-driven All-Star.",
     author: "Glynn Frechette",
     position: "Head of Paychex",
-    company: "PEO"
+    company: "PEO",
+    image: testimonialImages.glynn
   },
   {
     quote: "Monica is an experienced professional who gets results. She is very talented at sourcing into firms, versus the more common vetting of just posted information on candidates via the boards. However, the key attribute that she possesses beyond these is her ability to articulate what you wish to be known to the candidate; Being convincing and creative while attracting the best isn't an easy task and she's highly competent in explaining what your company's attributes are, matching them with the right person and moving a prospective person along the process effectively. An intelligent and resourceful partner who is exemplary at follow-up, she gets the job done right in a very timely manner. The final point I'll make is the retention of the employee and overall performance of those individuals--> notably better than most.",
     author: "James Sheridan",
     position: "Outsourced Vice President of Sales",
-    company: "Xceleration"
+    company: "Xceleration",
+    image: testimonialImages.james
   },
   {
     quote: "Monica is a great resource that takes the time to understand your needs and match your needs with a prospect's needs and talent! She is thorough, reliable, responsible, understanding and values matching the right talent with the right Company.",
     author: "Wendy Boyd",
     position: "Chief Distribution Officer",
-    company: "World Financial Group"
+    company: "World Financial Group",
+    image: testimonialImages.wendy
   },
   {
     quote: "Monica has an incredible eye for talent and has served as a sage advisor and partner. She has been absolutely clutch in identifying and delivering candidates to fill key roles. The war for talent is real and Monica is a great ally to have!",
@@ -143,6 +133,19 @@ export const allTestimonials: Testimonial[] = [
     position: "VP Global Talent Acquisition",
     company: "ICF",
     image: testimonialImages.jana
+  },
+  {
+    quote: "Melanie has been an exceptional business partner. She has gone beyond the scope of her role to ensure a win-win for our mutual organizations. Her ability to step back and see the strategic picture and communicate with a diverse community of stakeholders up and down the management chain is a rare and powerful asset to any organization. I would highly recommend Melanie as a pro-active business leader and true team player.",
+    author: "Ira Grossman",
+    position: "Software Entrepreneur & Investor",
+    image: testimonialImages.ira
+  },
+  {
+    quote: "Melanie is an excellent business partner. She is an astute listener and able to transcend content to action. I would strongly recommend Melanie for her knowledge, skill and attitude. Definitely someone you want on your team.",
+    author: "Jeff Vandiver",
+    position: "EVP Managing Director of Growth - Americas",
+    company: "AMS",
+    image: testimonialImages.jeff
   }
 ];
 
