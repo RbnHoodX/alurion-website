@@ -1,8 +1,26 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import P5Background from './P5Background';
 
 const HeroSection = () => {
+  const [displayText, setDisplayText] = useState('');
+  const fullText = "A beacon of sophistication and trusted excellence in executive recruiting and workforce planning.";
+  const typingSpeed = 40; // milliseconds per character
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section 
       id="home" 
@@ -28,9 +46,9 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight fade-in">
               Alurion <span className="text-alurion-secondary">Talent</span> Group
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-gray-100 leading-relaxed max-w-3xl fade-in delay-200">
-              A beacon of sophistication and trusted excellence in executive recruiting 
-              and workforce planning.
+            <p className="text-xl md:text-2xl mb-10 text-gray-100 leading-relaxed max-w-3xl fade-in delay-200 h-[3rem] md:h-[4rem]">
+              {displayText}
+              <span className="animate-pulse ml-0.5 inline-block border-l-2 border-gray-100 h-[1em] align-middle">|</span>
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center fade-in delay-400">
               <a href="/solutions" className="bg-alurion-secondary text-alurion-primary px-8 py-4 rounded-md font-medium hover:bg-opacity-90 transition-all">
