@@ -56,14 +56,14 @@ const AboutSection = () => {
         
         {/* Card with backdrop blur */}
         <div className="max-w-4xl mx-auto backdrop-blur-sm bg-white/10 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20">
-          <p className="text-lg text-white leading-relaxed mb-6">
+          <p className="text-lg text-alurion-primary leading-relaxed mb-6">
             We are a female owned team of high-powered executives, with decades of experience leading 
             organizations across a diverse portfolio—from Fortune 5 companies to startups—and navigating 
             high-stakes challenges like M&A, global expansions, and technology transformations. Having 
             walked in the shoes of our clients, we bring a unique, insider perspective to deliver tailored, 
             results-driven talent solutions that directly impact business performance.
           </p>
-          <p className="text-lg text-white leading-relaxed">
+          <p className="text-lg text-alurion-primary leading-relaxed">
             We combine the power of technology with the art of human connection to redefine talent 
             strategies. By leveraging AI-driven efficiencies to streamline processes, we create a seamless 
             and data-informed hiring experience while ensuring that every candidate interaction is personal, 
