@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 interface Testimonial {
   quote: string;
@@ -184,6 +187,27 @@ const TestimonialsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Testimonials Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <Button 
+            asChild
+            variant="outline" 
+            size="lg"
+            className="group border-alurion-primary text-alurion-primary hover:bg-alurion-primary hover:text-white"
+          >
+            <Link to="/testimonials">
+              View All Testimonials
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
