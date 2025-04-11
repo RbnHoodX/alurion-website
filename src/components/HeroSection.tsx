@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
     }}></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-white/95 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white z-0"></div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
