@@ -34,7 +34,7 @@ const Industries = () => {
                 {/* Image section */}
                 <div className="mb-12">
                   <div className="rounded-xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80" alt="Technology team working together" className="w-full h-64 md:h-80 object-cover" />
+                    
                   </div>
                 </div>
                 
@@ -72,7 +72,7 @@ const Industries = () => {
                 {/* Image section */}
                 <div className="mb-12">
                   <div className="rounded-xl overflow-hidden shadow-xl">
-                    <img alt="Business meeting" className="w-full h-64 md:h-80 object-cover" src="/lovable-uploads/1fe602af-8834-451f-8c45-864963a3d2ac.jpg" />
+                    
                   </div>
                 </div>
                 
