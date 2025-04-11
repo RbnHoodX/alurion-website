@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
     }}></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/95 z-0"></div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -34,10 +34,10 @@ const HeroSection = () => {
               </g>
             </svg>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight fade-in">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-alurion-primary leading-tight fade-in">
               Alurion <span className="text-alurion-secondary">Talent</span> Group
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-gray-100 leading-relaxed max-w-3xl fade-in delay-200 h-[3rem] md:h-[4rem]">
+            <p className="text-xl md:text-2xl mb-10 text-alurion-primary/90 leading-relaxed max-w-3xl fade-in delay-200 h-[3rem] md:h-[4rem]">
               {displayText}
               <span className="animate-pulse ml-0.5 inline-block border-l-2 border-gray-100 h-[1em] align-middle">|</span>
             </p>
