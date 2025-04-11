@@ -21,14 +21,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
     }}></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/95 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-alurion-primary">
           <div className="flex flex-col items-center text-center">
             {/* Logo Mark */}
-            <svg width="80" height="80" viewBox="0 0 640.01 616.56" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6 text-alurion-primary">
+            <svg width="80" height="80" viewBox="0 0 640.01 616.56" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6 text-alurion-primary/80">
               <g>
                 <polygon className="fill-alurion-secondary" points="94.63 55.43 640.01 55.43 640.01 0 39.2 0 27.71 0 0 0 0 616.56 55.43 616.56 55.43 94.63 577.36 616.56 640.01 616.56 640.01 187.3 345.11 187.3 405.45 242.73 584.58 242.73 584.58 545.37 94.63 55.43" />
               </g>
