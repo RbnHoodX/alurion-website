@@ -1,6 +1,6 @@
 import React from 'react';
 const CandidatesSection = () => {
-  return <section id="candidates" className="section bg-alurion-primary text-white pattern-bg-dark">
+  return <section id="candidates" className="section bg-white text-white pattern-bg-dark">
       <div className="absolute inset-0 bg-white"></div>
       <div className="container mx-auto relative z-10">
         <h2 className="section-title text-alurion-secondary">For Candidates</h2>
