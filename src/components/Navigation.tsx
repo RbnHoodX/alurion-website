@@ -22,8 +22,8 @@ const Navigation = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#1C213C]/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto flex justify-between items-center px-4 bg-alurion-primary">
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-alurion-primary ${isScrolled ? 'shadow-lg py-2' : 'py-4'}`}>
+      <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <svg width="180" height="40" viewBox="0 0 995.32 504.62" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
