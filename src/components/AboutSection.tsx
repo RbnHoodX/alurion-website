@@ -1,68 +1,50 @@
-
 import React, { useEffect } from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { AnimatePresence, motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
-
 const AboutSection = () => {
-  const backgroundImages = [
-    "https://images.unsplash.com/photo-1529070538774-1843cb3265df",
-    "https://images.unsplash.com/photo-1554902843-260acd0993f8",
-    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4",
-    "https://images.unsplash.com/photo-1622675363311-3e1904dc1885"
-  ];
+  const backgroundImages = ["https://images.unsplash.com/photo-1529070538774-1843cb3265df", "https://images.unsplash.com/photo-1554902843-260acd0993f8", "https://images.unsplash.com/photo-1573164574572-cb89e39749b4", "https://images.unsplash.com/photo-1622675363311-3e1904dc1885"];
 
   // Create autoplay plugin with options
-  const autoplayPlugin = React.useMemo(
-    () => 
-      Autoplay({
-        delay: 5000, // 5 seconds between slides
-        stopOnInteraction: false, // continue autoplay after user interaction
-      }),
-    []
-  );
-
-  return (
-    <section id="about" className="section relative overflow-hidden">
+  const autoplayPlugin = React.useMemo(() => Autoplay({
+    delay: 5000,
+    // 5 seconds between slides
+    stopOnInteraction: false // continue autoplay after user interaction
+  }), []);
+  return <section id="about" className="section relative overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[autoplayPlugin]}
-          className="w-full h-full"
-        >
+        <Carousel opts={{
+        align: "start",
+        loop: true
+      }} plugins={[autoplayPlugin]} className="w-full h-full">
           <CarouselContent className="h-full">
             <AnimatePresence>
-              {backgroundImages.map((image, index) => (
-                <CarouselItem key={index} className="h-full basis-full">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 1.5 }}
-                    className="w-full h-full"
-                  >
-                    <div
-                      className="w-full h-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${image})` }}
-                    />
+              {backgroundImages.map((image, index) => <CarouselItem key={index} className="h-full basis-full">
+                  <motion.div initial={{
+                opacity: 0,
+                scale: 1.1
+              }} animate={{
+                opacity: 1,
+                scale: 1
+              }} exit={{
+                opacity: 0,
+                scale: 0.9
+              }} transition={{
+                duration: 1.5
+              }} className="w-full h-full">
+                    <div className="w-full h-full bg-cover bg-center" style={{
+                  backgroundImage: `url(${image})`
+                }} />
                   </motion.div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </AnimatePresence>
           </CarouselContent>
         </Carousel>
       </div>
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/90 to-alurion-primary/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/80 backdrop-blur-sm"></div>
       
       {/* Background design elements */}
       <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-alurion-primary/5 blur-3xl"></div>
@@ -96,8 +78,6 @@ const AboutSection = () => {
         <div className="absolute top-1/4 left-10 w-20 h-20 rounded-full border border-alurion-secondary/30 hidden lg:block"></div>
         <div className="absolute bottom-1/4 right-10 w-32 h-32 rounded-full border-2 border-alurion-secondary/20 hidden lg:block"></div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
