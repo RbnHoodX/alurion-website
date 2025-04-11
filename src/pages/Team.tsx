@@ -127,7 +127,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
                   
                   <div className="mt-6 flex flex-col justify-between" style={{ minHeight: "360px" }}> {/* Added min-height and flex to push button to bottom */}
                     <div className="flex-grow">
-                      <p className="text-gray-600 text-lg">{member.bio[0].substring(0, 300)}...</p> {/* Increased text content and font size */}
+                      <p className="text-gray-600 text-lg">{member.bio[0].substring(0, 600)}...</p> {/* Increased text content from 300 to 600 characters */}
                     </div>
                     <div className="mt-6 flex justify-center">
                       <button 
