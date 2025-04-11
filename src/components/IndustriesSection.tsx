@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -27,7 +26,7 @@ const IndustriesSection = () => {
   return <section id="industries" className="section bg-alurion-primary relative">
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{
-      backgroundImage: 'url(https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80)'
+      backgroundImage: 'url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80)'
     }}></div>
       <div className="absolute inset-0 bg-alurion-primary/70"></div>
       
