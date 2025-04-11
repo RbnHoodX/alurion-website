@@ -8,6 +8,7 @@ import ValuesSection from '../components/ValuesSection';
 import SolutionsSection from '../components/SolutionsSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import RetainedSearchSection from '../components/RetainedSearchSection';
 import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
 import AddOnServicesSection from '../components/AddOnServicesSection';
 import BlogSection from '../components/BlogSection';
@@ -26,6 +27,7 @@ const Index = () => {
         <SolutionsSection />
         <IndustriesSection />
         <TestimonialsSection />
+        <RetainedSearchSection />
         <ExecutiveSearchTimeline />
         <AddOnServicesSection />
         <BlogSection />
