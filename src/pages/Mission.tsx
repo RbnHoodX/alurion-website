@@ -10,17 +10,17 @@ const Mission = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80)'
         }}></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-white/65"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 to-white/85"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-secondary">Our Mission</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-primary">Our Mission</h1>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl leading-relaxed mb-6">
+              <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary">
                 Our mission is to create lasting impact by forging meaningful connections
                 between exceptional talent and visionary organizations. We go beyond
                 placement; we are dedicated partners in shaping careers and building
                 teams that drive long-term success.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed mb-6">
+              <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary">
                 With a deep commitment to both the candidate's growth and the company's strategic goals, 
                 we ensure every match is not just a hire, but a transformative partnership that fosters
                 innovation, leadership, and sustainable excellence.
