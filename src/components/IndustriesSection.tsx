@@ -38,7 +38,7 @@ const IndustriesSection = () => {
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-alurion-secondary">Industry Experience</h3>
               <Link to="/industries">
-                <Button variant="outline" className="text-alurion-primary border-alurion-secondary ">
+                <Button variant="outline" className="text-alurion-primary border-alurion-secondary bg-alurion-secondary">
                   View All
                 </Button>
               </Link>
@@ -68,7 +68,7 @@ const IndustriesSection = () => {
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-alurion-secondary">Functions We've Recruited For</h3>
               <Link to="/industries">
-                <Button variant="outline" className="text-alurion-primary border-alurion-secondary">
+                <Button variant="outline" className="text-alurion-primary border-alurion-secondary bg-alurion-secondary">
                   View All
                 </Button>
               </Link>
