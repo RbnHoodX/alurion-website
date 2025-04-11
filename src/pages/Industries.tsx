@@ -16,7 +16,7 @@ const Industries = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80)'
         }}></div>
-          <div className="absolute inset-0 bg-white/90"></div>
+          <div className="absolute inset-0 bg-white/95"></div>
           
           <div className="container mx-auto relative z-10">
             <header className="mb-16 text-center">
