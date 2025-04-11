@@ -1,6 +1,6 @@
 
 import React from 'react';
-import P5Background from './P5Background';
+import GlobeDemo from './ui/GlobeDemo';
 
 const HeroSection = () => {
   return (
@@ -8,11 +8,13 @@ const HeroSection = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary"
     >
-      <P5Background className="absolute inset-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/80 to-alurion-primary/95 z-0"></div>
+      <div className="absolute inset-0 z-0">
+        <GlobeDemo />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-alurion-primary/50 to-alurion-primary/90 z-10"></div>
       
       {/* Hero Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col items-center text-center">
             {/* Logo Mark */}
@@ -41,7 +43,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <a href="#mission" className="text-white opacity-80 hover:opacity-100 transition-opacity">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
