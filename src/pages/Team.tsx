@@ -25,18 +25,17 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   
   const openModal = () => {
     setIsModalOpen(true);
-    // Start flip animation after a small delay
-    setTimeout(() => {
-      setIsFlipped(true);
-    }, 100);
+    // Don't set flipped state immediately - let the modal open first
+    setIsFlipped(false);
   };
 
   const closeModal = () => {
+    // First reset flip state
     setIsFlipped(false);
-    // Wait for flip animation to complete before closing modal
+    // Then close the modal after animation completes
     setTimeout(() => {
       setIsModalOpen(false);
-    }, 500);
+    }, 300);
   };
 
   return (
@@ -85,19 +84,25 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             onClick={closeModal}
           >
             <motion.div
-              className="w-full max-w-3xl h-auto max-h-[80vh] perspective-1000"
+              className="w-full max-w-3xl perspective-1000"
               onClick={(e) => e.stopPropagation()}
             >
               <motion.div 
-                className="relative w-full h-full preserve-3d"
+                className="relative w-full preserve-3d"
                 initial={{ rotateY: 0 }}
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
                 transition={{ duration: 0.6 }}
+                style={{ minHeight: "500px" }} // Set minimum height for the card
               >
-                {/* Front of card */}
+                {/* Front of card - always visible initially */}
                 <motion.div 
-                  className={`absolute w-full h-full backface-hidden bg-white rounded-xl shadow-2xl p-8 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
-                  style={{ backfaceVisibility: "hidden" }}
+                  className={`absolute w-full h-full backface-hidden bg-white rounded-xl shadow-2xl p-8 ${
+                    isFlipped ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  style={{ 
+                    backfaceVisibility: "hidden",
+                    minHeight: "500px" // Ensure consistent height
+                  }}
                 >
                   <div className="flex justify-between items-start">
                     <div className="flex gap-6 items-center">
@@ -137,10 +142,12 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
                 
                 {/* Back of card - full bio */}
                 <motion.div 
-                  className="absolute w-full h-full bg-white rounded-xl shadow-2xl p-8 overflow-y-auto"
+                  className="absolute w-full bg-white rounded-xl shadow-2xl p-8 overflow-y-auto"
                   style={{ 
                     backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)"
+                    transform: "rotateY(180deg)",
+                    minHeight: "500px", // Ensure consistent height
+                    maxHeight: "70vh" // Set maximum height with scrolling
                   }}
                 >
                   <div className="flex justify-between items-start mb-6">
