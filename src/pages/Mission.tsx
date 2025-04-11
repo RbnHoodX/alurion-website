@@ -1,15 +1,38 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import TeamSection from '../components/TeamSection';
 
 const Mission = () => {
+  // Text generation effect states
+  const [displayedText, setDisplayedText] = useState<string>('');
+  const [isTypingComplete, setIsTypingComplete] = useState<boolean>(false);
+  
+  const missionText = "Our mission is to create lasting impact by forging meaningful connections between exceptional talent and visionary organizations. We go beyond placement; we are dedicated partners in shaping careers and building teams that drive long-term success.";
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingSpeed = 30; // milliseconds per character
+    
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= missionText.length) {
+        setDisplayedText(missionText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+        setIsTypingComplete(true);
+      }
+    }, typingSpeed);
+    
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
-        {/* Hero section with background image */}
+        {/* Hero section with text generation effect */}
         <section className="bg-alurion-primary text-white py-24 relative">
           <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80)'
@@ -17,18 +40,19 @@ const Mission = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 to-white/85"></div>
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-primary">Our Mission</h1>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary">
-                Our mission is to create lasting impact by forging meaningful connections
-                between exceptional talent and visionary organizations. We go beyond
-                placement; we are dedicated partners in shaping careers and building
-                teams that drive long-term success.
+            <div className="max-w-4xl mx-auto bg-white/40 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-white/30">
+              <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary relative min-h-[120px]">
+                {displayedText}
+                <span className={`inline-block border-l-2 border-alurion-primary ml-0.5 h-[1em] align-middle animate-pulse ${isTypingComplete ? 'opacity-0' : 'opacity-100'}`}>|</span>
               </p>
-              <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary">
-                With a deep commitment to both the candidate's growth and the company's strategic goals, 
-                we ensure every match is not just a hire, but a transformative partnership that fosters
-                innovation, leadership, and sustainable excellence.
-              </p>
+              
+              <div className={`transition-opacity duration-700 ${isTypingComplete ? 'opacity-100' : 'opacity-0'}`}>
+                <p className="text-lg md:text-xl leading-relaxed mb-6 text-alurion-primary">
+                  With a deep commitment to both the candidate's growth and the company's strategic goals, 
+                  we ensure every match is not just a hire, but a transformative partnership that fosters
+                  innovation, leadership, and sustainable excellence.
+                </p>
+              </div>
             </div>
           </div>
         </section>

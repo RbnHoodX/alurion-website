@@ -1,14 +1,17 @@
+
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
+
 interface ValueProps {
   title: string;
   description: string;
   className?: string;
 }
+
 const ValueCard = ({
   title,
   description,
@@ -21,6 +24,7 @@ const ValueCard = ({
       </CardContent>
     </Card>;
 };
+
 const Values = () => {
   const values = [{
     title: "Excellence",
@@ -41,6 +45,7 @@ const Values = () => {
     title: "Adaptability",
     description: "We embrace change with agility, adjusting strategies to meet evolving business needs and market shifts. By staying ahead of trends, we ensure our solutions remain effective, timely and impactful."
   }];
+
   return <div className="min-h-screen bg-alurion-primary">
       <Navigation />
       <main className="pt-16">
@@ -81,27 +86,60 @@ const Values = () => {
           </div>
         </section>
 
+        {/* Living Our Values section - redesigned without image */}
         <section className="py-20 px-4 md:px-8 bg-alurion-primary/80 relative">
           <div className="absolute inset-0 pattern-bg-dark opacity-10"></div>
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/10 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/10 to-transparent"></div>
           
-          {/* Add team meeting image */}
           <div className="container mx-auto relative z-10">
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
-              <div className="w-full md:w-1/2">
-                <div className="rounded-xl overflow-hidden shadow-xl">
-                  <img src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80" alt="Team discussing values" className="w-full h-auto object-cover" />
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-10 text-alurion-secondary text-center">Living Our Values</h2>
+              
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 shadow-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="bg-white/10 p-6 rounded-xl border-t border-l border-white/20">
+                      <h3 className="text-xl font-medium mb-3 text-alurion-secondary">Daily Actions</h3>
+                      <p className="text-alurion-secondary/90 leading-relaxed">
+                        Our values aren't just words on a page—they're the principles that guide our daily actions and decisions. 
+                        They shape how we interact with clients, candidates, and each other.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/10 p-6 rounded-xl border-t border-l border-white/20">
+                      <h3 className="text-xl font-medium mb-3 text-alurion-secondary">Authentic Connections</h3>
+                      <p className="text-alurion-secondary/90 leading-relaxed">
+                        We believe in building genuine relationships founded on trust and mutual respect,
+                        creating a foundation for exceptional talent acquisition that stands the test of time.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6 md:mt-12">
+                    <div className="bg-white/10 p-6 rounded-xl border-t border-l border-white/20">
+                      <h3 className="text-xl font-medium mb-3 text-alurion-secondary">Driving Success</h3>
+                      <p className="text-alurion-secondary/90 leading-relaxed">
+                        By living these values every day, we create an environment where exceptional talent can connect 
+                        with outstanding opportunities, driving success for everyone involved in the process.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/10 p-6 rounded-xl border-t border-l border-white/20">
+                      <h3 className="text-xl font-medium mb-3 text-alurion-secondary">Lasting Impact</h3>
+                      <p className="text-alurion-secondary/90 leading-relaxed">
+                        Our commitment to our values ensures that we make meaningful connections that transform
+                        organizations and shape the future of work across industries.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="w-full md:w-1/2">
-                <h2 className="text-3xl font-bold mb-6 text-alurion-secondary">Living Our Values</h2>
-                <p className="text-lg text-alurion-secondary/90 mb-6 leading-relaxed">
-                  Our values aren't just words on a page—they're the principles that guide our daily actions and decisions. 
-                  They shape how we interact with clients, candidates, and each other.
-                </p>
-                <p className="text-lg text-alurion-secondary/90 leading-relaxed">
-                  By living these values every day, we create an environment where exceptional talent can connect 
-                  with outstanding opportunities, driving success for everyone involved in the process.
-                </p>
+                
+                <div className="mt-12 text-center">
+                  <blockquote className="text-xl italic text-alurion-secondary">
+                    "Values are the foundation upon which we build exceptional teams and transformative organizations."
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>
@@ -110,4 +148,5 @@ const Values = () => {
       <Footer />
     </div>;
 };
+
 export default Values;
