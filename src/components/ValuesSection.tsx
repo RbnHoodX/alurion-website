@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -46,7 +45,7 @@ const ValuesSection = () => {
     "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80", // Excellence
     "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80", // Integrity
     "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80", // Grit
-    "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80", // Now - innovation
+    "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80", // Now - updated to a different image
     "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80", // Curiosity - Updated to a working image
     "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80", // Adaptability
   ];
