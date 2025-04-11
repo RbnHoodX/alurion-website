@@ -1,20 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import TeamSection from '../components/TeamSection';
-
 const Mission = () => {
   // Text generation effect states
   const [displayedText, setDisplayedText] = useState<string>('');
   const [isTypingComplete, setIsTypingComplete] = useState<boolean>(false);
-  
   const missionText = "Our mission is to create lasting impact by forging meaningful connections between exceptional talent and visionary organizations. We go beyond placement; we are dedicated partners in shaping careers and building teams that drive long-term success.";
-  
   useEffect(() => {
     let currentIndex = 0;
     const typingSpeed = 30; // milliseconds per character
-    
+
     const typingInterval = setInterval(() => {
       if (currentIndex <= missionText.length) {
         setDisplayedText(missionText.slice(0, currentIndex));
@@ -24,20 +20,17 @@ const Mission = () => {
         setIsTypingComplete(true);
       }
     }, typingSpeed);
-    
     return () => clearInterval(typingInterval);
   }, []);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
         {/* Hero section with text generation effect */}
         <section className="bg-alurion-primary text-white py-24 relative">
           <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80)'
-          }}></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/75 to-white/85"></div>
+          backgroundImage: 'url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80)'
+        }}></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/85"></div>
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center text-alurion-primary">Our Mission</h1>
             <div className="max-w-4xl mx-auto bg-white/40 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-white/30">
@@ -114,8 +107,6 @@ const Mission = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Mission;
