@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -6,60 +5,17 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Briefcase } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 const Industries = () => {
-  const industries = [
-    "Life Sciences & Healthcare", 
-    "Technology & AI", 
-    "Genetics", 
-    "Manufacturing", 
-    "Software / SAAS",
-    "Hospitality & Tourism", 
-    "Retail", 
-    "Journalism", 
-    "Professional Services", 
-    "Finance", 
-    "Sales", 
-    "Real Estate",
-    "Consumer Packaged Goods", 
-    "Media", 
-    "Advertising", 
-    "HR Services", 
-    "Games", 
-    "Insurance"
-  ];
-
-  const functions = [
-    "Sales", 
-    "Technology", 
-    "Product", 
-    "Design", 
-    "Marketing", 
-    "Advertising", 
-    "Strategy", 
-    "HR", 
-    "Finance", 
-    "Legal",
-    "Operations", 
-    "Clinician", 
-    "Real Estate Development", 
-    "Commercial", 
-    "Communications", 
-    "Governance", 
-    "Journalism", 
-    "Food & Beverage"
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const industries = ["Life Sciences & Healthcare", "Technology & AI", "Genetics", "Manufacturing", "Software / SAAS", "Hospitality & Tourism", "Retail", "Journalism", "Professional Services", "Finance", "Sales", "Real Estate", "Consumer Packaged Goods", "Media", "Advertising", "HR Services", "Games", "Insurance"];
+  const functions = ["Sales", "Technology", "Product", "Design", "Marketing", "Advertising", "Strategy", "HR", "Finance", "Legal", "Operations", "Clinician", "Real Estate Development", "Commercial", "Communications", "Governance", "Journalism", "Food & Beverage"];
+  return <div className="min-h-screen">
       <Navigation />
       <div className="pt-16">
         <section className="section bg-alurion-primary relative">
           {/* Hero background image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80)' }}
-          ></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80)'
+        }}></div>
           <div className="absolute inset-0 bg-alurion-primary/70"></div>
           
           <div className="container mx-auto relative z-10">
@@ -78,11 +34,7 @@ const Industries = () => {
                 {/* Image section */}
                 <div className="mb-12">
                   <div className="rounded-xl overflow-hidden shadow-xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80" 
-                      alt="Technology team working together" 
-                      className="w-full h-64 md:h-80 object-cover"
-                    />
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80" alt="Technology team working together" className="w-full h-64 md:h-80 object-cover" />
                   </div>
                 </div>
                 
@@ -91,16 +43,12 @@ const Industries = () => {
                   technology enabled systems, as well as transformation of cultural work involved with globalization.
                 </p>
                 
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  className="w-full"
-                >
+                <Carousel opts={{
+                align: "start",
+                loop: true
+              }} className="w-full">
                   <CarouselContent className="-ml-4">
-                    {industries.map((industry, index) => (
-                      <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
+                    {industries.map((industry, index) => <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
                         <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
                           <CardContent className="flex flex-col p-6">
                             <div className="mb-4">
@@ -109,8 +57,7 @@ const Industries = () => {
                             <h4 className="text-xl font-medium text-white">{industry}</h4>
                           </CardContent>
                         </Card>
-                      </CarouselItem>
-                    ))}
+                      </CarouselItem>)}
                   </CarouselContent>
                   <div className="flex justify-end gap-2 mt-6">
                     <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
@@ -125,11 +72,7 @@ const Industries = () => {
                 {/* Image section */}
                 <div className="mb-12">
                   <div className="rounded-xl overflow-hidden shadow-xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80" 
-                      alt="Business meeting" 
-                      className="w-full h-64 md:h-80 object-cover"
-                    />
+                    <img alt="Business meeting" className="w-full h-64 md:h-80 object-cover" src="/lovable-uploads/1fe602af-8834-451f-8c45-864963a3d2ac.jpg" />
                   </div>
                 </div>
                 
@@ -138,16 +81,12 @@ const Industries = () => {
                   that can drive your business forward and help you achieve your strategic goals.
                 </p>
                 
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  className="w-full"
-                >
+                <Carousel opts={{
+                align: "start",
+                loop: true
+              }} className="w-full">
                   <CarouselContent className="-ml-4">
-                    {functions.map((func, index) => (
-                      <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
+                    {functions.map((func, index) => <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
                         <Card className="bg-white/10 backdrop-blur-sm border-none h-full">
                           <CardContent className="flex flex-col p-6">
                             <div className="mb-4">
@@ -156,8 +95,7 @@ const Industries = () => {
                             <h4 className="text-xl font-medium text-white">{func}</h4>
                           </CardContent>
                         </Card>
-                      </CarouselItem>
-                    ))}
+                      </CarouselItem>)}
                   </CarouselContent>
                   <div className="flex justify-end gap-2 mt-6">
                     <CarouselPrevious className="relative static -translate-y-0 bg-alurion-secondary text-alurion-primary hover:bg-alurion-secondary/80 hover:text-alurion-primary" />
@@ -170,8 +108,6 @@ const Industries = () => {
         </section>
         <Footer />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Industries;
