@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 interface BlogPost {
   title: string;
   excerpt: string;
@@ -9,7 +7,6 @@ interface BlogPost {
   date: string;
   author: string;
 }
-
 const BlogSection = () => {
   const blogPosts: BlogPost[] = [{
     title: "The Future of Work: AI and Human Connection",
@@ -30,20 +27,17 @@ const BlogSection = () => {
     date: "March 18, 2025",
     author: "Steve Palek"
   }];
-
-  return (
-    <section id="blog" className="section bg-white">
+  return <section id="blog" className="section bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="section-title text-center">Latest Insights</h2>
+        <h2 className="section-title text-center">Latest Blogs</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          {blogPosts.map((post, index) => <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <div className="flex justify-between text-sm text-gray-500 mb-3">
-                  <span className="text-alurion-secondary">{post.date}</span>
-                  <span className="text-alurion-secondary">By {post.author}</span>
+                  <span className="text-alurion-secondary font-medium">{post.date}</span>
+                  <span className="text-alurion-secondary font-normal">By {post.author}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-alurion-primary text-center">{post.title}</h3>
                 <p className="text-gray-600 mb-4 text-center">{post.excerpt}</p>
@@ -51,8 +45,7 @@ const BlogSection = () => {
                   <a href="#" className="text-alurion-primary font-medium hover:underline">Read More</a>
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
         
         <div className="mt-10 text-center">
@@ -64,8 +57,6 @@ const BlogSection = () => {
           </Link>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BlogSection;
