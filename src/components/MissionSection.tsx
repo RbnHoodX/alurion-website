@@ -1,9 +1,12 @@
-
 import React from 'react';
 
-const MissionSection = () => {
+interface MissionSectionProps {
+  id?: string;
+}
+
+const MissionSection = ({ id }: MissionSectionProps) => {
   return (
-    <section id="mission" className="section bg-white text-alurion-primary relative">
+    <section id={id} className="section bg-white text-alurion-primary relative">
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-fixed bg-center opacity-10" style={{
         backgroundImage: 'url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80)'

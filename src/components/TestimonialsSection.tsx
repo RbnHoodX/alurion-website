@@ -1,9 +1,12 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+
+interface TestimonialsSectionProps {
+  id?: string;
+}
 
 interface Testimonial {
   quote: string;
@@ -134,29 +137,21 @@ export const allTestimonials: Testimonial[] = [
   }
 ];
 
-const TestimonialsSection = () => {
-  // Display only the first 3 testimonials on the home page
+const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
   const displayedTestimonials = allTestimonials.slice(0, 3);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id={id} className="section">
       <div className="container mx-auto px-4">
-        <motion.div
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-16 text-alurion-primary text-left"
         >
-          <h2 className="text-4xl font-bold text-alurion-primary mb-4">
-            What Our Clients Say
-          </h2>
-          <div className="h-1 w-24 bg-alurion-accent mx-auto"></div>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mt-6">
-            We pride ourselves on the strong relationships we build with our clients.
-            Here's what they have to say about working with Alurion.
-          </p>
-        </motion.div>
+          What Our Clients Say
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedTestimonials.map((testimonial, index) => (
@@ -188,7 +183,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* View All Testimonials Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

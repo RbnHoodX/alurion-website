@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Briefcase, Users, Home } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +39,12 @@ const Navigation = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+  };
+
+  const scrollWithOffset = (el: HTMLElement) => {
+    const yOffset = -80; // Adjust this value as needed
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   };
 
   return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-lg py-2' : 'py-4'}`}>
@@ -79,8 +86,20 @@ const Navigation = () => {
         <nav className="hidden lg:flex space-x-2">
           {/* Desktop Navigation */}
           <Link to="/" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Home</Link>
-          <Link to="/mission" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Mission</Link>
-          <Link to="/values" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Values</Link>
+          <HashLink 
+            to="/#mission" 
+            scroll={scrollWithOffset} 
+            className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium"
+          >
+            Mission
+          </HashLink>
+          <HashLink 
+            to="/#values" 
+            scroll={scrollWithOffset} 
+            className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium"
+          >
+            Values
+          </HashLink>
           <Link to="/team" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Meet the Team</Link>
           
           <div className="nav-item text-alurion-primary hover:text-alurion-secondary group px-3 font-medium">
@@ -146,7 +165,15 @@ const Navigation = () => {
           </div>
           
           <Link to="/industries" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Industries</Link>
-          <Link to="/testimonials" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Testimonials</Link>
+          
+          <HashLink 
+            to="/#testimonials" 
+            scroll={scrollWithOffset} 
+            className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium"
+          >
+            Testimonials
+          </HashLink>
+          
           <Link to="/blog" className="nav-item text-alurion-primary hover:text-alurion-secondary px-3 font-medium">Blog</Link>
           
           <div className="nav-item text-alurion-primary hover:text-alurion-secondary group px-3 font-medium">
@@ -174,12 +201,12 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && <div className="lg:hidden bg-white shadow-lg animated fade-in py-4 px-6">
           <Link to="/" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Home</Link>
-          <Link to="/mission" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Mission</Link>
-          <Link to="/values" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Values</Link>
+          <HashLink to="/#mission" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Mission</HashLink>
+          <HashLink to="/#values" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Values</HashLink>
           <Link to="/team" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Meet the Team</Link>
           <Link to="/solutions" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Solutions</Link>
           <Link to="/industries" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Industries & Functions</Link>
-          <Link to="/testimonials" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Testimonials</Link>
+          <HashLink to="/#testimonials" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Testimonials</HashLink>
           <Link to="/blog" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Blog</Link>
           <Link to="/candidates" className="block py-2 text-alurion-primary hover:text-alurion-secondary">For Candidates</Link>
           <Link to="/contact" className="block py-2 text-alurion-primary hover:text-alurion-secondary">Contact Us</Link>

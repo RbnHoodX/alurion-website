@@ -5,13 +5,10 @@ import HeroSection from '../components/HeroSection';
 import MissionSection from '../components/MissionSection';
 import AboutSection from '../components/AboutSection';
 import ValuesSection from '../components/ValuesSection';
+import TeamSection from '../components/TeamSection';
 import SolutionsSection from '../components/SolutionsSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
-import RetainedSearchSection from '../components/RetainedSearchSection';
-import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
-import AddOnServicesSection from '../components/AddOnServicesSection';
-import BlogSection from '../components/BlogSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
@@ -21,16 +18,13 @@ const Index = () => {
       <Navigation />
       <div className="pt-16"> {/* Add padding to account for fixed navbar */}
         <HeroSection />
-        <MissionSection />
+        <MissionSection id="mission" />
         <AboutSection />
-        <ValuesSection />
+        <ValuesSection id="values" />
+        <TeamSection />
         <SolutionsSection />
         <IndustriesSection />
-        <TestimonialsSection />
-        <RetainedSearchSection />
-        <ExecutiveSearchTimeline />
-        <AddOnServicesSection />
-        <BlogSection />
+        <TestimonialsSection id="testimonials" />
         <ContactSection />
         <Footer />
       </div>
