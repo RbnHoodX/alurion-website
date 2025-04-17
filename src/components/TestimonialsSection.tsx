@@ -1,7 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TestimonialsSectionProps {
   id?: string;
@@ -125,27 +127,50 @@ export const allTestimonials = [
 const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % allTestimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
+  const handlePrevious = () => {
+    setCurrentTestimonial((prev) => 
+      prev === 0 ? allTestimonials.length - 1 : prev - 1
+    );
+  };
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
+  const handleNext = () => {
+    setCurrentTestimonial((prev) => 
+      prev === allTestimonials.length - 1 ? 0 : prev + 1
+    );
+  };
   
-  const testimonial = allTestimonials[currentTestimonial];
-  
-  return <section id={id} className="section bg-gray-50">
+  return (
+    <section id={id} className="section bg-gray-50">
       <div className="container mx-auto text-center">
         <h2 className="section-title text-center">What Our Clients Say</h2>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative">
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 rounded-full bg-white hover:bg-gray-100"
+            onClick={handlePrevious}
+          >
+            <ChevronLeft className="h-4 w-4" />
+            <span className="sr-only">Previous testimonial</span>
+          </Button>
+
           <TestimonialCard 
             quote={allTestimonials[currentTestimonial].quote}
             author={allTestimonials[currentTestimonial].author}
             position={allTestimonials[currentTestimonial].position}
             company={allTestimonials[currentTestimonial].company}
           />
+
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 rounded-full bg-white hover:bg-gray-100"
+            onClick={handleNext}
+          >
+            <ChevronRight className="h-4 w-4" />
+            <span className="sr-only">Next testimonial</span>
+          </Button>
         </div>
         
         <div className="mt-12 text-center">
@@ -157,7 +182,8 @@ const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default TestimonialsSection;
