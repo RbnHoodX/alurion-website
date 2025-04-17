@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -6,7 +5,6 @@ import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
 import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
-
 interface TeamMember {
   name: string;
   title: string;
@@ -14,7 +12,6 @@ interface TeamMember {
   bio: string[];
   category: 'managing-partner' | 'team';
 }
-
 const TeamMemberCard = ({
   member
 }: {
@@ -23,21 +20,17 @@ const TeamMemberCard = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const initials = member.name.split(' ').map(name => name[0]).join('').toUpperCase();
-  
   const openModal = () => {
     setIsModalOpen(true);
     setIsFlipped(false);
   };
-  
   const closeModal = () => {
     setIsFlipped(false);
     setTimeout(() => {
       setIsModalOpen(false);
     }, 300);
   };
-  
-  return (
-    <>
+  return <>
       <div className="group relative transition-all duration-300 hover:translate-y-[-8px]">
         <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
           <div className="p-6 pb-0 flex justify-center">
@@ -66,30 +59,28 @@ const TeamMemberCard = ({
 
       {/* Bio Modal with Flip Animation */}
       <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 backdrop-blur-sm"
-            onClick={closeModal}
-          >
+        {isModalOpen && <motion.div initial={{
+        opacity: 0
+      }} animate={{
+        opacity: 1
+      }} exit={{
+        opacity: 0
+      }} className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 backdrop-blur-sm" onClick={closeModal}>
             <motion.div className="w-full max-w-3xl perspective-1000" onClick={e => e.stopPropagation()}>
-              <motion.div
-                className="relative w-full preserve-3d"
-                initial={{ rotateY: 0 }}
-                animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ duration: 0.6 }}
-                style={{ minHeight: "500px" }}
-              >
+              <motion.div className="relative w-full preserve-3d" initial={{
+            rotateY: 0
+          }} animate={{
+            rotateY: isFlipped ? 180 : 0
+          }} transition={{
+            duration: 0.6
+          }} style={{
+            minHeight: "500px"
+          }}>
                 {/* Front of card - always visible initially */}
-                <motion.div
-                  className={`absolute w-full h-full backface-hidden bg-white rounded-xl shadow-2xl p-8 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
-                  style={{
-                    backfaceVisibility: "hidden",
-                    minHeight: "500px"
-                  }}
-                >
+                <motion.div className={`absolute w-full h-full backface-hidden bg-white rounded-xl shadow-2xl p-8 ${isFlipped ? 'opacity-0' : 'opacity-100'}`} style={{
+              backfaceVisibility: "hidden",
+              minHeight: "500px"
+            }}>
                   <div className="flex justify-between items-start">
                     <div className="flex gap-6 items-center">
                       <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-alurion-secondary/30">
@@ -100,17 +91,16 @@ const TeamMemberCard = ({
                         <p className="text-alurion-secondary">{member.title}</p>
                       </div>
                     </div>
-                    <button
-                      onClick={closeModal}
-                      className="text-gray-400 hover:text-gray-600 transition-colors"
-                    >
+                    <button onClick={closeModal} className="text-gray-400 hover:text-gray-600 transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
                   </div>
                   
-                  <div className="mt-6 flex flex-col justify-between" style={{ minHeight: "360px" }}>
+                  <div className="mt-6 flex flex-col justify-between" style={{
+                minHeight: "360px"
+              }}>
                     <div className="flex-grow">
                       <p className="text-gray-600 text-lg">{member.bio[0].substring(0, 600)}...</p>
                     </div>
@@ -126,15 +116,12 @@ const TeamMemberCard = ({
                 </motion.div>
                 
                 {/* Back of card - full bio */}
-                <motion.div
-                  className="absolute w-full bg-white rounded-xl shadow-2xl p-8 overflow-y-auto"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                    minHeight: "500px",
-                    maxHeight: "70vh"
-                  }}
-                >
+                <motion.div className="absolute w-full bg-white rounded-xl shadow-2xl p-8 overflow-y-auto" style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+              minHeight: "500px",
+              maxHeight: "70vh"
+            }}>
                   <div className="flex justify-between items-start mb-6">
                     <h3 className="text-2xl font-bold text-alurion-primary">About {member.name}</h3>
                     <button onClick={closeModal} className="text-gray-400 hover:text-gray-600 transition-colors">
@@ -145,9 +132,7 @@ const TeamMemberCard = ({
                   </div>
                   
                   <div className="prose max-w-none text-gray-700">
-                    {member.bio.map((paragraph, i) => (
-                      <p key={i} className="mb-4">{paragraph}</p>
-                    ))}
+                    {member.bio.map((paragraph, i) => <p key={i} className="mb-4">{paragraph}</p>)}
                   </div>
                   
                   <div className="mt-8 flex justify-center">
@@ -161,79 +146,45 @@ const TeamMemberCard = ({
                 </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
-        )}
+          </motion.div>}
       </AnimatePresence>
-    </>
-  );
+    </>;
 };
-
 const Team = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'managing-partner' | 'team'>('all');
-  
-  const teamMembers: TeamMember[] = [
-    {
-      name: "Melanie \"Mel\" Smith",
-      title: "Founder & CEO, Human Capital Strategy Consultant",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: [
-        "Melanie Smith is a transformative Human Capital strategist with a proven track record of unlocking the full potential of an organization's most valuable asset—its people. With deep expertise in diagnosing systemic talent challenges, Mel designs and implements people-first strategies that accelerate performance, empower leadership, and align seamlessly with business objectives. Her work is especially impactful during periods of high-stakes change, including mergers and acquisitions, global expansion, and digital transformation driven by AI.",
-        "Mel's executive HR leadership spans Fortune 500 companies and high-growth innovators alike, including UnitedHealth Group, ADP, 3M, Target, Savvy Sherpa/Optum Labs, and DiaMedica. Her ability to adapt across industries is rooted in a strong HR Generalist foundation and a commitment to human-centered design.",
-        "Mel is a certified Talent Strategist and Coach through the Human Capital Institute and holds certifications in the full suite of TalentTelligent solutions. Her work has earned multiple industry accolades for driving measurable, sustainable impact."
-      ],
-      category: "managing-partner"
-    },
-    {
-      name: "Monica Parodi",
-      title: "Managing Partner, Chief Talent Officer",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: [
-        "Monica Parodi is a globally recognized authority in talent acquisition and human capital strategy, known for building high-performance recruitment engines that scale with business growth. As Managing Partner, Monica leads the development of Alurion's next-generation recruitment services and consults across the full talent lifecycle—from workforce planning to executive search.",
-        "With over two decades of experience, Monica has led transformative talent initiatives at iconic brands including The New York Times and Hilton, where she served as Vice President of Talent Acquisition and Head of Global Executive Recruitment, respectively. She also founded and scaled her own search firm, helping clients like Build-A-Bear Workshop grow from startup to global brand.",
-        "Monica's leadership is defined by innovation, agility, and a relentless focus on aligning talent strategies with business outcomes."
-      ],
-      category: "managing-partner"
-    },
-    {
-      name: "Steve Palek",
-      title: "Chief Revenue Officer",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: [
-        "Steve Palek is a growth strategist and revenue architect with over two decades of experience driving transformational business development. As Chief Revenue Officer at Alurion, Steve leads go-to-market strategy, sales transformation consulting, and client growth initiatives that deliver measurable ROI.",
-        "Steve's leadership has fueled sustained growth across multiple industries. As Chief Sales Officer and Partner at Asurint, he led the company through eight consecutive years of 25%+ growth and played a pivotal role in securing private equity investment. At ADP, he revitalized underperforming markets and expanded national operations, while at USIS, he contributed to the $250M acquisition of HireRight.",
-        "Steve is also the founder of Auxilia, a donor management platform for nonprofits, where he drives innovation and impact through technology. His work consistently bridges strategy and execution to accelerate business success."
-      ],
-      category: "team"
-    },
-    {
-      name: "Chessa Keimig",
-      title: "Director, Talent Operations & Delivery",
-      image: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: [
-        "Chessa Keimig brings operational excellence to the forefront of talent strategy. With a strong background in project management and talent operations, Chessa ensures seamless execution of complex initiatives that drive scalable, sustainable results.",
-        "Her ability to translate vision into action enables Alurion to deliver high-impact solutions with precision and consistency. Chessa's work is instrumental in helping clients achieve operational alignment and long-term success."
-      ],
-      category: "team"
-    },
-    {
-      name: "Neetu Khosla",
-      title: "Director, Sourcing & Market Research",
-      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: [
-        "Neetu Khosla is a trusted executive search leader with a sharp instinct for identifying transformative talent. With 18 years of experience across industries and geographies, Neetu has built high-performing leadership teams for startups, mid-market firms, and global enterprises. Her approach is defined by strategic insight, agility, and a deep commitment to integrity.",
-        "A valued advisor to C-suite leaders and boards, Neetu delivers more than candidates—she delivers business catalysts. Her placements consistently drive innovation, cultural alignment, and long-term value creation.",
-        "Neetu's reputation as a strategic partner is built on her ability to match top-tier talent with mission-critical roles that shape the future of organizations."
-      ],
-      category: "team"
-    }
-  ];
-
-  const filteredMembers = activeTab === 'all'
-    ? teamMembers
-    : teamMembers.filter(member => member.category === activeTab);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-alurion-primary to-alurion-primary/90">
+  const teamMembers: TeamMember[] = [{
+    name: "Melanie \"Mel\" Smith",
+    title: "Founder & CEO, Human Capital Strategy Consultant",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    bio: ["Melanie Smith is a transformative Human Capital strategist with a proven track record of unlocking the full potential of an organization's most valuable asset—its people. With deep expertise in diagnosing systemic talent challenges, Mel designs and implements people-first strategies that accelerate performance, empower leadership, and align seamlessly with business objectives. Her work is especially impactful during periods of high-stakes change, including mergers and acquisitions, global expansion, and digital transformation driven by AI.", "Mel's executive HR leadership spans Fortune 500 companies and high-growth innovators alike, including UnitedHealth Group, ADP, 3M, Target, Savvy Sherpa/Optum Labs, and DiaMedica. Her ability to adapt across industries is rooted in a strong HR Generalist foundation and a commitment to human-centered design.", "Mel is a certified Talent Strategist and Coach through the Human Capital Institute and holds certifications in the full suite of TalentTelligent solutions. Her work has earned multiple industry accolades for driving measurable, sustainable impact."],
+    category: "managing-partner"
+  }, {
+    name: "Monica Parodi",
+    title: "Managing Partner, Chief Talent Officer",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    bio: ["Monica Parodi is a globally recognized authority in talent acquisition and human capital strategy, known for building high-performance recruitment engines that scale with business growth. As Managing Partner, Monica leads the development of Alurion's next-generation recruitment services and consults across the full talent lifecycle—from workforce planning to executive search.", "With over two decades of experience, Monica has led transformative talent initiatives at iconic brands including The New York Times and Hilton, where she served as Vice President of Talent Acquisition and Head of Global Executive Recruitment, respectively. She also founded and scaled her own search firm, helping clients like Build-A-Bear Workshop grow from startup to global brand.", "Monica's leadership is defined by innovation, agility, and a relentless focus on aligning talent strategies with business outcomes."],
+    category: "managing-partner"
+  }, {
+    name: "Steve Palek",
+    title: "Chief Revenue Officer",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    bio: ["Steve Palek is a growth strategist and revenue architect with over two decades of experience driving transformational business development. As Chief Revenue Officer at Alurion, Steve leads go-to-market strategy, sales transformation consulting, and client growth initiatives that deliver measurable ROI.", "Steve's leadership has fueled sustained growth across multiple industries. As Chief Sales Officer and Partner at Asurint, he led the company through eight consecutive years of 25%+ growth and played a pivotal role in securing private equity investment. At ADP, he revitalized underperforming markets and expanded national operations, while at USIS, he contributed to the $250M acquisition of HireRight.", "Steve is also the founder of Auxilia, a donor management platform for nonprofits, where he drives innovation and impact through technology. His work consistently bridges strategy and execution to accelerate business success."],
+    category: "team"
+  }, {
+    name: "Chessa Keimig",
+    title: "Director, Talent Operations & Delivery",
+    image: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    bio: ["Chessa Keimig brings operational excellence to the forefront of talent strategy. With a strong background in project management and talent operations, Chessa ensures seamless execution of complex initiatives that drive scalable, sustainable results.", "Her ability to translate vision into action enables Alurion to deliver high-impact solutions with precision and consistency. Chessa's work is instrumental in helping clients achieve operational alignment and long-term success."],
+    category: "team"
+  }, {
+    name: "Neetu Khosla",
+    title: "Director, Sourcing & Market Research",
+    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    bio: ["Neetu Khosla is a trusted executive search leader with a sharp instinct for identifying transformative talent. With 18 years of experience across industries and geographies, Neetu has built high-performing leadership teams for startups, mid-market firms, and global enterprises. Her approach is defined by strategic insight, agility, and a deep commitment to integrity.", "A valued advisor to C-suite leaders and boards, Neetu delivers more than candidates—she delivers business catalysts. Her placements consistently drive innovation, cultural alignment, and long-term value creation.", "Neetu's reputation as a strategic partner is built on her ability to match top-tier talent with mission-critical roles that shape the future of organizations."],
+    category: "team"
+  }];
+  const filteredMembers = activeTab === 'all' ? teamMembers : teamMembers.filter(member => member.category === activeTab);
+  return <div className="min-h-screen bg-gradient-to-b from-alurion-primary to-alurion-primary/90">
       <Navigation />
       <main>
         <section className="py-24 relative overflow-hidden">
@@ -257,24 +208,15 @@ const Team = () => {
             
             {/* Apple-style Tab Bar */}
             <div className="mx-auto max-w-md mb-12">
-              <Tabs defaultValue="all" onValueChange={(value) => setActiveTab(value as 'all' | 'managing-partner' | 'team')}>
+              <Tabs defaultValue="all" onValueChange={value => setActiveTab(value as 'all' | 'managing-partner' | 'team')}>
                 <TabsList className="w-full rounded-full bg-alurion-secondary/20 p-1 h-12">
-                  <TabsTrigger 
-                    value="all" 
-                    className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
-                  >
+                  <TabsTrigger value="all" className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1">
                     All
                   </TabsTrigger>
-                  <TabsTrigger 
-                    value="managing-partner" 
-                    className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
-                  >
+                  <TabsTrigger value="managing-partner" className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1">
                     Managing Partners
                   </TabsTrigger>
-                  <TabsTrigger 
-                    value="team" 
-                    className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1"
-                  >
+                  <TabsTrigger value="team" className="rounded-full data-[state=active]:bg-white data-[state=active]:text-alurion-primary flex-1">
                     Team Members
                   </TabsTrigger>
                 </TabsList>
@@ -282,45 +224,17 @@ const Team = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {filteredMembers.map((member, index) => (
-                <div 
-                  key={member.name} 
-                  className="animate-fade-in" 
-                  style={{animationDelay: `${index * 150}ms`}}
-                >
+              {filteredMembers.map((member, index) => <div key={member.name} className="animate-fade-in" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <TeamMemberCard member={member} />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
         
         {/* Our Approach Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-alurion-primary text-center">Our Approach</h2>
-              <div className="bg-alurion-primary/5 backdrop-blur-xl p-8 md:p-12 rounded-2xl shadow-sm">
-                <h3 className="text-2xl font-medium mb-6 text-alurion-primary">A Strategic Approach to Executive Talent Acquisition</h3>
-                <div className="space-y-6 text-gray-700 font-light">
-                  <p className="leading-relaxed">
-                    Our retained search solution is a dedicated, high-touch approach to
-                    securing top-tier talent for mission-critical roles. We partner closely with our
-                    clients, investing the time and expertise needed to deeply understand their
-                    business, culture, and business goals.
-                  </p>
-                  <p className="leading-relaxed">
-                    Through a rigorous and confidential search process, we identify and engage exceptional candidates who not
-                    only meet the technical requirements but also align with the organization's
-                    vision and values. With a commitment to precision, discretion, and
-                    long-term success, our retained search service ensures that every hire is a
-                    transformative leader poised to drive meaningful impact.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
         
         {/* Executive Search Timeline Section */}
         <ExecutiveSearchTimeline />
@@ -329,7 +243,7 @@ const Team = () => {
 
       {/* Add perspective CSS for flip animation */}
       <style dangerouslySetInnerHTML={{
-        __html: `
+      __html: `
           .perspective-1000 {
             perspective: 1000px;
           }
@@ -340,9 +254,7 @@ const Team = () => {
             backface-visibility: hidden;
           }
         `
-      }} />
-    </div>
-  );
+    }} />
+    </div>;
 };
-
 export default Team;
