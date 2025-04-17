@@ -34,9 +34,7 @@ const TeamMemberCard = ({
       <div className="group relative transition-all duration-300 hover:translate-y-[-8px]">
         <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
           <div className="p-6 pb-0 flex justify-center">
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-alurion-secondary/30 shadow-lg">
-              <img src={member.image} alt={member.name} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
-            </div>
+            
           </div>
           <CardContent className="p-6">
             <div className="space-y-3 text-center">
