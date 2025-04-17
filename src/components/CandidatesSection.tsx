@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const CandidatesSection = () => {
   return <section id="candidates" className="section text-white bg-gray-50">
       <div className="absolute inset-0 bg-white/10"></div>
@@ -16,19 +14,19 @@ const CandidatesSection = () => {
             </p>
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1 text-alurion-primary">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1 text-alurion-primary text-left">Full Name</label>
                 <input type="text" id="name" placeholder="Enter your full name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1 text-alurion-primary">Email Address</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1 text-alurion-primary text-left">Email Address</label>
                 <input type="email" id="email" placeholder="Enter your email address" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
-                <label htmlFor="resume" className="block text-sm font-medium mb-1 text-alurion-primary">Resume/CV</label>
+                <label htmlFor="resume" className="block text-sm font-medium mb-1 text-alurion-primary text-left">Resume/CV</label>
                 <input type="file" id="resume" placeholder="Upload your resume" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary text-alurion-primary bg-transparent" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-primary">Additional Information</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-1 text-alurion-primary text-left">Additional Information</label>
                 <textarea id="message" rows={3} placeholder="Tell us about your career goals and preferences" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-alurion-primary primary bg-transparent text-alurion-primary"></textarea>
               </div>
               <button type="submit" className="primary-btn">Submit Resume</button>
