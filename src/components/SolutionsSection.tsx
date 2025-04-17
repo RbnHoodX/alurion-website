@@ -59,8 +59,8 @@ const SolutionsSection = () => {
   }, []);
   return <section id="solutions" className="section py-24 px-4 relative bg-white overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-alurion-primary text-center">Our Solutions</h2>
-        <p className="text-lg text-gray-700 mb-16 max-w-3xl">
+        <h2 className=" text-center section-title">Our Solutions</h2>
+        <p className="text-lg text-gray-700 mb-16 align-center text-center mx-[100px]">
           At Alurion Talent Group, we don't just fill roles—we architect transformation. As strategic partners
           and fractional leaders, we help organizations attract, develop, and retain top talent that fuels
           innovation and drives business growth.
