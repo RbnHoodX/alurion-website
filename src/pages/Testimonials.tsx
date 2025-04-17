@@ -63,7 +63,6 @@ const Testimonials = () => {
                         author={testimonial.author}
                         position={testimonial.position}
                         company={testimonial.company}
-                        image={testimonial.image}
                         delay={0}
                       />
                     </CarouselItem>
@@ -88,7 +87,6 @@ const Testimonials = () => {
                   author={testimonial.author}
                   position={testimonial.position}
                   company={testimonial.company}
-                  image={testimonial.image}
                   delay={index % 3 * 0.1}
                 />
               ))}

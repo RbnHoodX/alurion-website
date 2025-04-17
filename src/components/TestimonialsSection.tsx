@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { Link } from 'react-router-dom';
@@ -6,40 +7,54 @@ interface TestimonialsSectionProps {
   id?: string;
 }
 
+export const allTestimonials = [
+  {
+    quote: "Alurion Talent Group truly understands the unique needs of our organization. Their team went above and beyond to find the perfect fit for our company culture and values.",
+    author: "Sarah Johnson",
+    position: "CEO",
+    company: "Tech Solutions Inc.",
+    featured: true
+  },
+  {
+    quote: "We were struggling to find top-tier talent in a competitive market. Alurion's strategic approach and extensive network delivered exceptional candidates that exceeded our expectations.",
+    author: "Michael Davis",
+    position: "VP of Engineering",
+    company: "Innovatech Corp",
+    featured: true
+  },
+  {
+    quote: "The level of professionalism and dedication demonstrated by Alurion Talent Group is unmatched. They provided invaluable guidance throughout the entire recruitment process, ensuring a seamless experience.",
+    author: "Emily White",
+    position: "HR Director",
+    company: "Global Enterprises Ltd.",
+    featured: true
+  }
+];
+
 const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const testimonials = [
-    {
-      quote: "Alurion Talent Group truly understands the unique needs of our organization. Their team went above and beyond to find the perfect fit for our company culture and values.",
-      author: "Sarah Johnson",
-      title: "CEO, Tech Solutions Inc."
-    },
-    {
-      quote: "We were struggling to find top-tier talent in a competitive market. Alurion's strategic approach and extensive network delivered exceptional candidates that exceeded our expectations.",
-      author: "Michael Davis",
-      title: "VP of Engineering, Innovatech Corp"
-    },
-    {
-      quote: "The level of professionalism and dedication demonstrated by Alurion Talent Group is unmatched. They provided invaluable guidance throughout the entire recruitment process, ensuring a seamless experience.",
-      author: "Emily White",
-      title: "HR Director, Global Enterprises Ltd."
-    }
-  ];
-
+  
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      setCurrentTestimonial((prev) => (prev + 1) % allTestimonials.length);
     }, 5000); // Change testimonial every 5 seconds
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, [testimonials.length]);
+  }, []);
+  
+  const testimonial = allTestimonials[currentTestimonial];
   
   return <section id={id} className="section bg-gray-50">
       <div className="container mx-auto text-center">
         <h2 className="section-title text-center">What Our Clients Say</h2>
         
         <div className="max-w-4xl mx-auto">
-          <TestimonialCard testimonial={testimonials[currentTestimonial]} />
+          <TestimonialCard 
+            quote={testimonial.quote}
+            author={testimonial.author}
+            position={testimonial.position}
+            company={testimonial.company}
+          />
         </div>
         
         <div className="mt-12 text-center">
