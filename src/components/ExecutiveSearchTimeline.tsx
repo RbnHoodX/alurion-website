@@ -2,14 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Calendar, Users, Search, ClipboardCheck, FileText, Handshake } from 'lucide-react';
-
 interface TimelineStep {
   week: string;
   title: string;
   description: string[];
   icon: React.ElementType;
 }
-
 const ExecutiveSearchTimeline = () => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -40,7 +38,6 @@ const ExecutiveSearchTimeline = () => {
     description: ["Conduct In-depth Referencing & Background checks", "Offer Negotiations & Candidate Onboarding"],
     icon: Handshake
   }];
-
   useEffect(() => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
@@ -69,36 +66,7 @@ const ExecutiveSearchTimeline = () => {
     };
   }, []);
 
-  return (
-    <div ref={timelineRef} className="relative py-12">
-      <div className="container mx-auto">
-        {timelineSteps.map((step, index) => (
-          <div
-            key={index}
-            ref={(el) => (stepsRef.current[index] = el)}
-            className={`mb-8 ${
-              index === activeStepIndex ? 'opacity-100' : 'opacity-50'
-            }`}
-          >
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
-                <step.icon className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">{step.week}</h3>
-                <h4 className="font-medium mb-2">{step.title}</h4>
-                <ul className="list-disc pl-4 space-y-2">
-                  {step.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  // Add the JSX return statement that was missing
+  return;
 };
-
 export default ExecutiveSearchTimeline;
