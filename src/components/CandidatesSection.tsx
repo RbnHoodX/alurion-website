@@ -1,6 +1,6 @@
 import React from 'react';
 const CandidatesSection = () => {
-  return <section id="candidates" className="section text-white">
+  return <section id="candidates" className="section text-white bg-gray-100">
       <div className="absolute inset-0 bg-white/10"></div>
       <div className="container mx-auto relative z-10 text-center">
         <h2 className="section-title text-alurion-primary text-center">For Candidates</h2>
