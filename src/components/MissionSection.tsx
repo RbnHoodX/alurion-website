@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface MissionSectionProps {
@@ -12,7 +13,7 @@ const MissionSection = ({ id }: MissionSectionProps) => {
         backgroundImage: 'url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80)'
       }}></div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 text-center">
         <div className="max-w-5xl mx-auto">
           <h2 className="section-title text-alurion-primary mb-12 text-center">Our Mission</h2>
           
@@ -24,8 +25,8 @@ const MissionSection = ({ id }: MissionSectionProps) => {
             
             <div className="flex flex-col md:flex-row gap-8 mb-10">
               <div className="flex-1 p-6 bg-white/50 rounded-lg border-t border-l border-white">
-                <h3 className="text-lg font-medium text-alurion-primary mb-3">Elevating Potential</h3>
-                <p className="text-alurion-primary/90">
+                <h3 className="text-lg font-medium text-alurion-primary mb-3 text-center">Elevating Potential</h3>
+                <p className="text-alurion-primary/90 text-center">
                   We elevate potential and empower organizations through
                   tailored talent solutions that span recruitment, leadership development, and organizational
                   effectiveness.
@@ -33,15 +34,15 @@ const MissionSection = ({ id }: MissionSectionProps) => {
               </div>
               
               <div className="flex-1 p-6 bg-white/50 rounded-lg border-t border-l border-white">
-                <h3 className="text-lg font-medium text-alurion-primary mb-3">Building Excellence</h3>
-                <p className="text-alurion-primary/90">
+                <h3 className="text-lg font-medium text-alurion-primary mb-3 text-center">Building Excellence</h3>
+                <p className="text-alurion-primary/90 text-center">
                   As trusted advisors, we partner with clients to cultivate resilient teams, unlock growth,
                   and foster enduring excellence across industries and markets.
                 </p>
               </div>
             </div>
             
-            <p className="text-lg leading-relaxed italic border-l-4 border-alurion-accent pl-6 max-w-3xl mx-auto">
+            <p className="text-lg leading-relaxed italic border-l-4 border-alurion-accent pl-6 max-w-3xl mx-auto text-center">
               "We don't just fill positions—we forge meaningful connections that transform organizations 
               and elevate careers to new heights."
             </p>

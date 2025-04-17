@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import P5Background from './P5Background';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const fullText = "Blending advanced strategy with the art of human connection to deliver talent and HR solutions that shape the future of work";
@@ -17,6 +18,7 @@ const HeroSection = () => {
     }, typingSpeed);
     return () => clearInterval(typingInterval);
   }, []);
+  
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary">
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
       backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
@@ -25,13 +27,11 @@ const HeroSection = () => {
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-alurion-primary">
+        <div className="max-w-5xl mx-auto text-alurion-primary text-center">
           <div className="flex flex-col items-center text-center">
-            {/* Logo Mark */}
-            <svg width="80" height="80" viewBox="0 0 640.01 616.56" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6 text-alurion-primary">
-              <g>
-                <polygon className="fill-alurion-secondary" points="94.63 55.43 640.01 55.43 640.01 0 39.2 0 27.71 0 0 0 0 616.56 55.43 616.56 55.43 94.63 577.36 616.56 640.01 616.56 640.01 187.3 345.11 187.3 405.45 242.73 584.58 242.73 584.58 545.37 94.63 55.43" />
-              </g>
+            {/* New SVG Logo */}
+            <svg width="80" height="80" viewBox="0 0 520 501" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6">
+              <path d="M76.995 45.6265H519.276V0.669922H32.0384H22.7299H0.255859V500.67H45.2039V77.409L468.473 500.67H519.276V152.571H280.127L329.061 197.519H474.319V442.951L76.995 45.6265Z" fill="#1C213C"/>
             </svg>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-alurion-primary leading-tight fade-in">
@@ -62,4 +62,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
