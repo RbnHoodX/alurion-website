@@ -62,7 +62,7 @@ const HomeTeamSection = () => {
           {filteredMembers.map((member, index) => <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 group">
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold mb-1 text-alurion-primary">{member.name}</h3>
-                <p className="text-gray-600 mb-4">{member.position}</p>
+                <p className="text-gray-600 mb-4 min-h-[50px]">{member.position}</p>
                 <button onClick={() => setSelectedMember(member)} className="px-4 py-2 rounded-full bg-alurion-primary/10 text-alurion-primary text-sm font-medium hover:bg-alurion-primary hover:text-white transition-colors">
                   Read Bio
                 </button>
