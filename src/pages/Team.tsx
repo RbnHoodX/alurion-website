@@ -36,14 +36,14 @@ const TeamMemberCard = ({
           <div className="p-6 pb-0 flex justify-center">
             
           </div>
-          <CardContent className="p-6">
+          <CardContent className="p-6 py-[24px]">
             <div className="space-y-3 text-center">
               <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
               <p className="text-alurion-secondary font-medium">{member.title}</p>
               
               <div className="min-h-[130px] overflow-hidden">
                 <div className="prose-sm text-gray-600 space-y-3 pt-2">
-                  <p className="text-left font-light leading-relaxed line-clamp-4">{member.bio[0]}</p>
+                  <p className="font-light leading-relaxed line-clamp-4 text-center">{member.bio[0]}</p>
                 </div>
               </div>
               
