@@ -1,7 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from './ui/button';
 
 interface TestimonialsSectionProps {
   id?: string;
@@ -124,40 +126,83 @@ export const allTestimonials = [
 
 const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const featuredTestimonials = allTestimonials.filter(t => t.featured);
   
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % allTestimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
+  const handlePrevious = () => {
+    setCurrentTestimonial((prev) => 
+      prev === 0 ? featuredTestimonials.length - 1 : prev - 1
+    );
+  };
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
+  const handleNext = () => {
+    setCurrentTestimonial((prev) => 
+      (prev + 1) % featuredTestimonials.length
+    );
+  };
   
-  const testimonial = allTestimonials[currentTestimonial];
-  
-  return <section id={id} className="section bg-gray-50">
-      <div className="container mx-auto text-center">
-        <h2 className="section-title text-center">What Our Clients Say</h2>
+  return (
+    <section id={id} className="section bg-gray-50 py-20">
+      <div className="container mx-auto">
+        <h2 className="section-title text-center mb-16">What Our Clients Say</h2>
         
-        <div className="max-w-4xl mx-auto">
-          <TestimonialCard 
-            quote={allTestimonials[currentTestimonial].quote}
-            author={allTestimonials[currentTestimonial].author}
-            position={allTestimonials[currentTestimonial].position}
-            company={allTestimonials[currentTestimonial].company}
-          />
+        <div className="relative max-w-5xl mx-auto">
+          <div className="flex items-center justify-center gap-8">
+            <button
+              onClick={handlePrevious}
+              className="rounded-full p-4 bg-white shadow-lg hover:bg-gray-50 transition-all"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <div className="flex-1 max-w-3xl">
+              <TestimonialCard 
+                quote={featuredTestimonials[currentTestimonial].quote}
+                author={featuredTestimonials[currentTestimonial].author}
+                position={featuredTestimonials[currentTestimonial].position}
+                company={featuredTestimonials[currentTestimonial].company}
+              />
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="rounded-full p-4 bg-white shadow-lg hover:bg-gray-50 transition-all"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {featuredTestimonials.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === currentTestimonial 
+                    ? 'bg-alurion-primary' 
+                    : 'bg-gray-300'
+                }`}
+                onClick={() => setCurrentTestimonial(index)}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         
         <div className="mt-12 text-center">
-          <Link to="/testimonials" className="inline-flex items-center bg-alurion-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-all">
-            View All Testimonials
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+          <Link to="/testimonials">
+            <Button 
+              variant="default" 
+              className="bg-alurion-primary hover:bg-alurion-primary/90"
+            >
+              View All Testimonials
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default TestimonialsSection;
