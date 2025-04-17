@@ -1,4 +1,7 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 const CandidatesSection = () => {
   return <section id="candidates" className="section text-white bg-gray-50">
       <div className="absolute inset-0 bg-white/10"></div>
@@ -76,12 +79,12 @@ const CandidatesSection = () => {
             </div>
             
             <div className="mt-8 text-center">
-              <a href="#" className="inline-flex items-center text-alurion-primary hover:underline font-medium">
+              <Link to="/candidates" className="inline-flex items-center text-alurion-primary hover:underline font-medium">
                 View All Open Positions
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

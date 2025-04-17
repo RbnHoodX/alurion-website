@@ -20,7 +20,7 @@ const BlogSection = () => {
   }, {
     title: "Building Resilient Teams in Uncertain Times",
     excerpt: "Strategies for developing adaptable and high-performing teams that thrive amidst change and disruption.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "/lovable-uploads/53a345c5-e456-4c61-94d3-b53e144af85f.png",
     date: "March 25, 2025",
     author: "Monica Parodi"
   }, {
