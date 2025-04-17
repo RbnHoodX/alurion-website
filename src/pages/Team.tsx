@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
-import ExecutiveSearchTimeline from '../components/ExecutiveSearchTimeline';
+
 interface TeamMember {
   name: string;
   title: string;
@@ -12,6 +12,7 @@ interface TeamMember {
   bio: string[];
   category: 'managing-partner' | 'team';
 }
+
 const TeamMemberCard = ({
   member
 }: {
@@ -146,6 +147,7 @@ const TeamMemberCard = ({
       </AnimatePresence>
     </>;
 };
+
 const Team = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'managing-partner' | 'team'>('all');
   const teamMembers: TeamMember[] = [{
@@ -202,7 +204,6 @@ const Team = () => {
               </p>
             </div>
             
-            {/* Apple-style Tab Bar */}
             <div className="mx-auto max-w-md mb-12">
               <Tabs defaultValue="all" onValueChange={value => setActiveTab(value as 'all' | 'managing-partner' | 'team')}>
                 <TabsList className="w-full rounded-full bg-alurion-secondary/20 p-1 h-12">
@@ -228,16 +229,9 @@ const Team = () => {
             </div>
           </div>
         </section>
-        
-        {/* Our Approach Section */}
-        
-        
-        {/* Executive Search Timeline Section */}
-        <ExecutiveSearchTimeline />
       </main>
       <Footer />
 
-      {/* Add perspective CSS for flip animation */}
       <style dangerouslySetInnerHTML={{
       __html: `
           .perspective-1000 {
@@ -253,4 +247,5 @@ const Team = () => {
     }} />
     </div>;
 };
+
 export default Team;
