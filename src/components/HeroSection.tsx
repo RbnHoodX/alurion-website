@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const fullText = "Blending advanced strategy with the art of human connection to deliver talent and HR solutions that shape the future of work";
@@ -16,10 +18,15 @@ const HeroSection = () => {
     }, typingSpeed);
     return () => clearInterval(typingInterval);
   }, []);
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary">
-      <div className="absolute inset-0 bg-cover bg-center z-0" style={{
-      backgroundImage: 'url(https://images.unsplash.com/photo-1552581234-26160f608093)'
-    }}></div>
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary">
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1551135049-8a33b5883817)'
+        }}
+      ></div>
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white z-0"></div>
       
       {/* Hero Content */}
@@ -57,6 +64,8 @@ const HeroSection = () => {
           </svg>
         </a>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
