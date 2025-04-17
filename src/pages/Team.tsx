@@ -81,9 +81,7 @@ const TeamMemberCard = ({
             }}>
                   <div className="flex justify-between items-start">
                     <div className="flex gap-6 items-center">
-                      <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-alurion-secondary/30">
-                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                      </div>
+                      
                       <div>
                         <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
                         <p className="text-alurion-secondary">{member.title}</p>
