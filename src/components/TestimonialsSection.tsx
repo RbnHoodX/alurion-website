@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TestimonialsSectionProps {
   id?: string;
@@ -126,73 +124,32 @@ export const allTestimonials = [
 
 const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const featuredTestimonials = allTestimonials.filter(t => t.featured);
   
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % featuredTestimonials.length);
-    }, 5000);
+      setCurrentTestimonial((prev) => (prev + 1) % allTestimonials.length);
+    }, 5000); // Change testimonial every 5 seconds
 
-    return () => clearInterval(intervalId);
-  }, [featuredTestimonials.length]);
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
   
-  const handlePrevious = () => {
-    setCurrentTestimonial((prev) => 
-      prev === 0 ? featuredTestimonials.length - 1 : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentTestimonial((prev) => 
-      (prev + 1) % featuredTestimonials.length
-    );
-  };
+  const testimonial = allTestimonials[currentTestimonial];
   
-  return (
-    <section id={id} className="section bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <h2 className="section-title mb-12">What Our Clients Say</h2>
+  return <section id={id} className="section bg-gray-50">
+      <div className="container mx-auto text-center">
+        <h2 className="section-title text-center">What Our Clients Say</h2>
         
-        <div className="relative max-w-5xl mx-auto">
-          {/* Testimonial Card */}
-          <div className="mb-12">
-            <TestimonialCard 
-              quote={featuredTestimonials[currentTestimonial].quote}
-              author={featuredTestimonials[currentTestimonial].author}
-              position={featuredTestimonials[currentTestimonial].position}
-              company={featuredTestimonials[currentTestimonial].company}
-            />
-          </div>
-          
-          {/* Navigation Buttons */}
-          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
-            <Button 
-              variant="outline"
-              size="icon"
-              onClick={handlePrevious}
-              className="rounded-full bg-white hover:bg-gray-50"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous testimonial</span>
-            </Button>
-            <Button 
-              variant="outline"
-              size="icon"
-              onClick={handleNext}
-              className="rounded-full bg-white hover:bg-gray-50"
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next testimonial</span>
-            </Button>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <TestimonialCard 
+            quote={allTestimonials[currentTestimonial].quote}
+            author={allTestimonials[currentTestimonial].author}
+            position={allTestimonials[currentTestimonial].position}
+            company={allTestimonials[currentTestimonial].company}
+          />
         </div>
         
-        <div className="mt-20 text-center">
-          <Link 
-            to="/testimonials" 
-            onClick={() => window.scrollTo(0, 0)}
-            className="inline-flex items-center bg-alurion-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-all"
-          >
+        <div className="mt-12 text-center">
+          <Link to="/testimonials" className="inline-flex items-center bg-alurion-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-all">
             View All Testimonials
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -200,8 +157,7 @@ const TestimonialsSection = ({ id }: TestimonialsSectionProps) => {
           </Link>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default TestimonialsSection;
