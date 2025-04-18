@@ -27,7 +27,7 @@ const ScrollToTopButton = () => {
     };
   }, []);
   return <>
-      {isVisible && <Button variant="secondary" size="icon" onClick={scrollToTop} aria-label="Scroll to top" className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-alurion-primary/70 text-white hover:bg-alurion-primary">
+      {isVisible && <Button variant="secondary" size="icon" onClick={scrollToTop} aria-label="Scroll to top" className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-alurion-secondary text-white hover:bg-alurion-secondary/90">
           <ArrowUp className="h-5 w-5" />
         </Button>}
     </>;
