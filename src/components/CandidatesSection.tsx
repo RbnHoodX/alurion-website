@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const CandidatesSection = () => {
-  return <section id="candidates" className="section text-white bg-gray-50">
-      <div className="absolute inset-0 bg-white/10"></div>
+  return <section id="candidates" className="section text-white">
+      <div className="absolute inset-0"></div>
       <div className="container mx-auto relative z-10 text-center">
         <h2 className="section-title text-alurion-primary text-center">For Candidates</h2>
         
