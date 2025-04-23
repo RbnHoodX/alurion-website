@@ -13,7 +13,7 @@ const BlogSection = () => {
   const blogPosts: BlogPost[] = [{
     title: "The Future of Work: AI and Human Connection",
     excerpt: "Exploring how artificial intelligence is transforming talent acquisition while maintaining the human touch.",
-    image: "https://images.unsplash.com/photo-1573164574511-73c773193279?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "https://iili.io/3MKHYiX.jpg",
     date: "April 2, 2025",
     author: "Melanie Smith"
   }, {
