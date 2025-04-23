@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
+import { Button } from '../components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TeamMember {
@@ -14,8 +16,11 @@ interface TeamMember {
 }
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const summaryBio = member.bio[0].slice(0, 200) + '...'; // Show first 200 characters
+
   return (
-    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 hover:-translate-y-2">
+    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
       <CardContent className="p-6">
         <div className="space-y-4">
           <div className="text-center">
@@ -24,9 +29,29 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
           </div>
           
           <div className="prose max-w-none text-gray-700">
-            {member.bio.map((paragraph, i) => (
-              <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>
-            ))}
+            {isExpanded ? (
+              <>
+                {member.bio.map((paragraph, i) => (
+                  <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>
+                ))}
+                <Button 
+                  onClick={() => setIsExpanded(false)}
+                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
+                >
+                  Show Less
+                </Button>
+              </>
+            ) : (
+              <>
+                <p className="mb-4 text-sm leading-relaxed">{summaryBio}</p>
+                <Button 
+                  onClick={() => setIsExpanded(true)}
+                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
+                >
+                  Read More
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </CardContent>
