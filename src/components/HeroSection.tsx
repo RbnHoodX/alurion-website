@@ -16,11 +16,10 @@ const HeroSection = () => {
     }, typingSpeed);
     return () => clearInterval(typingInterval);
   }, []);
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alurion-primary">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center z-0" style={{
-        backgroundImage: 'url(/lovable-uploads/d8af8c89-33fc-4dea-8bf4-24bc5bb9fe18.png)'
-      }}></div>
+      backgroundImage: 'url(/lovable-uploads/d8af8c89-33fc-4dea-8bf4-24bc5bb9fe18.png)'
+    }}></div>
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/60 z-0"></div>
       
       {/* Hero Content */}
@@ -58,7 +57,6 @@ const HeroSection = () => {
           </svg>
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default HeroSection;
