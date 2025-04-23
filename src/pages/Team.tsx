@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -6,7 +5,6 @@ import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { Button } from '../components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-
 interface TeamMember {
   name: string;
   title: string;
@@ -14,13 +12,15 @@ interface TeamMember {
   bio: string[];
   category: 'managing-partner' | 'team';
 }
-
-const TeamMemberCard = ({ member }: { member: TeamMember }) => {
+const TeamMemberCard = ({
+  member
+}: {
+  member: TeamMember;
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const summaryBio = member.bio[0].slice(0, 200) + '...'; // Show first 200 characters
 
-  return (
-    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+  return <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
       <CardContent className="p-6">
         <div className="space-y-4">
           <div className="text-center">
@@ -28,37 +28,23 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             <p className="text-alurion-secondary font-medium">{member.title}</p>
           </div>
           
-          <div className="prose max-w-none text-gray-700">
-            {isExpanded ? (
-              <>
-                {member.bio.map((paragraph, i) => (
-                  <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>
-                ))}
-                <Button 
-                  onClick={() => setIsExpanded(false)}
-                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
-                >
+          <div className="prose max-w-none text-gray-700 text-center">
+            {isExpanded ? <>
+                {member.bio.map((paragraph, i) => <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>)}
+                <Button onClick={() => setIsExpanded(false)} className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90">
                   Show Less
                 </Button>
-              </>
-            ) : (
-              <>
+              </> : <>
                 <p className="mb-4 text-sm leading-relaxed">{summaryBio}</p>
-                <Button 
-                  onClick={() => setIsExpanded(true)}
-                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
-                >
+                <Button onClick={() => setIsExpanded(true)} className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90">
                   Read More
                 </Button>
-              </>
-            )}
+              </>}
           </div>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
-
 const Team = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'managing-partner' | 'team'>('all');
   const teamMembers: TeamMember[] = [{
@@ -132,13 +118,11 @@ const Team = () => {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {filteredMembers.map((member, index) => (
-                <div key={member.name} className="animate-fade-in" style={{
-                  animationDelay: `${index * 150}ms`
-                }}>
+              {filteredMembers.map((member, index) => <div key={member.name} className="animate-fade-in" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <TeamMemberCard member={member} />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -146,5 +130,4 @@ const Team = () => {
       <Footer />
     </div>;
 };
-
 export default Team;
