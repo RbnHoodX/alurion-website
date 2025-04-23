@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 interface BlogPost {
   title: string;
   excerpt: string;
@@ -7,6 +8,7 @@ interface BlogPost {
   date: string;
   author: string;
 }
+
 const BlogSection = () => {
   const blogPosts: BlogPost[] = [{
     title: "The Future of Work: AI and Human Connection",
@@ -23,10 +25,11 @@ const BlogSection = () => {
   }, {
     title: "The Strategic Value of Talent Mapping",
     excerpt: "How proactive talent intelligence gives organizations a competitive edge in securing top performers.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "https://iili.io/3MFDXxn.jpg",
     date: "March 18, 2025",
     author: "Steve Palek"
   }];
+
   return <section id="blog" className="section bg-white">
       <div className="container mx-auto text-center">
         <h2 className="section-title text-center">Latest Blogs</h2>
@@ -59,4 +62,5 @@ const BlogSection = () => {
       </div>
     </section>;
 };
+
 export default BlogSection;
