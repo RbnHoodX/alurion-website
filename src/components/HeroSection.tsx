@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const fullText = "Blending advanced strategy with the art of human connection to deliver talent and HR solutions that shape the future of work";
@@ -16,10 +18,18 @@ const HeroSection = () => {
     }, typingSpeed);
     return () => clearInterval(typingInterval);
   }, []);
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center z-0" style={{
-      backgroundImage: 'url(/lovable-uploads/e068e2c2-c16a-448d-b3cd-e5ff412b2f99.png)'
-    }}></div>
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with proper absolute path */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{
+          backgroundImage: "url('/lovable-uploads/e068e2c2-c16a-448d-b3cd-e5ff412b2f99.png')"
+        }}
+      ></div>
+      
+      {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/60 z-0"></div>
       
       {/* Hero Content */}
@@ -57,6 +67,8 @@ const HeroSection = () => {
           </svg>
         </a>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
