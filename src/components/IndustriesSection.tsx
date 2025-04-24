@@ -124,7 +124,7 @@ const IndustriesSection = () => {
             <DialogTitle className="text-2xl font-bold text-alurion-primary">All Industries</DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {industries.map((industry, index) => <Card key={index} className="bg-alurion-secondary/80 backdrop-blur-sm">
+            {industries.map((industry, index) => <Card key={index} className="bg-alurion-secondary/50 backdrop-blur-sm">
                 <CardContent className="flex flex-col p-6">
                   <Building className="h-6 w-6 text-alurion-primary mb-2" />
                   <span className="text-alurion-primary font-medium">{industry}</span>
