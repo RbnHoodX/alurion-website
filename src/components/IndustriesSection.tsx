@@ -121,13 +121,13 @@ const IndustriesSection = () => {
       <Dialog open={industriesModalOpen} onOpenChange={setIndustriesModalOpen}>
         <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-alurion-secondary">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-alurion-primary">All Industries</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-alurion-secondary">All Industries</DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {industries.map((industry, index) => <Card key={index} className="bg-alurion-secondary/50 backdrop-blur-sm">
+            {industries.map((industry, index) => <Card key={index} className="bg-alurion-primary/80 backdrop-blur-sm">
                 <CardContent className="flex flex-col p-6">
-                  <Building className="h-6 w-6 text-alurion-primary mb-2" />
-                  <span className="text-alurion-primary font-medium">{industry}</span>
+                  <Building className="h-6 w-6 text-alurion-secondary mb-2" />
+                  <span className="text-alurion-secondary font-medium">{industry}</span>
                 </CardContent>
               </Card>)}
           </div>
