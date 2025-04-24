@@ -20,31 +20,31 @@ const HomeTeamSection = () => {
     position: "Founder & CEO, Human Capital Strategy Consultant",
     bio: "Melanie Smith is a transformative Human Capital strategist with a proven track record of unlocking the full potential of an organization's most valuable asset—its people. With deep expertise in diagnosing systemic talent challenges, Mel designs and implements people-first strategies that accelerate performance, empower leadership, and align seamlessly with business objectives. Her work is especially impactful during periods of high-stakes change, including mergers and acquisitions, global expansion, and digital transformation driven by AI.",
     category: "managing-partner",
-    image: "/lovable-uploads/melanieheadshot.jpg"
+    image: "https://iili.io/3McX8Ol.md.jpg"
   }, {
     name: "Monica Parodi",
     position: "Managing Partner, Chief Talent Officer",
     bio: "Monica Parodi is a globally recognized authority in talent acquisition and human capital strategy, known for building high-performance recruitment engines that scale with business growth. As Managing Partner, Monica leads the development of Alurion's next-generation recruitment services and consults across the full talent lifecycle—from workforce planning to executive search.",
     category: "managing-partner",
-    image: "/lovable-uploads/MParodi.jpeg"
+    image: "https://iili.io/3McjJQS.jpg"
   }, {
     name: "Steve Palek",
     position: "Chief Revenue Officer",
     bio: "Steve Palek is a growth strategist and revenue architect with over two decades of experience driving transformational business development. As Chief Revenue Officer at Alurion, Steve leads go-to-market strategy, sales transformation consulting, and client growth initiatives that deliver measurable ROI.",
     category: "team",
-    image: "/lovable-uploads/Palek headshot.jpeg"
+    image: "https://iili.io/3Mce3Dx.md.jpg"
   }, {
     name: "Chessa Keimig",
     position: "Director, Talent Operations & Delivery",
     bio: "Chessa Keimig brings operational excellence to the forefront of talent strategy. With a strong background in project management and talent operations, Chessa ensures seamless execution of complex initiatives that drive scalable, sustainable results.",
     category: "team",
-    image: "/lovable-uploads/Chessa.png"
+    image: "https://iili.io/3McWewB.png"
   }, {
     name: "Neetu Khosla",
     position: "Director, Sourcing & Market Research",
     bio: "Neetu Khosla is a trusted executive search leader with a sharp instinct for identifying transformative talent. With 18 years of experience across industries and geographies, Neetu has built high-performing leadership teams for startups, mid-market firms, and global enterprises.",
     category: "team",
-    image: "/lovable-uploads/Neetu.png"
+    image: "https://iili.io/3McwdAv.md.png"
   }];
 
   const filteredMembers = activeTab === 'all' ? teamMembers : teamMembers.filter(member => member.category === activeTab);
