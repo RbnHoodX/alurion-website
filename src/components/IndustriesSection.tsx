@@ -135,15 +135,15 @@ const IndustriesSection = () => {
       </Dialog>
 
       <Dialog open={functionsModalOpen} onOpenChange={setFunctionsModalOpen}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-alurion-primary">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-alurion-primary">All Functions</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-alurion-secondary">All Functions</DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {functions.map((func, index) => <Card key={index} className="bg-white/10 backdrop-blur-sm">
+            {functions.map((func, index) => <Card key={index} className="bg-alurion-primary/80 backdrop-blur-sm">
                 <CardContent className="flex flex-col p-6">
-                  <Briefcase className="h-6 w-6 text-alurion-primary mb-2" />
-                  <span className="text-alurion-primary font-medium">{func}</span>
+                  <Briefcase className="h-6 w-6 text-alurion-secondary mb-2" />
+                  <span className="text-alurion-secondary font-medium">{func}</span>
                 </CardContent>
               </Card>)}
           </div>
