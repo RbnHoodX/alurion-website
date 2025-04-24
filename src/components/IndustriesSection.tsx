@@ -119,7 +119,7 @@ const IndustriesSection = () => {
       </div>
 
       <Dialog open={industriesModalOpen} onOpenChange={setIndustriesModalOpen}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-alurion-secondary">
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-alurion-primary">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-alurion-secondary">All Industries</DialogTitle>
           </DialogHeader>
