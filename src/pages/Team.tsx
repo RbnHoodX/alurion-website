@@ -19,32 +19,53 @@ const TeamMemberCard = ({
   member: TeamMember;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const summaryBio = member.bio[0].slice(0, 200) + '...'; // Show first 200 characters
+  const summaryBio = member.bio[0].slice(0, 200) + '...';
 
-  return <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+  return (
+    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
       <CardContent className="p-6">
         <div className="space-y-4">
-          <div className="text-center">
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <h3 className="text-2xl font-bold text-alurion-primary">{member.name}</h3>
             <p className="text-alurion-secondary font-medium">{member.title}</p>
           </div>
           
           <div className="prose max-w-none text-gray-700 text-center">
-            {isExpanded ? <>
-                {member.bio.map((paragraph, i) => <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>)}
-                <Button onClick={() => setIsExpanded(false)} className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90">
+            {isExpanded ? (
+              <>
+                {member.bio.map((paragraph, i) => (
+                  <p key={i} className="mb-4 text-sm leading-relaxed">{paragraph}</p>
+                ))}
+                <Button 
+                  onClick={() => setIsExpanded(false)} 
+                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
+                >
                   Show Less
                 </Button>
-              </> : <>
+              </>
+            ) : (
+              <>
                 <p className="mb-4 text-sm leading-relaxed">{summaryBio}</p>
-                <Button onClick={() => setIsExpanded(true)} className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90">
+                <Button 
+                  onClick={() => setIsExpanded(true)} 
+                  className="mt-4 bg-alurion-primary text-white hover:bg-alurion-primary/90"
+                >
                   Read More
                 </Button>
-              </>}
+              </>
+            )}
           </div>
         </div>
       </CardContent>
-    </Card>;
+    </Card>
+  );
 };
 
 const Team = () => {
@@ -82,6 +103,7 @@ const Team = () => {
   }];
 
   const filteredMembers = activeTab === 'all' ? teamMembers : teamMembers.filter(member => member.category === activeTab);
+
   return <div className="min-h-screen bg-gradient-to-b from-alurion-primary to-alurion-primary/90">
       <Navigation />
       <main>
