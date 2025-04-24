@@ -44,7 +44,7 @@ const HomeTeamSection = () => {
       "Steve is also the founder of Auxilia, a donor management platform for nonprofits, where he drives innovation and impact through technology. His work consistently bridges strategy and execution to accelerate business success."
     ],
     category: "team",
-    image: "https://iili.io/3Mce3Dx.md.jpg"
+    image: "https://iili.io/3M1DR2t.md.jpg"
   }, {
     name: "Chessa Keimig",
     position: "Director, Talent Operations & Delivery",

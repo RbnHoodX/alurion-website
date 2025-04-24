@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -85,7 +86,7 @@ const Team = () => {
   }, {
     name: "Steve Palek",
     title: "Chief Revenue Officer",
-    image: "https://iili.io/3Mce3Dx.md.jpg",
+    image: "https://iili.io/3M1DR2t.md.jpg",
     bio: ["Steve Palek is a growth strategist and revenue architect with over two decades of experience driving transformational business development. As Chief Revenue Officer at Alurion, Steve leads go-to-market strategy, sales transformation consulting, and client growth initiatives that deliver measurable ROI.", "Steve's leadership has fueled sustained growth across multiple industries. As Chief Sales Officer and Partner at Asurint, he led the company through eight consecutive years of 25%+ growth and played a pivotal role in securing private equity investment. At ADP, he revitalized underperforming markets and expanded national operations, while at USIS, he contributed to the $250M acquisition of HireRight.", "Steve is also the founder of Auxilia, a donor management platform for nonprofits, where he drives innovation and impact through technology. His work consistently bridges strategy and execution to accelerate business success."],
     category: "team"
   }, {
