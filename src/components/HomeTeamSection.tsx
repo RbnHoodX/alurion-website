@@ -1,47 +1,61 @@
+
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Link } from 'react-router-dom';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
+
 interface TeamMember {
   name: string;
   position: string;
   bio: string;
   category: 'managing-partner' | 'team';
+  image: string;
 }
+
 const HomeTeamSection = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'managing-partner' | 'team'>('all');
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  
   const teamMembers: TeamMember[] = [{
     name: "Melanie \"Mel\" Smith",
     position: "Founder & CEO, Human Capital Strategy Consultant",
     bio: "Melanie Smith is a transformative Human Capital strategist with a proven track record of unlocking the full potential of an organization's most valuable asset—its people. With deep expertise in diagnosing systemic talent challenges, Mel designs and implements people-first strategies that accelerate performance, empower leadership, and align seamlessly with business objectives. Her work is especially impactful during periods of high-stakes change, including mergers and acquisitions, global expansion, and digital transformation driven by AI.",
-    category: "managing-partner"
+    category: "managing-partner",
+    image: "/lovable-uploads/c43b39e3-77d3-4165-a309-1180b289a119.png"
   }, {
     name: "Monica Parodi",
     position: "Managing Partner, Chief Talent Officer",
     bio: "Monica Parodi is a globally recognized authority in talent acquisition and human capital strategy, known for building high-performance recruitment engines that scale with business growth. As Managing Partner, Monica leads the development of Alurion's next-generation recruitment services and consults across the full talent lifecycle—from workforce planning to executive search.",
-    category: "managing-partner"
+    category: "managing-partner",
+    image: "/lovable-uploads/17f02bfe-91c6-44df-b215-7c9ade9c832d.png"
   }, {
     name: "Steve Palek",
     position: "Chief Revenue Officer",
     bio: "Steve Palek is a growth strategist and revenue architect with over two decades of experience driving transformational business development. As Chief Revenue Officer at Alurion, Steve leads go-to-market strategy, sales transformation consulting, and client growth initiatives that deliver measurable ROI.",
-    category: "team"
+    category: "team",
+    image: "/lovable-uploads/e1a14570-5683-423a-a5dd-2b038c361744.png"
   }, {
     name: "Chessa Keimig",
     position: "Director, Talent Operations & Delivery",
     bio: "Chessa Keimig brings operational excellence to the forefront of talent strategy. With a strong background in project management and talent operations, Chessa ensures seamless execution of complex initiatives that drive scalable, sustainable results.",
-    category: "team"
+    category: "team",
+    image: "/lovable-uploads/4d94e85d-1632-494a-b609-4728cd12f4c9.png"
   }, {
     name: "Neetu Khosla",
     position: "Director, Sourcing & Market Research",
     bio: "Neetu Khosla is a trusted executive search leader with a sharp instinct for identifying transformative talent. With 18 years of experience across industries and geographies, Neetu has built high-performing leadership teams for startups, mid-market firms, and global enterprises.",
-    category: "team"
+    category: "team",
+    image: "/lovable-uploads/271ac591-1d64-4ee6-b89d-55a875eb3e58.png"
   }];
+
   const filteredMembers = activeTab === 'all' ? teamMembers : teamMembers.filter(member => member.category === activeTab);
-  return <section id="team" className="section bg-gray-50">
+
+  return (
+    <section id="team" className="section bg-gray-50">
       <div className="container mx-auto text-center">
         <h2 className="section-title text-center">Meet the Team</h2>
         
-        {/* Apple-style Tab Bar */}
         <div className="flex justify-center mb-8">
           <Tabs value={activeTab} onValueChange={value => setActiveTab(value as 'all' | 'managing-partner' | 'team')} className="w-full max-w-md">
             <TabsList className="w-full rounded-full bg-alurion-secondary/20 p-1 h-12">
@@ -59,7 +73,11 @@ const HomeTeamSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredMembers.map((member, index) => <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 group">
+          {filteredMembers.map((member, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 group">
+              <div className="relative aspect-square overflow-hidden">
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+              </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold mb-1 text-alurion-primary">{member.name}</h3>
                 <p className="text-gray-600 mb-4 min-h-[50px]">{member.position}</p>
@@ -67,7 +85,8 @@ const HomeTeamSection = () => {
                   Read Bio
                 </button>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         <div className="mt-8 text-center">
@@ -78,29 +97,30 @@ const HomeTeamSection = () => {
             </svg>
           </Link>
         </div>
-      </div>
-      
-      {/* Bio Modal */}
-      {selectedMember && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-start">
+
+        <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
+          <DialogContent className="max-w-4xl">
+            {selectedMember && (
+              <div className="grid md:grid-cols-[300px,1fr] gap-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-alurion-secondary">{selectedMember.name}</h2>
-                  <p className="text-gray-600 mb-4">{selectedMember.position}</p>
+                  <img 
+                    src={selectedMember.image} 
+                    alt={selectedMember.name} 
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
-                <button onClick={() => setSelectedMember(null)} className="text-gray-500 hover:text-gray-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                <div>
+                  <h2 className="text-2xl font-bold text-alurion-primary mb-2">{selectedMember.name}</h2>
+                  <p className="text-gray-600 mb-4">{selectedMember.position}</p>
+                  <p className="text-gray-700">{selectedMember.bio}</p>
+                </div>
               </div>
-              <div className="mt-4">
-                <p className="text-gray-700 whitespace-pre-line">{selectedMember.bio}</p>
-              </div>
-            </div>
-          </div>
-        </div>}
-    </section>;
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+    </section>
+  );
 };
+
 export default HomeTeamSection;

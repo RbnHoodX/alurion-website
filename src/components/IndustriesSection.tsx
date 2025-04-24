@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Briefcase, ArrowLeft, ArrowRight } from 'lucide-react';
@@ -12,6 +11,9 @@ const IndustriesSection = () => {
   const industries = ["Life Sciences & Healthcare", "Technology & AI", "Genetics", "Manufacturing", "Software / SAAS", "Hospitality & Tourism", "Retail", "Journalism", "Professional Services", "Finance", "Sales", "Real Estate", "Consumer Packaged Goods", "Media", "Advertising", "HR Services", "Games", "Insurance"];
   const functions = ["Sales", "Technology", "Product", "Design", "Marketing", "Advertising", "Strategy", "HR", "Finance", "Legal", "Operations", "Clinician", "Real Estate Development", "Commercial", "Communications", "Governance", "Journalism", "Food & Beverage"];
   
+  const [industriesModalOpen, setIndustriesModalOpen] = React.useState(false);
+  const [functionsModalOpen, setFunctionsModalOpen] = React.useState(false);
+
   const [industriesCarouselRef, industriesCarouselApi] = useEmblaCarousel({
     loop: true,
     dragFree: true
@@ -36,7 +38,6 @@ const IndustriesSection = () => {
 
   return (
     <section id="industries" className="section bg-alurion-primary relative">
-      {/* Background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{
         backgroundImage: 'url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80)'
       }}></div>
@@ -49,11 +50,13 @@ const IndustriesSection = () => {
           <div>
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-alurion-secondary">Industry Experience</h3>
-              <Link to="/industries">
-                <Button variant="outline" className="text-alurion-primary border-alurion-secondary bg-alurion-secondary hover:bg-alurion-secondary/90">
-                  View All
-                </Button>
-              </Link>
+              <Button 
+                variant="outline" 
+                className="text-alurion-primary border-alurion-secondary bg-alurion-secondary hover:bg-alurion-secondary/90"
+                onClick={() => setIndustriesModalOpen(true)}
+              >
+                View All
+              </Button>
             </div>
             <p className="text-gray-200 mb-8 max-w-2xl">
               Within these industries, we are able to prepare your workforce for a change in control, for AI and
@@ -100,11 +103,13 @@ const IndustriesSection = () => {
           <div>
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-alurion-secondary">Functions We've Recruited For</h3>
-              <Link to="/industries">
-                <Button variant="outline" className="text-alurion-primary border-alurion-secondary bg-alurion-secondary hover:bg-alurion-secondary/90">
-                  View All
-                </Button>
-              </Link>
+              <Button 
+                variant="outline" 
+                className="text-alurion-primary border-alurion-secondary bg-alurion-secondary hover:bg-alurion-secondary/90"
+                onClick={() => setFunctionsModalOpen(true)}
+              >
+                View All
+              </Button>
             </div>
             <p className="text-gray-200 mb-8 max-w-2xl">
               Our expertise spans across various functional areas, ensuring we find the right talent for specialized roles.
@@ -148,6 +153,42 @@ const IndustriesSection = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={industriesModalOpen} onOpenChange={setIndustriesModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-alurion-primary">All Industries</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {industries.map((industry, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm">
+                <CardContent className="flex flex-col p-6">
+                  <Building className="h-6 w-6 text-alurion-primary mb-2" />
+                  <span className="text-alurion-primary font-medium">{industry}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={functionsModalOpen} onOpenChange={setFunctionsModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-alurion-primary">All Functions</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {functions.map((func, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm">
+                <CardContent className="flex flex-col p-6">
+                  <Briefcase className="h-6 w-6 text-alurion-primary mb-2" />
+                  <span className="text-alurion-primary font-medium">{func}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
