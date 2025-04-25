@@ -24,7 +24,7 @@ const HomeTeamSection = () => {
       "Mel is a certified Talent Strategist and Coach through the Human Capital Institute and holds certifications in the full suite of TalentTelligent solutions. Her work has earned multiple industry accolades for driving measurable, sustainable impact."
     ],
     category: "managing-partner",
-    image: "https://iili.io/3MmjoCJ.jpg"
+    image: "https://iili.io/3MmbskB.jpg"
   }, {
     name: "Monica Parodi",
     position: "Managing Partner, Chief Talent Officer",
