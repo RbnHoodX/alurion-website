@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -74,13 +73,13 @@ const Team = () => {
   const teamMembers: TeamMember[] = [{
     name: "Melanie \"Mel\" Smith",
     title: "Founder & CEO, Human Capital Strategy Consultant",
-    image: "https://iili.io/3McX8Ol.md.jpg",
+    image: "https://iili.io/3MmjoCJ.jpg",
     bio: ["Melanie Smith is a transformative Human Capital strategist with a proven track record of unlocking the full potential of an organization's most valuable asset—its people. With deep expertise in diagnosing systemic talent challenges, Mel designs and implements people-first strategies that accelerate performance, empower leadership, and align seamlessly with business objectives. Her work is especially impactful during periods of high-stakes change, including mergers and acquisitions, global expansion, and digital transformation driven by AI.", "Mel's executive HR leadership spans Fortune 500 companies and high-growth innovators alike, including UnitedHealth Group, ADP, 3M, Target, Savvy Sherpa/Optum Labs, and DiaMedica. Her ability to adapt across industries is rooted in a strong HR Generalist foundation and a commitment to human-centered design.", "Mel is a certified Talent Strategist and Coach through the Human Capital Institute and holds certifications in the full suite of TalentTelligent solutions. Her work has earned multiple industry accolades for driving measurable, sustainable impact."],
     category: "managing-partner"
   }, {
     name: "Monica Parodi",
     title: "Managing Partner, Chief Talent Officer",
-    image: "https://iili.io/3McjJQS.jpg",
+    image: "https://iili.io/3MmhL22.jpg",
     bio: ["Monica Parodi is a globally recognized authority in talent acquisition and human capital strategy, known for building high-performance recruitment engines that scale with business growth. As Managing Partner, Monica leads the development of Alurion's next-generation recruitment services and consults across the full talent lifecycle—from workforce planning to executive search.", "With over two decades of experience, Monica has led transformative talent initiatives at iconic brands including The New York Times and Hilton, where she served as Vice President of Talent Acquisition and Head of Global Executive Recruitment, respectively. She also founded and scaled her own search firm, helping clients like Build-A-Bear Workshop grow from startup to global brand.", "Monica's leadership is defined by innovation, agility, and a relentless focus on aligning talent strategies with business outcomes."],
     category: "managing-partner"
   }, {

@@ -24,7 +24,7 @@ const HomeTeamSection = () => {
       "Mel is a certified Talent Strategist and Coach through the Human Capital Institute and holds certifications in the full suite of TalentTelligent solutions. Her work has earned multiple industry accolades for driving measurable, sustainable impact."
     ],
     category: "managing-partner",
-    image: "https://iili.io/3McX8Ol.md.jpg"
+    image: "https://iili.io/3MmjoCJ.jpg"
   }, {
     name: "Monica Parodi",
     position: "Managing Partner, Chief Talent Officer",
@@ -34,7 +34,7 @@ const HomeTeamSection = () => {
       "Monica's leadership is defined by innovation, agility, and a relentless focus on aligning talent strategies with business outcomes."
     ],
     category: "managing-partner",
-    image: "https://iili.io/3McjJQS.jpg"
+    image: "https://iili.io/3MmhL22.jpg"
   }, {
     name: "Steve Palek",
     position: "Chief Revenue Officer",
