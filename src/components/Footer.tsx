@@ -1,21 +1,38 @@
-import React from 'react';
+import React from "react";
 const Footer = () => {
-  return <footer className="bg-alurion-primary text-white relative">
+  return (
+    <footer className="bg-alurion-primary text-white relative">
       <div className="absolute inset-0 pattern-bg-light opacity-10"></div>
       <div className="container mx-auto py-16 px-4 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="space-y-6">
-            <div className="flex items-center">
-              <svg width="180" height="90" viewBox="0 0 995.32 504.62" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-2">
+          <div className="relative space-y-6">
+            {/* Logo */}
+            <div className="flex items-center justify-center mt-12">
+              <svg
+                width="180"
+                height="90"
+                viewBox="0 0 995.32 504.62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mb-2"
+              >
                 <g id="Layer_1-2" data-name="Layer 1">
                   <g>
-                    <polygon className="fill-alurion-accent" points="422.48 18.49 604.4 18.49 604.4 0 403.99 0 400.16 0 390.92 0 390.92 205.67 409.4 205.67 409.4 31.56 583.51 205.67 604.4 205.67 604.4 62.48 506.04 62.48 526.16 80.97 585.91 80.97 585.91 181.92 422.48 18.49" />
+                    <polygon
+                      className="fill-alurion-accent"
+                      points="422.48 18.49 604.4 18.49 604.4 0 403.99 0 400.16 0 390.92 0 390.92 205.67 409.4 205.67 409.4 31.56 583.51 205.67 604.4 205.67 604.4 62.48 506.04 62.48 526.16 80.97 585.91 80.97 585.91 181.92 422.48 18.49"
+                    />
                     <g className="fill-alurion-accent">
                       <path d="M0,426.24l49.88-115.44h18.17l51.67,115.44h-19.95l-13.18-29.75h-54.16l-12.83,29.75H0ZM38.84,379.74h41.69l-21.38-47.74-20.31,47.74Z" />
                       <polygon points="172.63 311.69 191.15 311.69 191.15 409.31 258.14 409.31 258.14 426.24 172.63 426.24 172.63 311.69" />
                       <path d="M308.02,311.69h18.52v59.68c0,6.65,1.28,12.95,3.83,18.89,2.55,5.94,6.35,10.75,11.4,14.43,5.04,3.69,11.01,5.52,17.9,5.52s12.86-1.84,17.91-5.52c5.04-3.68,8.85-8.52,11.4-14.52,2.55-6,3.83-12.26,3.83-18.8v-59.68h18.52v59.68c0,9.74-2.02,18.97-6.06,27.7-4.04,8.73-9.97,15.83-17.81,21.29-7.84,5.46-17.1,8.2-27.79,8.2s-19.95-2.73-27.79-8.2c-7.84-5.46-13.78-12.56-17.81-21.29-4.04-8.73-6.06-17.96-6.06-27.7v-59.68Z" />
                       <path d="M474.05,426.24v-114.55h78.56c6.65,0,12.32,1.49,17.01,4.46,4.69,2.97,8.25,6.95,10.69,11.93,2.43,4.99,3.65,10.51,3.65,16.57,0,8.79-2.32,16.24-6.95,22.36-4.63,6.12-11.52,9.53-20.67,10.24h-2.31l28.33,48.99h-20.66l-28.15-48.81h-40.98v48.81h-18.52ZM492.58,360.32h60.04c4.39,0,7.63-1.42,9.71-4.28,2.08-2.85,3.12-6.59,3.12-11.22s-1.1-8.34-3.29-11.49c-2.2-3.14-5.38-4.72-9.53-4.72h-60.04v31.71Z" />
-                      <rect x="642.23" y="311.69" width="18.52" height="114.55" />
+                      <rect
+                        x="642.23"
+                        y="311.69"
+                        width="18.52"
+                        height="114.55"
+                      />
                       <path d="M773.88,309.37c11.52,0,21.52,2.76,30.02,8.28,8.49,5.52,14.99,12.83,19.51,21.91,4.52,9.09,6.77,18.92,6.77,29.48s-2.26,20.22-6.77,29.31c-4.51,9.09-11.02,16.39-19.51,21.91-8.49,5.52-18.5,8.28-30.02,8.28s-21.35-2.76-29.84-8.28c-8.49-5.52-14.96-12.83-19.42-21.91-4.46-9.08-6.68-18.85-6.68-29.31s2.23-20.25,6.68-29.39c4.45-9.14,10.92-16.48,19.42-22,8.49-5.52,18.44-8.28,29.84-8.28M773.88,327.37c-7.48,0-13.96,1.96-19.42,5.88-5.46,3.92-9.62,9.06-12.47,15.41-2.85,6.35-4.28,13.09-4.28,20.22s1.42,13.84,4.28,20.13c2.85,6.3,7.01,11.4,12.47,15.32,5.46,3.92,11.94,5.88,19.42,5.88s14.01-1.93,19.6-5.79c5.58-3.86,9.83-8.93,12.74-15.23,2.91-6.3,4.36-13.01,4.36-20.13s-1.46-14.04-4.36-20.4c-2.91-6.35-7.13-11.49-12.65-15.41-5.52-3.92-12.09-5.88-19.69-5.88" />
                       <polygon points="887.54 311.69 905 311.69 976.79 396.84 976.79 311.69 995.32 311.69 995.32 426.24 977.86 426.24 906.06 340.9 906.06 426.24 887.54 426.24 887.54 311.69" />
                     </g>
@@ -36,25 +53,65 @@ const Footer = () => {
                 </g>
               </svg>
             </div>
-            <p className="text-sm text-gray-300">
+            {/* <p className="text-sm text-gray-300">
               A beacon of sophistication and trusted excellence in executive recruiting 
               and workforce planning.
-            </p>
-            <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-300 hover:text-alurion-accent transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            </p> */}
+            {/* social icons */}
+            <div className="flex items-center justify-center space-x-4 pt-2 mb-2">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-alurion-accent transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="#" className="text-gray-300 hover:text-alurion-accent transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-alurion-accent transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                 </svg>
               </a>
-              <a href="#" className="text-gray-300 hover:text-alurion-accent transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-alurion-accent transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -62,66 +119,203 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">Company</h3>
+            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
+              Company
+            </h3>
             <ul className="space-y-3">
-              <li><a href="/mission" className="text-gray-300 hover:text-white transition-colors">Mission</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/values" className="text-gray-300 hover:text-white transition-colors">Values</a></li>
-              <li><a href="/team" className="text-gray-300 hover:text-white transition-colors">Meet the Team</a></li>
-              <li><a href="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li>
+                <a
+                  href="/mission"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Mission
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/values"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Values
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/team"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Meet the Team
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">Solutions</h3>
+            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
+              Solutions
+            </h3>
             <ul className="space-y-3">
-              <li><a href="/solutions" className="text-gray-300 hover:text-white transition-colors">Retained Search</a></li>
-              <li><a href="/solutions" className="text-gray-300 hover:text-white transition-colors">RPO</a></li>
-              <li><a href="/solutions" className="text-gray-300 hover:text-white transition-colors">Fractional HR</a></li>
-              <li><a href="/solutions" className="text-gray-300 hover:text-white transition-colors">Consulting</a></li>
-              <li><a href="/solutions" className="text-gray-300 hover:text-white transition-colors">Board Advisory</a></li>
+              <li>
+                <a
+                  href="/solutions"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Retained Search
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/solutions"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  RPO
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/solutions"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Fractional HR
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/solutions"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Consulting
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/solutions"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Board Advisory
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">Contact</h3>
+            <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
+              Contact
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-alurion-accent mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-alurion-accent mr-3 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
                 <span className="text-gray-300">info@aluriontalent.com</span>
               </li>
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-alurion-accent mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-alurion-accent mr-3 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
                 <span className="text-gray-300">(555) 123-4567</span>
               </li>
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-alurion-accent mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-alurion-accent mr-3 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
-                <span className="text-gray-300">123 Business Avenue<br />Minneapolis, MN 55401</span>
+                <span className="text-gray-300">
+                  123 Business Avenue
+                  <br />
+                  Minneapolis, MN 55401
+                </span>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-700/50 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Alurion Talent Group. All rights reserved.</p>
+            <p className="text-sm text-gray-400">
+              &copy; {new Date().getFullYear()} Alurion Talent Group. All rights
+              reserved.
+            </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Terms of Service
+              </a>
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Cookie Policy
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 export default Footer;
