@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface BlogPost {
@@ -151,6 +151,8 @@ And see the full picture: products, people, and possibilities.`,
     },
   ];
 
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
   return (
     <section id="blog" className="section bg-white">
       <div className="container mx-auto text-center">
@@ -181,12 +183,12 @@ And see the full picture: products, people, and possibilities.`,
                 </h3>
                 <p className="text-gray-600 mb-4 text-center">{post.excerpt}</p>
                 <div className="text-center">
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => setSelectedPost(post)}
                     className="text-alurion-primary font-medium hover:underline"
                   >
                     Read More
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -213,6 +215,51 @@ And see the full picture: products, people, and possibilities.`,
           </Link>
         </div>
       </div>
+      {/* Modal for displaying full blog content */}
+      {selectedPost && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 w-full flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[80vh] my-8 overflow-y-auto p-6 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedPost(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              ✕
+            </button>
+
+            {/* Blog Title */}
+            <h3 className="text-2xl font-bold mb-4 text-alurion-primary">
+              {selectedPost.title}
+            </h3>
+
+            {/* Blog Image */}
+            <img
+              src={selectedPost.image}
+              alt={selectedPost.title}
+              className="w-full h-100 object-cover rounded-lg mb-4"
+            />
+
+            {/* Blog Content */}
+            <div className="prose prose-lg text-gray-700 max-w-none scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+              {selectedPost.content.split("\n\n").map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {/* Close Button at the Bottom */}
+            <div className="text-right mt-6">
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="text-alurion-primary font-medium hover:underline"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
