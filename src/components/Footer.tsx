@@ -60,7 +60,7 @@ const Footer = () => {
             {/* social icons */}
             <div className="flex items-center justify-center space-x-4 pt-2 mb-2">
               <a
-                href="#"
+                href="https://linkedin.com"
                 className="text-gray-300 hover:text-alurion-accent transition-colors"
               >
                 <svg
@@ -120,14 +120,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Company
             </h3>
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/mission"
+                  href="#mission"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Mission
@@ -143,7 +143,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/values"
+                  href="#values"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Values
@@ -151,7 +151,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/team"
+                  href="#team"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Meet the Team
@@ -159,7 +159,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/blog"
+                  href="#blog"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Blog
@@ -168,14 +168,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Solutions
             </h3>
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/solutions"
+                  href="/solutions#retained-search"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Retained Search
@@ -183,7 +183,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/solutions"
+                  href="/solutions#rpo"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   RPO
@@ -191,7 +191,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/solutions"
+                  href="/solutions#fractional-hr"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Fractional HR
@@ -199,7 +199,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/solutions"
+                  href="/solutions#consulting"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Consulting
@@ -207,7 +207,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/solutions"
+                  href="/solutions#board-advisory"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Board Advisory
@@ -216,12 +216,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Contact
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start">
+              <li className="flex items-center justify-center sm:items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
@@ -238,7 +238,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-300">info@aluriontalent.com</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-center justify-center sm:items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
@@ -255,7 +255,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-300">(952)333-9877</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-center justify-center sm:items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
@@ -286,7 +286,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700/50 mt-12 pt-8">
+        <div className="border-t border-gray-700/50 mt-12 pt-8 ">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Alurion Talent Group. All rights

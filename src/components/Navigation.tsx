@@ -69,7 +69,7 @@ const Navigation = () => {
               viewBox="0 0 995.32 504.62"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-2"
+              className="mr-2 md:w-[180px] md:h-[40px] w-[120px] h-[30px]"
             >
               <g id="Layer_1-2" data-name="Layer 1">
                 <g>
@@ -267,7 +267,7 @@ const Navigation = () => {
           </Link>
         </nav>
 
-        <div className="lg:hidden">
+        <div className="lg:hidden px-8">
           <button onClick={toggleMenu} className="text-alurion-primary p-2">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

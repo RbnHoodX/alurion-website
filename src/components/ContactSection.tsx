@@ -2,7 +2,7 @@ import React from "react";
 const ContactSection = () => {
   return (
     <section id="contact" className="section bg-white">
-      <div className="container mx-auto text-center">
+      <div className="container p-2 md:p-6 mx-auto text-center">
         <h2 className="section-title text-center">Contact Us</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
