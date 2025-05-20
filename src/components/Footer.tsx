@@ -1,5 +1,27 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
+
 const Footer = () => {
+  const location = useLocation();
+
+  const handleSolutionClick = (solutionId: string) => {
+    if (location.pathname === "/solutions") {
+      // Check if window.setActiveSolution exists
+      if (typeof window.setActiveSolution === "function") {
+        window.setActiveSolution(solutionId);
+        window.location.href = `/solutions#${solutionId}`;
+      } else {
+        console.error(
+          "setActiveSolution is not defined on the /solutions page."
+        );
+      }
+    } else {
+      // Navigate to the solutions page with the selected solution
+      window.location.href = `/solutions#${solutionId}`;
+    }
+  };
+
   return (
     <footer className="bg-alurion-primary text-white relative">
       <div className="absolute inset-0 pattern-bg-light opacity-10"></div>
@@ -53,14 +75,12 @@ const Footer = () => {
                 </g>
               </svg>
             </div>
-            {/* <p className="text-sm text-gray-300">
-              A beacon of sophistication and trusted excellence in executive recruiting 
-              and workforce planning.
-            </p> */}
-            {/* social icons */}
+            {/* Social icons */}
             <div className="flex items-center justify-center space-x-4 pt-2 mb-2">
               <a
                 href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-alurion-accent transition-colors"
               >
                 <svg
@@ -81,6 +101,8 @@ const Footer = () => {
               </a>
               <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-alurion-accent transition-colors"
               >
                 <svg
@@ -99,6 +121,8 @@ const Footer = () => {
               </a>
               <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-alurion-accent transition-colors"
               >
                 <svg
@@ -120,102 +144,105 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Company Links */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Company
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#mission"
+                <HashLink
+                  to="/#mission"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Mission
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#about"
+                <HashLink
+                  to="/#about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   About Us
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#values"
+                <HashLink
+                  to="/#values"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Values
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#team"
+                <HashLink
+                  to="/#team"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Meet the Team
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#blog"
+                <HashLink
+                  to="/#blog"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Blog
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
 
+          {/* Solutions Links */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Solutions
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="/solutions#retained-search"
+                <button
+                  onClick={() => handleSolutionClick("retained-search")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Retained Search
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/solutions#rpo"
+                <button
+                  onClick={() => handleSolutionClick("rpo")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   RPO
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/solutions#fractional-hr"
+                <button
+                  onClick={() => handleSolutionClick("fractional-hr")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Fractional HR
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/solutions#consulting"
+                <button
+                  onClick={() => handleSolutionClick("consulting")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Consulting
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/solutions#board-advisory"
+                <button
+                  onClick={() => handleSolutionClick("board-advisory")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Board Advisory
-                </a>
+                </button>
               </li>
             </ul>
           </div>
 
+          {/* Contact Information */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Contact
@@ -286,31 +313,31 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700/50 mt-12 pt-8 ">
+        <div className="border-t border-gray-700/50 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Alurion Talent Group. All rights
               reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a
-                href="#"
+              <HashLink
+                to="/privacy-policy"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </HashLink>
+              <HashLink
+                to="/terms-of-service"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Terms of Service
-              </a>
-              <a
-                href="#"
+              </HashLink>
+              <HashLink
+                to="/cookie-policy"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Cookie Policy
-              </a>
+              </HashLink>
             </div>
           </div>
         </div>
@@ -318,4 +345,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
