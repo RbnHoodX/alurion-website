@@ -1,26 +1,16 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
 
   const handleSolutionClick = (solutionId: string) => {
-    window.location.href = `/solutions#${solutionId}`;
-    // if (location.pathname === "/solutions") {
-    //   // Check if window.setActiveSolution exists
-    //   if (typeof window.setActiveSolution === "function") {
-    //     window.setActiveSolution(solutionId);
-    //     window.location.href = `/solutions#${solutionId}`;
-    //   } else {
-    //     console.error(
-    //       "setActiveSolution is not defined on the /solutions page."
-    //     );
-    //   }
-    // } else {
-    //   // Navigate to the solutions page with the selected solution
-    //   window.location.href = `/solutions#${solutionId}`;
-    // }
+    // Access window.setActiveSolution if it exists (defined in SolutionsSection)
+    console.log(solutionId);
+    if (window.location.pathname === "/solutions" && window.setActiveSolution) {
+      window.setActiveSolution(solutionId);
+    }
   };
 
   return (
@@ -201,44 +191,49 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <button
+                <Link
+                  to="/solutions#retained-search"
                   onClick={() => handleSolutionClick("retained-search")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Retained Search
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/solutions#rpo"
                   onClick={() => handleSolutionClick("rpo")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   RPO
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/solutions#fractional-hr"
                   onClick={() => handleSolutionClick("fractional-hr")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Fractional HR
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/solutions#consulting"
                   onClick={() => handleSolutionClick("consulting")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Consulting
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/solutions#board-advisory"
                   onClick={() => handleSolutionClick("board-advisory")}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Board Advisory
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
