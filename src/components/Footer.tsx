@@ -244,7 +244,7 @@ const Footer = () => {
               Contact
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-center justify-center sm:items-start">
+              <li className="flex items-center justify-center lg:justify-start ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
@@ -261,7 +261,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-300">info@aluriontalent.com</span>
               </li>
-              <li className="flex items-center justify-center sm:items-start">
+              <li className="flex items-center justify-center lg:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
@@ -278,7 +278,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-300">(952)333-9877</span>
               </li>
-              <li className="flex justify-center sm:items-start">
+              <li className="flex justify-center lg:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
