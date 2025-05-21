@@ -85,7 +85,7 @@ const ContactSection = () => {
 
               <div className="space-y-8">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                  <div className="min-w-12 min-h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -101,8 +101,8 @@ const ContactSection = () => {
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-medium text-alurion-secondary text-left">
+                  <div className="text-sm md:text-lg ">
+                    <h4 className="font-medium text-alurion-secondary text-left">
                       Phone
                     </h4>
                     <p className="text-white/80">(952)333-9877</p>
@@ -110,7 +110,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                  <div className="min-w-12 min-h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -126,7 +126,7 @@ const ContactSection = () => {
                       />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-sm md:text-lg ">
                     <h4 className="text-lg font-medium text-alurion-secondary text-left">
                       Email
                     </h4>
@@ -135,7 +135,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                  <div className="min-w-12 min-h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -157,7 +157,7 @@ const ContactSection = () => {
                       />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-sm md:text-lg ">
                     <h4 className="text-lg font-medium text-alurion-secondary text-left">
                       Location
                     </h4>

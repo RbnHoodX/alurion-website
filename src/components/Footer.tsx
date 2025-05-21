@@ -145,7 +145,7 @@ const Footer = () => {
           </div>
 
           {/* Company Links */}
-          <div className="text-center sm:text-left">
+          <div className="text-center lg:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Company
             </h3>
@@ -194,7 +194,7 @@ const Footer = () => {
           </div>
 
           {/* Solutions Links */}
-          <div className="text-center sm:text-left">
+          <div className="text-center lg:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Solutions
             </h3>
@@ -243,7 +243,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="text-center sm:text-left">
+          <div className="text-center lg:text-left">
             <h3 className="text-lg font-semibold mb-6 text-alurion-accent">
               Contact
             </h3>
@@ -282,7 +282,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-300">(952)333-9877</span>
               </li>
-              <li className="flex items-center justify-center sm:items-start">
+              <li className="flex justify-center sm:items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-alurion-accent mr-3 mt-1"
