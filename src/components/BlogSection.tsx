@@ -158,7 +158,7 @@ And see the full picture: products, people, and possibilities.`,
       <div className="container mx-auto text-center">
         <h2 className="section-title text-center">Latest Blogs</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <div
               key={index}
@@ -167,7 +167,7 @@ And see the full picture: products, people, and possibilities.`,
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-48 object-cover"
+                className="w-full w-100 lg:h-64 object-cover"
               />
               <div className="p-6">
                 <div className="flex justify-between text-sm text-gray-500 mb-3">
