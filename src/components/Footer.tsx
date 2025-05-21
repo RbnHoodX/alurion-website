@@ -6,20 +6,21 @@ const Footer = () => {
   const location = useLocation();
 
   const handleSolutionClick = (solutionId: string) => {
-    if (location.pathname === "/solutions") {
-      // Check if window.setActiveSolution exists
-      if (typeof window.setActiveSolution === "function") {
-        window.setActiveSolution(solutionId);
-        window.location.href = `/solutions#${solutionId}`;
-      } else {
-        console.error(
-          "setActiveSolution is not defined on the /solutions page."
-        );
-      }
-    } else {
-      // Navigate to the solutions page with the selected solution
-      window.location.href = `/solutions#${solutionId}`;
-    }
+    window.location.href = `/solutions#${solutionId}`;
+    // if (location.pathname === "/solutions") {
+    //   // Check if window.setActiveSolution exists
+    //   if (typeof window.setActiveSolution === "function") {
+    //     window.setActiveSolution(solutionId);
+    //     window.location.href = `/solutions#${solutionId}`;
+    //   } else {
+    //     console.error(
+    //       "setActiveSolution is not defined on the /solutions page."
+    //     );
+    //   }
+    // } else {
+    //   // Navigate to the solutions page with the selected solution
+    //   window.location.href = `/solutions#${solutionId}`;
+    // }
   };
 
   return (
