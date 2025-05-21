@@ -13,6 +13,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -34,6 +35,19 @@ const Navigation = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const toggleSubMenu = (key: string) => {
+    setOpenSubMenus((prev) =>
+      prev.includes(key)
+        ? prev.filter((k) => k !== key)
+        : [
+            ...prev.filter((k) => k.split(".").length < key.split(".").length),
+            key,
+          ]
+    );
+  };
+
+  const isSubMenuOpen = (key: string) => openSubMenus.includes(key);
 
   // Function to handle solutions dropdown item clicks
   const handleSolutionClick = (solutionId: string) => {
@@ -268,72 +282,270 @@ const Navigation = () => {
         </nav>
 
         <div className="lg:hidden px-8">
-          <button onClick={toggleMenu} className="text-alurion-primary p-2">
+          <button
+            onClick={() => setIsMenuOpen((v) => !v)}
+            className="text-alurion-primary p-2"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg animated fade-in py-4 px-6">
           <Link
             to="/"
             className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+            onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
-          <HashLink
-            to="/#mission"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            Mission
-          </HashLink>
-          <HashLink
-            to="/#values"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            Values
-          </HashLink>
-          <Link
-            to="/team"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            Meet the Team
-          </Link>
-          <Link
-            to="/solutions"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            Solutions
-          </Link>
-          <Link
-            to="/industries"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            Industries & Functions
-          </Link>
+
+          {/* Who We Are */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between py-2 cursor-pointer focus:outline-none"
+              onClick={() => toggleSubMenu("who")}
+              aria-expanded={isSubMenuOpen("who")}
+              aria-controls="mobile-who-sub"
+            >
+              <span className="text-alurion-primary">Who We Are</span>
+              {isSubMenuOpen("who") ? (
+                <ChevronRight
+                  size={16}
+                  className="text-alurion-primary transition-transform rotate-90"
+                />
+              ) : (
+                <ChevronDown
+                  size={16}
+                  className="text-alurion-primary transition-transform"
+                />
+              )}
+            </button>
+            <div
+              id="mobile-who-sub"
+              className={`pl-4 transition-all duration-300 overflow-hidden ${
+                isSubMenuOpen("who")
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              <HashLink
+                to="/#mission"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Mission
+              </HashLink>
+              <HashLink
+                to="/#values"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Values
+              </HashLink>
+              <Link
+                to="/team"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Meet the Team
+              </Link>
+            </div>
+          </div>
+
+          {/* What We Do */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between py-2 cursor-pointer focus:outline-none"
+              onClick={() => toggleSubMenu("what")}
+              aria-expanded={isSubMenuOpen("what")}
+              aria-controls="mobile-what-sub"
+            >
+              <span className="text-alurion-primary">What We Do</span>
+              {isSubMenuOpen("what") ? (
+                <ChevronRight
+                  size={16}
+                  className="text-alurion-primary transition-transform rotate-90"
+                />
+              ) : (
+                <ChevronDown
+                  size={16}
+                  className="text-alurion-primary transition-transform"
+                />
+              )}
+            </button>
+            <div
+              id="mobile-what-sub"
+              className={`pl-4 transition-all duration-300 overflow-hidden ${
+                isSubMenuOpen("what")
+                  ? "max-h-[600px] opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {/* Solutions */}
+              <div>
+                <button
+                  className="flex w-full items-center justify-between py-2 cursor-pointer focus:outline-none"
+                  onClick={() => toggleSubMenu("what.solutions")}
+                  aria-expanded={isSubMenuOpen("what.solutions")}
+                  aria-controls="mobile-solutions-sub"
+                >
+                  <span className="text-alurion-primary">Solutions</span>
+                  {isSubMenuOpen("what.solutions") ? (
+                    <ChevronRight
+                      size={16}
+                      className="text-alurion-primary transition-transform rotate-90"
+                    />
+                  ) : (
+                    <ChevronDown
+                      size={16}
+                      className="text-alurion-primary transition-transform"
+                    />
+                  )}
+                </button>
+                <div
+                  id="mobile-solutions-sub"
+                  className={`pl-4 transition-all duration-300 overflow-hidden ${
+                    isSubMenuOpen("what.solutions")
+                      ? "max-h-[600px] opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <Link
+                    to="/solutions"
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    All Solutions
+                  </Link>
+                  <Link
+                    to="/solutions#retained-search"
+                    onClick={() => handleSolutionClick("retained-search")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Retained Search
+                  </Link>
+                  <Link
+                    to="/solutions#rpo"
+                    onClick={() => handleSolutionClick("rpo")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    RPO
+                  </Link>
+                  <Link
+                    to="/solutions#fractional-hr"
+                    onClick={() => handleSolutionClick("fractional-hr")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Fractional HR & Talent Officer
+                  </Link>
+                  <Link
+                    to="/solutions#consulting"
+                    onClick={() => handleSolutionClick("consulting")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Consulting
+                  </Link>
+                  <Link
+                    to="/solutions#talent-mapping"
+                    onClick={() => handleSolutionClick("talent-mapping")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Candidate Mapping & Pipelining
+                  </Link>
+                  <Link
+                    to="/solutions#board-advisory"
+                    onClick={() => handleSolutionClick("board-advisory")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Board Advisory
+                  </Link>
+                  <Link
+                    to="/solutions#coaching"
+                    onClick={() => handleSolutionClick("coaching")}
+                    className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                  >
+                    Coaching & Development
+                  </Link>
+                </div>
+              </div>
+              <Link
+                to="/industries"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Industries
+              </Link>
+            </div>
+          </div>
+
+          {/* Testimonials, Blog, For Candidates, Contact */}
           <HashLink
             to="/#testimonials"
             className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+            onClick={() => setIsMenuOpen(false)}
           >
             Testimonials
           </HashLink>
           <Link
             to="/blog"
             className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+            onClick={() => setIsMenuOpen(false)}
           >
             Blog
           </Link>
-          <Link
-            to="/candidates"
-            className="block py-2 text-alurion-primary hover:text-alurion-secondary"
-          >
-            For Candidates
-          </Link>
+
+          {/* For Candidates */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between py-2 cursor-pointer focus:outline-none"
+              onClick={() => toggleSubMenu("candidates")}
+              aria-expanded={isSubMenuOpen("candidates")}
+              aria-controls="mobile-candidates-sub"
+            >
+              <span className="text-alurion-primary">For Candidates</span>
+              {isSubMenuOpen("candidates") ? (
+                <ChevronRight
+                  size={16}
+                  className="text-alurion-primary transition-transform rotate-90"
+                />
+              ) : (
+                <ChevronDown
+                  size={16}
+                  className="text-alurion-primary transition-transform"
+                />
+              )}
+            </button>
+            <div
+              id="mobile-candidates-sub"
+              className={`pl-4 transition-all duration-300 overflow-hidden ${
+                isSubMenuOpen("candidates")
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              <Link
+                to="/candidates"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Submit Resume
+              </Link>
+              <Link
+                to="/candidates"
+                className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Open Roles
+              </Link>
+            </div>
+          </div>
+
           <Link
             to="/contact"
             className="block py-2 text-alurion-primary hover:text-alurion-secondary"
+            onClick={() => setIsMenuOpen(false)}
           >
             Contact Us
           </Link>
